@@ -453,20 +453,46 @@ h1{animation:fu 0.6s 0.1s ease both;}
     <h2>Let's Find <span class="ar">Your Project</span></h2>
     <p class="sintro">Tell me what you're looking for. I'll come back to you personally — usually within a few hours.</p>
     <div class="fcard">
-      <div id="fc">
-        <div class="fgrid">
-          <div class="fg"><label for="fn">First Name</label><input type="text" id="fn" placeholder="Your first name"></div>
-          <div class="fg"><label for="ln">Last Name</label><input type="text" id="ln" placeholder="Your last name"></div>
-          <div class="fg"><label for="wa">WhatsApp Number</label><input type="tel" id="wa" placeholder="+971 50 000 0000"></div>
-          <div class="fg"><label for="em">Email Address</label><input type="email" id="em" placeholder="your@email.com"></div>
-          <div class="fg">
-            <label for="bud">Budget Range (AED)</label>
-            <select id="bud"><option value="" disabled selected>Select your range</option><option>Under AED 1M</option><option>AED 1M – 3M</option><option>AED 3M – 5M</option><option>AED 5M – 10M</option><option>Above AED 10M</option></select>
-          </div>
-          <div class="fg">
-            <label for="tl">Your Timeline</label>
-            <select id="tl"><option value="" disabled selected>When are you buying?</option><option>Within 1 month</option><option>1–3 months</option><option>3–6 months</option><option>Exploring for now</option></select>
-          </div>
+  <h2 style="text-align:center; color:#E6AA20;">RESERVE A CONSULTATION</h2>
+  <p style="text-align:center; margin-bottom:20px;">Masoud will review your requirements personally.</p>
+
+  <form id="enquiry-form" action="https://formspree.io/f/mkokrndr" method="POST">
+    <div class="fgrid">
+      <div class="fg">
+        <label for="fn">First Name</label>
+        <input type="text" name="First_Name" id="fn" placeholder="Your name" required>
+      </div>
+      <div class="fg">
+        <label for="wa">WhatsApp Number</label>
+        <input type="tel" name="WhatsApp" id="wa" placeholder="+971 50 000 0000" required>
+      </div>
+      <div class="fg">
+        <label for="em">Email Address</label>
+        <input type="email" name="Email" id="em" placeholder="your@email.com" required>
+      </div>
+      <div class="fg">
+        <label for="bud">Budget Range</label>
+        <select name="Budget" id="bud" required>
+          <option value="" disabled selected>Select Range</option>
+          <option>Under 1.5M AED</option>
+          <option>1.5M - 3M AED</option>
+          <option>3M - 5M AED</option>
+          <option>5M - 10M AED</option>
+          <option>Above 10M AED</option>
+        </select>
+      </div>
+      <div class="fg full">
+        <label for="msg">Message</label>
+        <textarea name="Message" id="msg" placeholder="How can I help with your investment?"></textarea>
+      </div>
+    </div>
+    <button type="submit" id="submit-btn" class="fsub">SUBMIT ENQUIRY</button>
+  </form>
+
+  <div id="form-status" style="display:none; text-align:center; padding:20px;">
+    <h3 style="color:#E6AA20;">✓ Enquiry Received</h3>
+    <p>I have received your details and will WhatsApp you shortly.</p>
+  </div>
           <div class="fg full">
             <label for="proj">Project Interest</label>
             <select id="proj"><option value="" disabled selected>Which project interests you?</option><option>Tilal Binghatti — Dubai</option><option>Sobha City — Abu Dhabi</option><option>Mondrian Residences — Al Marjan RAK</option><option>Open to recommendations</option></select>
@@ -528,33 +554,38 @@ h1{animation:fu 0.6s 0.1s ease both;}
 </div>
 
 <script>
-function submitForm(){
-  const fn=document.getElementById('fn').value.trim();
-  const wa=document.getElementById('wa').value.trim();
-  const bud=document.getElementById('bud').value;
-  if(!fn||!wa||!bud){alert('Please fill in your name, WhatsApp number and budget range.');return;}
-  const ln=document.getElementById('ln').value.trim();
-  const em=document.getElementById('em').value.trim();
-  const tl=document.getElementById('tl').value;
-  const proj=document.getElementById('proj').value;
-  const int=document.getElementById('int').value;
-  const msg=document.getElementById('msg').value.trim();
-  const sub=encodeURIComponent('UAE Off-Plan Enquiry — '+fn+' '+ln);
-  const body=encodeURIComponent(
-    'Name: '+fn+' '+ln+'\n'+
-    'WhatsApp: '+wa+'\n'+
-    'Email: '+(em||'Not provided')+'\n'+
-    'Budget: '+bud+'\n'+
-    'Timeline: '+(tl||'Not specified')+'\n'+
-    'Project Interest: '+(proj||'Not specified')+'\n'+
-    'Intent: '+(int||'Not specified')+'\n'+
-    'Message: '+(msg||'None')+'\n\n'+
-    'Source: Living Capital Dubai Landing Page'
-  );
-  window.location.href='mailto:mrlivingcapital@gmail.com?subject='+sub+'&body='+body;
-  document.getElementById('fc').style.display='none';
-  document.getElementById('sm').style.display='block';
-}
-</script>
+const contactForm = document.getElementById("enquiry-form");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevents page reload or opening email app
+    
+    const submitBtn = document.getElementById("submit-btn");
+    submitBtn.innerHTML = "SENDING...";
+    submitBtn.disabled = true;
+
+    const formData = new FormData(event.target);
+    
+    fetch(event.target.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            contactForm.style.display = "none"; // Hide form
+            formStatus.style.display = "block"; // Show success message
+        } else {
+            alert("Oops! There was a problem. Please try again or contact me via WhatsApp.");
+            submitBtn.innerHTML = "SUBMIT ENQUIRY";
+            submitBtn.disabled = false;
+        }
+    }).catch(error => {
+        alert("Network error. Please check your connection.");
+        submitBtn.innerHTML = "SUBMIT ENQUIRY";
+        submitBtn.disabled = false;
+    });
+});</script>
 </body>
 </html>
