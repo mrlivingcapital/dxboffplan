@@ -5,57 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Off-Plan UAE Properties | Masoud - Living Capital Dubai</title>
     <meta name="description" content="Expert off-plan property advisory in Dubai, Abu Dhabi & RAK. 19 years banking experience. English, Arabic, and Farsi supported.">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+Arabic:wght@300;600&display=swap" rel="stylesheet">
-
     <style>
-        :root {
-            --red: #CE1126; --red-dark: #A50D1E; --green: #00732F;
-            --black: #0D0D0D; --black2: #181818; --white: #FFFFFF;
-            --off-white: #F6F4F0; --sand: #F0EBE0; --gold-light: #E6AA20;
-            --text: #1C1C1C; --text-soft: #888; --border: rgba(0,0,0,0.09);
-        }
+        :root { --red: #CE1126; --red-dark: #A50D1E; --green: #00732F; --black: #0D0D0D; --black2: #181818; --white: #FFFFFF; --off-white: #F6F4F0; --sand: #F0EBE0; --gold-light: #E6AA20; --text: #1C1C1C; --text-soft: #888; --border: rgba(0,0,0,0.09); }
         *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { background: var(--white); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
-        
-        /* RTL Global Logic */
         body.rtl { direction: rtl; font-family: 'Noto Sans Arabic', sans-serif; }
         body.rtl .float-wrap { right: auto !important; left: 1.5rem !important; }
         body.rtl .hstat { border-right: none; border-left: 1px solid rgba(255,255,255,0.1); }
         body.rtl .hstat:last-child { border-left: none; }
         body.rtl .nav-logo { order: 2; }
         body.rtl .lang-switch { order: 1; }
-
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: stretch; background: var(--white); box-shadow: 0 1px 0 var(--border); }
         .nav-bar-red { width: 7px; background: var(--red); }
         .nav-bar-white { width: 7px; background: var(--off-white); }
         .nav-bar-green { width: 7px; background: var(--green); }
         .nav-inner { flex: 1; display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 2rem; }
         .nav-logo { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; }
-        
         .lang-switch { display: flex; gap: 8px; }
         .lang-btn { cursor: pointer; font-size: 0.65rem; font-weight: 600; padding: 5px 10px; border: 1px solid var(--border); background: none; }
         .lang-btn.active { background: var(--black); color: white; border-color: var(--black); }
-
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; position: relative; background: var(--black2); color: white; }
         .hero-content { position: relative; z-index: 2; padding: 9rem 4rem 4rem; }
         h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
         .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.6); max-width: 550px; margin-bottom: 2.5rem; }
-        
         .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.1); }
         .hstat { padding: 2rem; border-right: 1px solid rgba(255,255,255,0.1); }
         .hstat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-light); display: block; }
         .hstat-l { font-size: 0.65rem; text-transform: uppercase; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-top: 5px; }
-
         section { padding: 5rem 4rem; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
         .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .pcard { border: 1px solid var(--border); padding: 2rem; background: white; transition: 0.3s; cursor: pointer; }
         .pcard:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-
         .about-s { background: var(--black2); color: white; }
         .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
         .advisor-header { display: flex; align-items: center; gap: 20px; margin-bottom: 2rem; }
@@ -64,7 +49,6 @@
         .tlist { list-style: none; }
         .tlist li { margin-bottom: 1.5rem; display: flex; gap: 15px; }
         .ticon { color: var(--gold-light); font-weight: bold; }
-
         .form-s { background: var(--sand); }
         .fcard { max-width: 600px; margin: 0 auto; background: white; padding: 2.5rem; border-top: 4px solid var(--red); box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
         .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -72,27 +56,16 @@
         input, select, textarea { width: 100%; padding: 12px; border: none; border-bottom: 1px solid #ddd; background: var(--off-white); margin-top: 5px; font-family: inherit; outline: none; }
         .fsub { width: 100%; padding: 16px; background: var(--red); color: white; border: none; text-transform: uppercase; font-weight: 600; margin-top: 20px; cursor: pointer; transition: 0.2s; }
         .fsub:hover { background: var(--red-dark); }
-
         footer { background: var(--black); padding: 3rem 4rem; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.8rem; }
-
         .float-wrap { position: fixed; bottom: 2rem; right: 1.5rem; z-index: 999; display: flex; flex-direction: column; gap: 12px; }
         .fb { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.2s; }
         .fb:hover { transform: scale(1.1); }
         .fb svg { width: 26px; fill: white; }
-        .fb-wa { background: #25D366; }
-        .fb-tg { background: #229ED9; }
-
-        @media(max-width:800px){
-            section { padding: 3rem 1.5rem; }
-            .about-inner, .fgrid, .hero-stats { grid-template-columns: 1fr; }
-            .fg.full { grid-column: span 1; }
-            .advisor-header { flex-direction: column; text-align: center; }
-            h1 { font-size: 2.4rem; }
-        }
+        .fb-wa { background: #25D366; } .fb-tg { background: #229ED9; }
+        @media(max-width:800px){ section { padding: 3rem 1.5rem; } .about-inner, .fgrid, .hero-stats { grid-template-columns: 1fr; } .advisor-header { flex-direction: column; text-align: center; } h1 { font-size: 2.4rem; } }
     </style>
 </head>
 <body id="body">
-
 <nav>
     <div class="nav-bar-red"></div><div class="nav-bar-white"></div><div class="nav-bar-green"></div>
     <div class="nav-inner">
@@ -189,87 +162,29 @@
 <script>
     const translations = {
         en: {
-            LOGO: "MR · LIVING CAPITAL · DUBAI",
-            HERO_H1: "Own Dubai<br>Before the Price<br><span style='color:var(--red)'>Goes</span> Up",
-            HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.",
-            HERO_CTA: "Consult Masoud",
-            STAT1: "Buyer Commission", STAT2: "Payment Plans", STAT3: "Developer Access",
-            PROJ_TITLE: "Current Opportunities",
-            P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration.",
-            P2: "Luxury master community in Abu Dhabi. Built by the region's quality leader.",
-            P3: "Next to Wynn Casino. Branded residences with immense short-term rental upside.",
-            ABOUT_H2: "Not an Agent.<br><span style='color:var(--red)'>An Advisor.</span>",
-            ABOUT_P1: "19 years leading senior operations at Emirates NBD. I brought institutional discipline to real estate.",
-            ABOUT_P2: "I review the developer, the math, and the exit strategy before I recommend a single unit.",
-            SIG: "Investment Advisor",
-            T1: "Banking Grade Due Diligence", T2: "No Pressure Sales Environment", T3: "Direct Relationship with Developers",
-            FORM_TITLE: "Secure Consultation", FN: "First Name", WA: "WhatsApp", EM: "Email", BUD: "Budget", MSG: "Message", SUBMIT: "Send Enquiry"
+            LOGO: "MR · LIVING CAPITAL · DUBAI", HERO_H1: "Own Dubai<br>Before the Price<br><span style='color:var(--red)'>Goes</span> Up", HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.", HERO_CTA: "Consult Masoud", STAT1: "Buyer Commission", STAT2: "Payment Plans", STAT3: "Developer Access", PROJ_TITLE: "Current Opportunities", P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration.", P2: "Luxury master community in Abu Dhabi. Built by the region's quality leader.", P3: "Next to Wynn Casino. Branded residences with immense short-term rental upside.", ABOUT_H2: "Not an Agent.<br><span style='color:var(--red)'>An Advisor.</span>", ABOUT_P1: "19 years leading senior operations at Emirates NBD. I brought institutional discipline to real estate.", ABOUT_P2: "I review the developer, the math, and the exit strategy before I recommend a single unit.", SIG: "Investment Advisor", T1: "Banking Grade Due Diligence", T2: "No Pressure Sales Environment", T3: "Direct Relationship with Developers", FORM_TITLE: "Secure Consultation", FN: "First Name", WA: "WhatsApp", EM: "Email", BUD: "Budget", MSG: "Message", SUBMIT: "Send Enquiry"
         },
         ar: {
-            LOGO: "مسعود · ليفينج كابيتال · دبي",
-            HERO_H1: "تملّك في دبي<br>قبل <span style='color:var(--red)'>ارتفاع</span><br>الأسعار",
-            HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي. أساعدك على الاستثمار في عقارات الإمارات بناءً على البيانات والخبرة المالية.",
-            HERO_CTA: "استشر مسعود الآن",
-            STAT1: "عمولة شراء ٠٪", STAT2: "خطط دفع ميسرة", STAT3: "مشاريع حصرية",
-            PROJ_TITLE: "الفرص المتاحة حالياً",
-            P1: "منطقة واحة دبي للسيليكون. عوائد استثمارية عالية وتقنيات ذكية.",
-            P2: "مجتمع سكني فاخر في قلب العاصمة أبوظبي من تطوير 'شوبا'.",
-            P3: "بجانب كازينو وين. فخامة عالمية وعوائد إيجارية قوية في رأس الخيمة.",
-            ABOUT_H2: "لست مجرد وكيل،<br><span style='color:var(--red)'>بل مستشارك.</span>",
-            ABOUT_P1: "١٩ عاماً من الخبرة القيادية في بنك الإمارات دبي الوطني. أنقل انضباط العمل المصرفي إلى سوق العقارات.",
-            ABOUT_P2: "أقوم بمراجعة المطور، الحسابات المالية، واستراتيجية الخروج قبل التوصية بأي وحدة.",
-            SIG: "مستشار استثمار عقاري",
-            T1: "تدقيق عقاري بمعايير مصرفية", T2: "بيئة بيع خالية من الضغوط", T3: "علاقات مباشرة مع كبار المطورين",
-            FORM_TITLE: "حجز استشارة خاصة", FN: "الاسم", WA: "واتساب", EM: "الإيميل", BUD: "الميزانية", MSG: "الرسالة", SUBMIT: "إرسال الطلب"
+            LOGO: "مسعود · ليفينج كابيتال · دبي", HERO_H1: "تملّك في دبي<br>قبل <span style='color:var(--red)'>ارتفاع</span><br>الأسعار", HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي. أساعدك على الاستثمار في عقارات الإمارات بناءً على البيانات والخبرة المالية.", HERO_CTA: "استشر مسعود الآن", STAT1: "عمولة شراء ٠٪", STAT2: "خطط دفع ميسرة", STAT3: "مشاريع حصرية", PROJ_TITLE: "الفرص المتاحة حالياً", P1: "منطقة واحة دبي للسيليكون. عوائد استثمارية عالية وتقنيات ذكية.", P2: "مجتمع سكني فاخر في قلب العاصمة أبوظبي من تطوير 'شوبا'.", P3: "بجانب كازينو وين. فخامة عالمية وعوائد إيجارية قوية في رأس الخيمة.", ABOUT_H2: "لست مجرد وكيل،<br><span style='color:var(--red)'>بل مستشارك.</span>", ABOUT_P1: "١٩ عاماً من الخبرة القيادية في بنك الإمارات دبي الوطني. أنقل انضباط العمل المصرفي إلى سوق العقارات.", ABOUT_P2: "أقوم بمراجعة المطور، الحسابات المالية، واستراتيجية الخروج قبل التوصية بأي وحدة.", SIG: "مستشار استثمار عقاري", T1: "تدقيق عقاري بمعايير مصرفية", T2: "بيئة بيع خالية من الضغوط", T3: "علاقات مباشرة مع كبار المطورين", FORM_TITLE: "حجز استشارة خاصة", FN: "الاسم", WA: "واتساب", EM: "الإيميل", BUD: "الميزانية", MSG: "الرسالة", SUBMIT: "إرسال الطلب"
         },
         fa: {
-            LOGO: "مسعود · لیوینگ کپیتال · دبی",
-            HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span style='color:var(--red)'>افزایش</span><br>قیمت‌ها",
-            HERO_SUB: "مشاوره تخصصی با ۱۹ سال سابقه بانکی در امارات. من به شما کمک می‌کنم بر اساس اعداد و ارقام سرمایه‌گذاری کنید، نه حرف‌های تبلیغاتی.",
-            HERO_CTA: "مشاوره با مسعود",
-            STAT1: "بدون کمیسیون خرید", STAT2: "اقساط بلند مدت", STAT3: "دسترسی به سازندگان برتر",
-            PROJ_TITLE: "فرصت‌های فعلی",
-            P1: "منطقه سیلیکون واحه. پتانسیل رشد بالا و خانه‌های هوشمند.",
-            P2: "شهرک لوکس و مدرن در پایتخت، ابوظبی. ساخته شده توسط بهترین سازنده منطقه.",
-            P3: "در مجاورت کازینو وین. زندگی لوکس و پتانسیل بالای اجاره کوتاه‌مدت در رأس‌الخیمه.",
-            ABOUT_H2: "نه فقط یک کارگزار،<br><span style='color:var(--red)'>بلکه مشاور شما.</span>",
-            ABOUT_P1: "۱۹ سال سابقه مدیریت عملیات در بانک Emirates NBD. انضباط بانکی را به دنیای املاک آورده‌ام.",
-            ABOUT_P2: "من سازنده، محاسبات ریاضی و استراتژی فروش مجدد را قبل از پیشنهاد هر واحد بررسی می‌کنم.",
-            SIG: "مشاور سرمایه‌گذاری",
-            T1: "بررسی دقیق با استانداردهای بانکی", T2: "فروش بدون فشار و صادقانه", T3: "ارتباط مستقیم با سازندگان تراز اول",
-            FORM_TITLE: "درخواست مشاوره", FN: "نام", WA: "واتس‌اپ", EM: "ایمیل", BUD: "بودجه", MSG: "پیام شما", SUBMIT: "ارسال درخواست"
+            LOGO: "مسعود · لیوینگ کپیتال · دبی", HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span style='color:var(--red)'>افزایش</span><br>قیمت‌ها", HERO_SUB: "مشاوره تخصصی با ۱۹ سال سابقه بانکی در امارات. من به شما کمک می‌کنم بر اساس اعداد و ارقام سرمایه‌گذاری کنید، نه حرف‌های تبلیغاتی.", HERO_CTA: "مشاوره با مسعود", STAT1: "بدون کمیسیون خرید", STAT2: "اقساط بلند مدت", STAT3: "دسترسی به سازندگان برتر", PROJ_TITLE: "فرصت‌های فعلی", P1: "منطقه سیلیکون واحه. پتانسیل رشد بالا و خانه‌های هوشمند.", P2: "شهرک لوکس و مدرن در پایتخت، ابوظبی. ساخته شده توسط بهترین سازنده منطقه.", P3: "در مجاورت کازینو وین. زندگی لوکس و پتانسیل بالای اجاره کوتاه‌مدت در رأس‌الخیمه.", ABOUT_H2: "نه فقط یک کارگزار،<br><span style='color:var(--red)'>بلکه مشاور شما.</span>", ABOUT_P1: "۱۹ سال سابقه مدیریت عملیات در بانک Emirates NBD. انضباط بانکی را به دنیای املاک آورده‌ام.", ABOUT_P2: "من سازنده، محاسبات ریاضی و استراتژی فروش مجدد را قبل از پیشنهاد هر واحد بررسی می‌کنم.", SIG: "مشاور سرمایه‌گذاری", T1: "بررسی دقیق با استانداردهای بانکی", T2: "فروش بدون فشار و صادقانه", T3: "ارتباط مستقیم با سازندگان تراز اول", FORM_TITLE: "درخواست مشاوره", FN: "نام", WA: "واتس‌اپ", EM: "ایمیل", BUD: "بودجه", MSG: "پیام شما", SUBMIT: "ارسال درخواست"
         }
     };
-
     function setLang(lang, btn) {
         const body = document.getElementById('body');
         lang === 'en' ? body.classList.remove('rtl') : body.classList.add('rtl');
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        for (let key in translations[lang]) {
-            const el = document.getElementById('L_' + key);
-            if (el) el.innerHTML = translations[lang][key];
-        }
+        for (let key in translations[lang]) { const el = document.getElementById('L_' + key); if (el) el.innerHTML = translations[lang][key]; }
         document.getElementById('submit-btn').innerText = translations[lang].SUBMIT;
     }
-
     const form = document.getElementById("enquiry-form");
     form.addEventListener("submit", async function(e) {
         e.preventDefault();
-        const btn = document.getElementById("submit-btn");
-        btn.innerText = "SENDING...";
-        btn.disabled = true;
-        const data = new FormData(e.target);
-        const res = await fetch(e.target.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
-        if (res.ok) {
-            form.style.display = "none";
-            document.getElementById("form-status").style.display = "block";
-        } else {
-            alert("Error. Please WhatsApp me.");
-            btn.innerText = "Send Enquiry";
-            btn.disabled = false;
-        }
+        const btn = document.getElementById("submit-btn"); btn.innerText = "SENDING..."; btn.disabled = true;
+        const res = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' }});
+        if (res.ok) { form.style.display = "none"; document.getElementById("form-status").style.display = "block"; }
     });
 </script>
 </body>
