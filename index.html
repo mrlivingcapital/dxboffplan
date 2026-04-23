@@ -43,7 +43,6 @@ html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:hidden;}
 body.rtl { direction: rtl; font-family: 'Noto Sans Arabic', sans-serif; }
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:stretch;background:var(--white);box-shadow:0 1px 0 var(--border);}
 .nav-bar-red{width:7px;background:var(--red);flex-shrink:0;}
 .nav-bar-white{width:7px;background:var(--off-white);flex-shrink:0;}
@@ -55,7 +54,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:str
 .lang-btn { cursor: pointer; font-size: 0.7rem; font-weight: 600; padding: 6px 12px; border: 1px solid var(--border); background: none; }
 .lang-btn.active { background: var(--black); color: white; border-color: var(--black); }
 
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:var(--black2);}
 .hero-geo{position:absolute;inset:0;overflow:hidden;}
@@ -77,7 +75,7 @@ h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6.5vw,5.5rem);font-
 section{padding:8rem 4rem; max-width:1300px; margin: 0 auto; width:100%;}
 h2{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:700;color:var(--black);line-height:1.15;margin-bottom:1.5rem;}
 
-/* ABOUT SECTION (MOVED UP) */
+/* ABOUT SECTION */
 .about-s{background:var(--black2);color:var(--white); max-width:100%;}
 .about-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start; max-width:1200px; margin: 0 auto;}
 .advisor-header{display:flex; align-items:center; gap:30px; margin-bottom:2.5rem;}
@@ -127,6 +125,7 @@ body.rtl .float-wrap { right:auto; left:2rem; }
   .about-inner,.fgrid,.hero-stats{grid-template-columns:1fr;}
   .advisor-header{flex-direction:column; text-align:center;}
   .hstat{border-right:none; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .fcard { padding: 2.5rem 1.5rem; }
 }
 </style>
 </head>
@@ -210,7 +209,7 @@ body.rtl .float-wrap { right:auto; left:2rem; }
       <div class="pfooter" id="L_REQ2">Request Details →</div>
     </div>
     <div class="pcard pgo" onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">
-      <div class="ph"><div class="pbadge">RAK</div><h3 style="color:var(--gold-light)">Mondrian Residences</h3><div class="pdev">BY AL MARJAN ISLAND</div></div>
+      <div class="ph"><div class="pbadge">RAK</div><h3 style="color:var(--gold-light); font-family:'Playfair Display';">Mondrian Residences</h3><div class="pdev">BY AL MARJAN ISLAND</div></div>
       <p class="pdesc" id="L_P3">Branded residences with immense short-term rental upside on Al Marjan Island, next to Wynn Casino.</p>
       <div class="pdetails">
         <div class="prow"><span>Starting From</span><span>AED 1.2M</span></div>
@@ -242,12 +241,13 @@ body.rtl .float-wrap { right:auto; left:2rem; }
           </select>
         </div>
         <div class="fg">
-          <label id="L_GOAL">Investment or Own Use?</label>
-          <select name="Goal" id="L_GOAL_SEL">
-            <option value="Investment">Pure Investment — Rental Yield</option>
-            <option value="Residence">Own Use — Primary Residence</option>
-            <option value="Holiday">Own Use — Holiday Home</option>
-            <option value="Both">Both — Live in then Rent</option>
+          <label id="L_TIMELINE">How soon you plan to purchase?</label>
+          <select name="Timeline" id="L_TIMELINE_SEL">
+            <option value="Immediately">Immediately</option>
+            <option value="2-4 Weeks">2 to 4 weeks</option>
+            <option value="1-2 Months">1 to 2 months</option>
+            <option value="3-5 Months">3 to 5 months</option>
+            <option value="Exploring">Exploring options & need consultation</option>
           </select>
         </div>
         <div class="fg full">
@@ -259,7 +259,7 @@ body.rtl .float-wrap { right:auto; left:2rem; }
             <option value="Open">Open to Recommendations</option>
           </select>
         </div>
-        <div class="fg full"><label id="L_MSG">Investment Goals</label><textarea name="Message" rows="4"></textarea></div>
+        <div class="fg full"><label id="L_MSG">Anything else I should know?</label><textarea name="Message" rows="4"></textarea></div>
       </div>
       <button type="submit" id="submit-btn" class="fsub">Send enquiry to masoud</button>
     </form>
@@ -273,13 +273,13 @@ body.rtl .float-wrap { right:auto; left:2rem; }
 <script>
     const translations = {
         en: {
-            LOGO: "MR LIVING CAPITAL", HERO_H1: "Own Dubai<br>Before the Price<br><span style='color:var(--red)'>Goes</span> Up", HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.", HERO_CTA: "Consult Masoud personally", STAT1: "Buyer Commission", S2_N: "Post-Handover", S2_L: "Payment Plans", S3_N: "7-9%", S3_L: "Rental Yields", PROJ_TITLE: "What's <span style='color:var(--green)'>Available Now</span>", P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration in Dubai's tech hub.", P2: "Luxury master community in Abu Dhabi. Built by the region's quality leader for premium living.", P3: "Branded residences with immense short-term rental upside on Al Marjan Island, next to Wynn Casino.", REQ1: "Request Details →", REQ2: "Request Details →", REQ3: "Request Details →", ABOUT_H2: "Not an Agent.<br><span style='color:var(--red)'>An Advisor.</span>", ABOUT_P1: "I spent nearly two decades leading senior operations at one of the region's largest financial organizations. I brought institutional discipline to real estate.", ABOUT_P2: "I review the developer, the math, and the exit strategy before I recommend a single unit to my clients.", SIG_NAME: "Masoud", T1: "Banking Grade Due Diligence", T1_SUB: "Strict assessment of every project's financial viability.", T2: "Market-First Approach", T2_SUB: "I tell you what the market is doing — not the brochure.", T3: "Direct Relationship with Developers", T3_SUB: "Direct access to the source. No middle-man layers.", T4: "Active Pipeline", T4_SUB: "Real projects, real timelines, real developers.", T5: "No Pressure, Ever", T5_SUB: "I advise based on your timeline, not a sales quota.", FORM_TITLE: "Secure Consultation", FN: "First Name", WA: "WhatsApp Number", EM: "Email Address", BUD: "Budget Range", GOAL: "Investment or Own Use?", IPROJ: "Project Interest", MSG: "Investment Goals", SUBMIT: "Send enquiry to masoud"
+            LOGO: "MR LIVING CAPITAL", HERO_H1: "Own Dubai<br>Before the Price<br><span style='color:var(--red)'>Goes</span> Up", HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.", HERO_CTA: "Consult Masoud personally", STAT1: "Buyer Commission", S2_N: "Post-Handover", S2_L: "Payment Plans", S3_N: "7-9%", S3_L: "Rental Yields", PROJ_TITLE: "What's <span style='color:var(--green)'>Available Now</span>", P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration in Dubai's tech hub.", P2: "Luxury master community in Abu Dhabi. Built by the region's quality leader for premium living.", P3: "Branded residences with immense short-term rental upside on Al Marjan Island, next to Wynn Casino.", REQ1: "Request Details →", REQ2: "Request Details →", REQ3: "Request Details →", ABOUT_H2: "Not an Agent.<br><span style='color:var(--red)'>An Advisor.</span>", ABOUT_P1: "I spent nearly two decades leading senior operations at one of the region's largest financial organizations. I brought institutional discipline to real estate.", ABOUT_P2: "I review the developer, the math, and the exit strategy before I recommend a single unit to my clients.", SIG_NAME: "Masoud", T1: "Banking Grade Due Diligence", T1_SUB: "Strict assessment of every project's financial viability.", T2: "Market-First Approach", T2_SUB: "I tell you what the market is doing — not the brochure.", T3: "Direct Relationship with Developers", T3_SUB: "Direct access to the source. No middle-man layers.", T4: "Active Pipeline", T4_SUB: "Real projects, real timelines, real developers.", T5: "No Pressure, Ever", T5_SUB: "I advise based on your timeline, not a sales quota.", FORM_TITLE: "Secure Consultation", FN: "First Name", WA: "WhatsApp Number", EM: "Email Address", BUD: "Budget Range", TIMELINE: "How soon you plan to purchase?", IPROJ: "Project Interest", MSG: "Anything else I should know?", SUBMIT: "Send enquiry to masoud"
         },
         ar: {
-            LOGO: "MR LIVING CAPITAL", HERO_H1: "تملّك في دبي<br>قبل <span style='color:var(--red)'>ارتفاع</span><br>الأسعار", HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي. أساعدك على الاستثمار في عقارات الإمارات بناءً على البيانات والخبرة المالية.", HERO_CTA: "استشر مسعود شخصياً", STAT1: "عمولة شراء ٠٪", S2_N: "بعد التسليم", S2_L: "خطط دفع ميسرة", S3_N: "٧-٩٪", S3_L: "عوائد إيجارية", PROJ_TITLE: "ما هو <span style='color:var(--green)'>متاح الآن</span>", P1: "منطقة واحة دبي للسيليكون. عوائد استثمارية عالية وتقنيات ذكية في قلب دبي التقني.", P2: "مجتمع سكني فاخر في قلب العاصمة أبوظبي من تطوير 'شوبا' لضمان أعلى معايير الجودة.", P3: "فخامة عالمية وعوائد إيجارية قوية في جزيرة المرجان، رأس الخيمة بجانب كازينو وين.", REQ1: "اطلب التفاصيل ←", REQ2: "اطلب التفاصيل ←", REQ3: "اطلب التفاصيل ←", ABOUT_H2: "لست مجرد وكيل،<br><span style='color:var(--red)'>بل مستشارك.</span>", ABOUT_P1: "١٩ عاماً من الخبرة القيادية في واحدة من أكبر المؤسسات المالية في المنطقة. أنقل انضباط العمل المصرفي إلى سوق العقارات.", ABOUT_P2: "أقوم بمراجعة المطور، الحسابات المالية، واستراتيجية الخروج قبل التوصية بأي وحدة لعملائي.", SIG_NAME: "مسعود", T1: "تدقيق بمعايير مصرفية", T1_SUB: "تقييم صارم للجدوى المالية لكل مشروع.", T2: "نهج السوق أولاً", T2_SUB: "أخبرك بحقيقة السوق، وليس ما يكتب في الكتيبات الإعلانية.", T3: "علاقات مباشرة مع المطورين", T3_SUB: "وصول مباشر للمصدر دون وسطاء.", T4: "مشاريع نشطة", T4_SUB: "مشاريع حقيقية، جداول زمنية واقعية، مطورون موثوقون.", T5: "بدون ضغوط، أبداً", T5_SUB: "أقدم النصيحة بناءً على وقتك، لا على أهداف البيع.", FORM_TITLE: "حجز استشارة خاصة", FN: "الاسم الأول", WA: "رقم الواتساب", EM: "البريد الإلكتروني", BUD: "الميزانية", GOAL: "استثمار أم سكن؟", IPROJ: "المشروع المفضل", MSG: "الأهداف الاستثمارية", SUBMIT: "إرسال لمسعود الآن"
+            LOGO: "MR LIVING CAPITAL", HERO_H1: "تملّك في دبي<br>قبل <span style='color:var(--red)'>ارتفاع</span><br>الأسعار", HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي. أساعدك على الاستثمار في عقارات الإمارات بناءً على البيانات والخبرة المالية.", HERO_CTA: "استشر مسعود شخصياً", STAT1: "عمولة شراء ٠٪", S2_N: "بعد التسليم", S2_L: "خطط دفع ميسرة", S3_N: "٧-٩٪", S3_L: "عوائد إيجارية", PROJ_TITLE: "ما هو <span style='color:var(--green)'>متاح الآن</span>", P1: "منطقة واحة دبي للسيليكون. عوائد استثمارية عالية وتقنيات ذكية في قلب دبي التقني.", P2: "مجتمع سكني فاخر في قلب العاصمة أبوظبي من تطوير 'شوبا' لضمان أعلى معايير الجودة.", P3: "فخامة عالمية وعوائد إيجارية قوية في جزيرة المرجان، رأس الخيمة بجانب كازينو وين.", REQ1: "اطلب التفاصيل ←", REQ2: "اطلب التفاصيل ←", REQ3: "اطلب التفاصيل ←", ABOUT_H2: "لست مجرد وكيل،<br><span style='color:var(--red)'>بل مستشارك.</span>", ABOUT_P1: "١٩ عاماً من الخبرة القيادية في واحدة من أكبر المؤسسات المالية في المنطقة. أنقل انضباط العمل المصرفي إلى سوق العقارات.", ABOUT_P2: "أقوم بمراجعة المطور، الحسابات المالية، واستراتيجية الخروج قبل التوصية بأي وحدة لعملائي.", SIG_NAME: "مسعود", T1: "تدقيق بمعايير مصرفية", T1_SUB: "تقييم صارم للجدوى المالية لكل مشروع.", T2: "نهج السوق أولاً", T2_SUB: "أخبرك بحقيقة السوق، وليس ما يكتب في الكتيبات الإعلانية.", T3: "علاقات مباشرة مع المطورين", T3_SUB: "وصول مباشر للمصدر دون وسطاء.", T4: "مشاريع نشطة", T4_SUB: "مشاريع حقيقية، جداول زمنية واقعية، مطورون موثوقون.", T5: "بدون ضغوط، أبداً", T5_SUB: "أقدم النصيحة بناءً على وقتك، لا على أهداف البيع.", FORM_TITLE: "حجز استشارة خاصة", FN: "الاسم الأول", WA: "رقم الواتساب", EM: "البريد الإلكتروني", BUD: "الميزانية", TIMELINE: "متى تخطط للشراء؟", IPROJ: "المشروع المفضل", MSG: "أي ملاحظات أخرى؟", SUBMIT: "إرسال لمسعود الآن"
         },
         fa: {
-            LOGO: "MR LIVING CAPITAL", HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span style='color:var(--red)'>افزایش</span><br>قیمت‌ها", HERO_SUB: "مشاوره تخصصی با ۱۹ سال سابقه بانکی در امارات. من به شما کمک می‌کنم بر اساس اعداد و ارقام سرمایه‌گذاری کنید، نه حرف‌های تبلیغاتی.", HERO_CTA: "مشاوره با مسعود", STAT1: "بدون کمیسیون خرید", S2_N: "پس از تحویل", S2_L: "اقساط بلند مدت", S3_N: "۷-۹٪", S3_L: "سود اجاره", PROJ_TITLE: "فرصت‌های <span style='color:var(--green)'>موجود</span>", P1: "منطقه سیلیکون واحه. پتانسیل رشد بالا و خانه‌های هوشمند در مرکز تکنولوژی دبی.", P2: "شهرک لوکس و مدرن در پایتخت، ابوظبی. ساخته شده توسط بهترین سازنده برای زندگی ایده‌آل.", P3: "در مجاورت کازینو وین. زندگی لوکس و پتانسیل بالای اجاره کوتاه‌مدت در جزیره مرجان.", REQ1: "دریافت جزئیات ←", REQ2: "دریافت جزئیات ←", REQ3: "دریافت جزئیات ←", ABOUT_H2: "نه فقط یک کارگزار،<br><span style='color:var(--red)'>بلکه مشاور شما.</span>", ABOUT_P1: "۱۹ سال سابقه مدیریت عملیات در یکی از بزرگترین مؤسسات مالی منطقه. انضباط بانکی را به دنیای املاک آورده‌ام.", ABOUT_P2: "من سازنده، محاسبات ریاضی و استراتژی فروش مجدد را قبل از پیشنهاد هر واحد به مشتریانم بررسی می‌کنم.", SIG_NAME: "مسعود", T1: "بررسی با استانداردهای بانکی", T1_SUB: "ارزیابی دقیق پایداری مالی هر پروژه.", T2: "اولویت با واقعیت بازار", T2_SUB: "من واقعیت بازار را به شما می‌گویم، نه آنچه در بروشورهاست.", T3: "ارتباط مستقیم با سازندگان", T3_SUB: "دسترسی مستقیم به منبع بدون لایه‌های واسطه.", T4: "پروژه‌های فعال", T4_SUB: "پروژه‌های واقعی، زمان‌بندی دقیق و سازندگان معتبر.", T5: "بدون فشار فروش", T5_SUB: "من بر اساس زمان‌بندی شما مشاوره می‌دهم، نه سهمیه فروش.", FORM_TITLE: "درخواست مشاوره", FN: "نام", WA: "شماره واتس‌اپ", EM: "ایمیل", BUD: "بودجه", GOAL: "سرمایه‌گذاری یا استفاده شخصی؟", IPROJ: "پروژه مورد نظر", MSG: "اهداف سرمایه‌گذاری", SUBMIT: "ارسال برای مسعود"
+            LOGO: "MR LIVING CAPITAL", HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span style='color:var(--red)'>افزایش</span><br>قیمت‌ها", HERO_SUB: "مشاوره تخصصی با ۱۹ سال سابقه بانکی در امارات. من به شما کمک می‌کنم بر اساس اعداد و ارقام سرمایه‌گذاری کنید، نه حرف‌های تبلیغاتی.", HERO_CTA: "مشاوره با مسعود", STAT1: "بدون کمیسیون خرید", S2_N: "پس از تحویل", S2_L: "اقساط بلند مدت", S3_N: "۷-۹٪", S3_L: "سود اجاره", PROJ_TITLE: "فرصت‌های <span style='color:var(--green)'>موجود</span>", P1: "منطقه سیلیکون واحه. پتانسیل رشد بالا و خانه‌های هوشمند در مرکز تکنولوژی دبی.", P2: "شهرک لوکس و مدرن در پایتخت، ابوظبی. ساخته شده توسط بهترین سازنده برای زندگی ایده‌آل.", P3: "در مجاورت کازینو وین. زندگی لوکس و پتانسیل بالای اجاره کوتاه‌مدت در جزیره مرجان.", REQ1: "دریافت جزئیات ←", REQ2: "دریافت جزئیات ←", REQ3: "دریافت جزئیات ←", ABOUT_H2: "نه فقط یک کارگزار،<br><span style='color:var(--red)'>بلکه مشاور شما.</span>", ABOUT_P1: "۱۹ سال سابقه مدیریت عملیات در یکی از بزرگترین مؤسسات مالی منطقه. انضباط بانکی را به دنیای املاک آورده‌ام.", ABOUT_P2: "من سازنده، محاسبات ریاضی و استراتژی فروش مجدد را قبل از پیشنهاد هر واحد به مشتریانم بررسی می‌کنم.", SIG_NAME: "مسعود", T1: "بررسی با استانداردهای بانکی", T1_SUB: "ارزیابی دقیق پایداری مالی هر پروژه.", T2: "اولویت با واقعیت بازار", T2_SUB: "من واقعیت بازار را به شما می‌گویم، نه آنچه در بروشورهاست.", T3: "ارتباط مستقیم با سازندگان", T3_SUB: "دسترسی مستقیم به منبع بدون لایه‌های واسطه.", T4: "پروژه‌های فعال", T4_SUB: "پروژه‌های واقعی، زمان‌بندی دقیق و سازندگان معتبر.", T5: "بدون فشار فروش", T5_SUB: "من بر اساس زمان‌بندی شما مشاوره می‌دهم، نه سهمیه فروش.", FORM_TITLE: "درخواست مشاوره", FN: "نام", WA: "شماره واتس‌اپ", EM: "ایمیل", BUD: "بودجه", TIMELINE: "چه زمانی قصد خرید دارید؟", IPROJ: "پروژه مورد نظر", MSG: "پیام شما", SUBMIT: "ارسال برای مسعود"
         }
     };
 
@@ -294,11 +294,24 @@ body.rtl .float-wrap { right:auto; left:2rem; }
         }
         document.getElementById('submit-btn').innerText = translations[lang].SUBMIT;
         
-        const goalSel = document.getElementById('L_GOAL_SEL');
+        // Manual dropdown translation adjustment
+        const timeSel = document.getElementById('L_TIMELINE_SEL');
         const projSel = document.getElementById('L_IPROJ_SEL');
         if(lang === 'ar') {
-           goalSel.options[0].text = "استثمار بحت"; goalSel.options[1].text = "سكن رئيسي";
+           timeSel.options[0].text = "فوراً"; timeSel.options[1].text = "٢ إلى ٤ أسابيع";
+           timeSel.options[2].text = "١ إلى ٢ شهر"; timeSel.options[3].text = "٣ إلى ٥ أشهر";
+           timeSel.options[4].text = "استكشاف الخيارات واستشارة";
            projSel.options[3].text = "مفتوح للتوصيات";
+        } else if(lang === 'fa') {
+           timeSel.options[0].text = "فوراً"; timeSel.options[1].text = "۲ تا ۴ هفته";
+           timeSel.options[2].text = "۱ تا ۲ ماه"; timeSel.options[3].text = "۳ تا ۵ ماه";
+           timeSel.options[4].text = "بررسی گزینه‌ها و نیاز به مشاوره";
+           projSel.options[3].text = "نیاز به پیشنهاد";
+        } else {
+           timeSel.options[0].text = "Immediately"; timeSel.options[1].text = "2 to 4 weeks";
+           timeSel.options[2].text = "1 to 2 months"; timeSel.options[3].text = "3 to 5 months";
+           timeSel.options[4].text = "Exploring options & need consultation";
+           projSel.options[3].text = "Open to Recommendations";
         }
     }
 
