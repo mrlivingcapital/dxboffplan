@@ -12,57 +12,55 @@
         :root { --red: #CE1126; --red-dark: #A50D1E; --green: #00732F; --black: #0D0D0D; --black2: #181818; --white: #FFFFFF; --off-white: #F6F4F0; --sand: #F0EBE0; --gold-light: #E6AA20; --text: #1C1C1C; --text-soft: #888; --border: rgba(0,0,0,0.09); }
         *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { background: var(--white); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+        body { background: var(--white); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; line-height: 1.7; }
         body.rtl { direction: rtl; font-family: 'Noto Sans Arabic', sans-serif; }
         body.rtl .float-wrap { right: auto !important; left: 1.5rem !important; }
         body.rtl .hstat { border-right: none; border-left: 1px solid rgba(255,255,255,0.1); }
         body.rtl .hstat:last-child { border-left: none; }
-        body.rtl .nav-logo { order: 2; }
-        body.rtl .lang-switch { order: 1; }
+        body.rtl .nav-logo { order: 2; } body.rtl .lang-switch { order: 1; }
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: stretch; background: var(--white); box-shadow: 0 1px 0 var(--border); }
-        .nav-bar-red { width: 7px; background: var(--red); }
-        .nav-bar-white { width: 7px; background: var(--off-white); }
-        .nav-bar-green { width: 7px; background: var(--green); }
+        .nav-bar-red { width: 7px; background: var(--red); } .nav-bar-white { width: 7px; background: var(--off-white); } .nav-bar-green { width: 7px; background: var(--green); }
         .nav-inner { flex: 1; display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 2rem; }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; }
         .lang-switch { display: flex; gap: 8px; }
-        .lang-btn { cursor: pointer; font-size: 0.65rem; font-weight: 600; padding: 5px 10px; border: 1px solid var(--border); background: none; }
+        .lang-btn { cursor: pointer; font-size: 0.7rem; font-weight: 600; padding: 6px 12px; border: 1px solid var(--border); background: none; transition: 0.2s; }
         .lang-btn.active { background: var(--black); color: white; border-color: var(--black); }
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; position: relative; background: var(--black2); color: white; }
-        .hero-content { position: relative; z-index: 2; padding: 9rem 4rem 4rem; }
-        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
-        .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.6); max-width: 550px; margin-bottom: 2.5rem; }
-        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.1); }
-        .hstat { padding: 2rem; border-right: 1px solid rgba(255,255,255,0.1); }
-        .hstat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-light); display: block; }
-        .hstat-l { font-size: 0.65rem; text-transform: uppercase; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-top: 5px; }
-        section { padding: 5rem 4rem; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .pcard { border: 1px solid var(--border); padding: 2rem; background: white; transition: 0.3s; cursor: pointer; }
-        .pcard:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .about-s { background: var(--black2); color: white; }
-        .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-        .advisor-header { display: flex; align-items: center; gap: 20px; margin-bottom: 2rem; }
-        .profile-photo-frame { width: 110px; height: 110px; border-radius: 50%; border: 2px solid var(--gold-light); overflow: hidden; flex-shrink: 0; }
+        .hero-content { position: relative; z-index: 2; padding: 10rem 4rem 6rem; max-width: 1200px; margin: 0 auto; width: 100%; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-sub { font-size: 1.2rem; color: rgba(255,255,255,0.6); max-width: 600px; margin-bottom: 3rem; }
+        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.1); width: 100%; }
+        .hstat { padding: 2.5rem; border-right: 1px solid rgba(255,255,255,0.1); text-align: center; }
+        .hstat-n { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold-light); display: block; margin-bottom: 5px; }
+        .hstat-l { font-size: 0.7rem; text-transform: uppercase; color: rgba(255,255,255,0.4); letter-spacing: 1.5px; }
+        section { padding: 7rem 4rem; max-width: 1300px; margin: 0 auto; width: 100%; }
+        .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 3rem; }
+        .pcard { border: 1px solid var(--border); padding: 2.5rem; background: white; transition: 0.3s; cursor: pointer; }
+        .pcard:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .about-s { background: var(--black2); color: white; max-width: 100%; }
+        .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; max-width: 1200px; margin: 0 auto; }
+        .advisor-header { display: flex; align-items: center; gap: 30px; margin-bottom: 2.5rem; }
+        .profile-photo-frame { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--gold-light); overflow: hidden; flex-shrink: 0; }
         .profile-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-        .tlist { list-style: none; }
-        .tlist li { margin-bottom: 1.5rem; display: flex; gap: 15px; }
-        .ticon { color: var(--gold-light); font-weight: bold; }
-        .form-s { background: var(--sand); }
-        .fcard { max-width: 600px; margin: 0 auto; background: white; padding: 2.5rem; border-top: 4px solid var(--red); box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
-        .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .tlist { list-style: none; } .tlist li { margin-bottom: 2rem; display: flex; gap: 20px; }
+        .ticon { color: var(--gold-light); font-size: 1.2rem; font-weight: bold; }
+        .form-s { background: var(--sand); max-width: 100%; }
+        .fcard { max-width: 700px; margin: 0 auto; background: white; padding: 3.5rem; border-top: 5px solid var(--red); box-shadow: 0 15px 50px rgba(0,0,0,0.1); }
+        .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .fg.full { grid-column: span 2; }
-        input, select, textarea { width: 100%; padding: 12px; border: none; border-bottom: 1px solid #ddd; background: var(--off-white); margin-top: 5px; font-family: inherit; outline: none; }
-        .fsub { width: 100%; padding: 16px; background: var(--red); color: white; border: none; text-transform: uppercase; font-weight: 600; margin-top: 20px; cursor: pointer; transition: 0.2s; }
-        .fsub:hover { background: var(--red-dark); }
-        footer { background: var(--black); padding: 3rem 4rem; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.8rem; }
-        .float-wrap { position: fixed; bottom: 2rem; right: 1.5rem; z-index: 999; display: flex; flex-direction: column; gap: 12px; }
-        .fb { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.2s; }
-        .fb:hover { transform: scale(1.1); }
-        .fb svg { width: 26px; fill: white; }
+        input, select, textarea { width: 100%; padding: 14px; border: none; border-bottom: 2px solid #ddd; background: var(--off-white); font-family: inherit; font-size: 1rem; outline: none; }
+        .fsub { width: 100%; padding: 18px; background: var(--red); color: white; border: none; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: 0.2s; margin-top: 20px; }
+        footer { background: var(--black); padding: 4rem; text-align: center; color: rgba(255,255,255,0.3); }
+        .float-wrap { position: fixed; bottom: 2.5rem; right: 2rem; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
+        .fb { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transition: 0.3s; border: none; cursor: pointer; }
+        .fb:hover { transform: scale(1.15); }
+        .fb svg { width: 28px; fill: white; }
         .fb-wa { background: #25D366; } .fb-tg { background: #229ED9; }
-        @media(max-width:800px){ section { padding: 3rem 1.5rem; } .about-inner, .fgrid, .hero-stats { grid-template-columns: 1fr; } .advisor-header { flex-direction: column; text-align: center; } h1 { font-size: 2.4rem; } }
+        @media(max-width:850px){
+            section { padding: 4rem 1.5rem; } .about-inner, .fgrid, .hero-stats { grid-template-columns: 1fr; }
+            .hero-content { padding: 8rem 1.5rem 4rem; } .advisor-header { flex-direction: column; text-align: center; }
+            .hstat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        }
     </style>
 </head>
 <body id="body">
@@ -82,29 +80,29 @@
     <div class="hero-content">
         <h1 id="L_HERO_H1">Own Dubai<br>Before the Price<br><span style="color:var(--red)">Goes</span> Up</h1>
         <p class="hero-sub" id="L_HERO_SUB">Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.</p>
-        <a href="#enquire" class="fsub" style="text-decoration:none; display:inline-block; width:auto; padding:15px 40px;" id="L_HERO_CTA">Consult Masoud</a>
+        <a href="#enquire" class="fsub" style="text-decoration:none; display:inline-block; width:auto; padding:18px 45px;" id="L_HERO_CTA">Consult Masoud</a>
     </div>
     <div class="hero-stats">
         <div class="hstat"><span class="hstat-n">0%</span><span class="hstat-l" id="L_STAT1">Buyer Commission</span></div>
-        <div class="hstat"><span class="hstat-n">Post-Handover</span><span class="hstat-l" id="L_STAT2">Payment Plans</span></div>
-        <div class="hstat"><span class="hstat-n">Top Tier</span><span class="hstat-l" id="L_STAT3">Developer Access</span></div>
+        <div class="hstat"><span class="hstat-n" id="L_STAT2_N">Post-Handover</span><span class="hstat-l" id="L_STAT2">Payment Plans</span></div>
+        <div class="hstat"><span class="hstat-n" id="L_STAT3_N">Top Tier</span><span class="hstat-l" id="L_STAT3">Developer Access</span></div>
     </div>
 </section>
 
 <section id="projects">
     <h2 id="L_PROJ_TITLE">Current Opportunities</h2>
     <div class="proj-grid">
-        <div class="pcard" onclick="document.getElementById('enquire').scrollIntoView()">
-            <h3 style="color:var(--red)">Tilal Binghatti</h3>
-            <p id="L_P1">Silicon Oasis Corridor. High ROI potential and smart-home integration.</p>
+        <div class="pcard" onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">
+            <h3 style="color:var(--red); margin-bottom:15px; font-family:'Playfair Display'; font-size:1.8rem;">Tilal Binghatti</h3>
+            <p id="L_P1">Silicon Oasis Corridor. High ROI potential and smart-home integration in Dubai's tech hub.</p>
         </div>
-        <div class="pcard" onclick="document.getElementById('enquire').scrollIntoView()">
-            <h3 style="color:var(--green)">Sobha City</h3>
-            <p id="L_P2">Luxury master community in Abu Dhabi. Built by the region's quality leader.</p>
+        <div class="pcard" onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">
+            <h3 style="color:var(--green); margin-bottom:15px; font-family:'Playfair Display'; font-size:1.8rem;">Sobha City</h3>
+            <p id="L_P2">Luxury master community in Abu Dhabi. Built by the region's quality leader for premium living.</p>
         </div>
-        <div class="pcard" onclick="document.getElementById('enquire').scrollIntoView()">
-            <h3 style="color:var(--gold-light)">Mondrian RAK</h3>
-            <p id="L_P3">Next to Wynn Casino. Branded residences with immense short-term rental upside.</p>
+        <div class="pcard" onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">
+            <h3 style="color:var(--gold-light); margin-bottom:15px; font-family:'Playfair Display'; font-size:1.8rem;">Mondrian RAK</h3>
+            <p id="L_P3">Next to Wynn Casino. Branded residences with immense short-term rental upside on Al Marjan Island.</p>
         </div>
     </div>
 </section>
@@ -114,61 +112,60 @@
         <div class="atext">
             <div class="advisor-header">
                 <div class="profile-photo-frame"><img src="MRLC.jpeg" alt="Masoud"></div>
-                <h2 id="L_ABOUT_H2" style="margin:0;">Not an Agent.<br><span style="color:var(--red)">An Advisor.</span></h2>
+                <div><h2 id="L_ABOUT_H2" style="margin:0;">Not an Agent.<br><span style="color:var(--red)">An Advisor.</span></h2></div>
             </div>
-            <p id="L_ABOUT_P1">19 years leading senior operations at Emirates NBD. I brought institutional discipline to real estate.</p>
-            <p id="L_ABOUT_P2">I review the developer, the math, and the exit strategy before I recommend a single unit.</p>
-            <div class="asig">Masoud<small id="L_SIG" style="display:block; color:var(--gold-light)">Investment Advisor</small></div>
+            <p id="L_ABOUT_P1">19 years leading senior operations at one of the region's largest financial organizations. I brought institutional discipline to real estate.</p>
+            <p id="L_ABOUT_P2">I review the developer, the math, and the exit strategy before I recommend a single unit to my clients.</p>
+            <div class="asig" id="L_SIG_NAME" style="font-size:2.2rem; font-family:'Playfair Display';">Masoud<small id="L_SIG_TITLE" style="display:block; color:var(--gold-light); font-size:0.8rem; letter-spacing:2px; font-style:normal; font-family:'DM Sans';">Investment Advisor</small></div>
         </div>
         <ul class="tlist">
-            <li><span class="ticon">✓</span><h4 id="L_T1">Banking Grade Due Diligence</h4></li>
-            <li><span class="ticon">✓</span><h4 id="L_T2">No Pressure Sales Environment</h4></li>
-            <li><span class="ticon">✓</span><h4 id="L_T3">Direct Relationship with Developers</h4></li>
+            <li><span class="ticon">✓</span><div><h4 id="L_T1" style="font-size:1.1rem;">Banking Grade Due Diligence</h4><p id="L_T1_SUB" style="font-size:0.85rem; opacity:0.6;">Strict assessment of every project's financial viability.</p></div></li>
+            <li><span class="ticon">✓</span><div><h4 id="L_T2" style="font-size:1.1rem;">No Pressure Environment</h4><p id="L_T2_SUB" style="font-size:0.85rem; opacity:0.6;">I advise based on your timeline, not a sales quota.</p></div></li>
+            <li><span class="ticon">✓</span><div><h4 id="L_T3" style="font-size:1.1rem;">Direct Developer Access</h4><p id="L_T3_SUB" style="font-size:0.85rem; opacity:0.6;">First-phase pricing and priority unit selection.</p></div></li>
         </ul>
     </div>
 </section>
 
 <section class="form-s" id="enquire">
     <div class="fcard">
-        <h2 id="L_FORM_TITLE" style="text-align:center;">Secure Consultation</h2>
-        <div id="form-status" style="display:none; text-align:center; padding:15px; color:var(--green); font-weight:600;">✓ Message Sent to Masoud</div>
+        <h2 id="L_FORM_TITLE" style="text-align:center; color:var(--black); margin-bottom:10px;">Secure Consultation</h2>
+        <p id="L_FORM_SUB" style="text-align:center; font-size:0.9rem; color:var(--text-soft); margin-bottom:30px;">I will contact you personally via WhatsApp.</p>
+        <div id="form-status" style="display:none; text-align:center; padding:15px; color:var(--green); font-weight:600; border:1px solid var(--green); margin-bottom:20px;">✓ Message Sent to Masoud</div>
         <form id="enquiry-form" action="https://formspree.io/f/mkokrndr" method="POST">
             <div class="fgrid">
                 <div class="fg"><label id="L_FN">First Name</label><input type="text" name="First_Name" required></div>
-                <div class="fg"><label id="L_WA">WhatsApp</label><input type="tel" name="WhatsApp" required></div>
-                <div class="fg full"><label id="L_EM">Email</label><input type="email" name="Email" required></div>
+                <div class="fg"><label id="L_WA">WhatsApp Number</label><input type="tel" name="WhatsApp" required></div>
+                <div class="fg full"><label id="L_EM">Email Address</label><input type="email" name="Email" required></div>
                 <div class="fg full">
-                    <label id="L_BUD">Budget</label>
+                    <label id="L_BUD">Budget Range</label>
                     <select name="Budget">
-                        <option>Under 1.5M AED</option>
-                        <option>1.5M - 3M AED</option>
-                        <option>Above 3M AED</option>
+                        <option>Under 1.5M AED</option><option>1.5M - 3M AED</option><option>Above 3M AED</option>
                     </select>
                 </div>
-                <div class="fg full"><label id="L_MSG">Message</label><textarea name="Message" rows="3"></textarea></div>
+                <div class="fg full"><label id="L_MSG">Investment Goals</label><textarea name="Message" rows="4"></textarea></div>
             </div>
-            <button type="submit" id="submit-btn" class="fsub">Send Enquiry</button>
+            <button type="submit" id="submit-btn" class="fsub">Send Enquiry to Masoud</button>
         </form>
     </div>
 </section>
 
-<footer>© 2026 LIVING CAPITAL DUBAI · BY MASOUD</footer>
+<footer>© 2026 LIVING CAPITAL DUBAI · DUBAI, UAE</footer>
 
 <div class="float-wrap">
-    <a href="https://wa.me/971585899112" class="fb fb-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-    <a href="https://t.me/mrlivingcapital" class="fb fb-tg"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+    <a href="https://wa.me/971585899112" target="_blank" class="fb fb-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    <a href="https://t.me/mrlivingcapital" target="_blank" class="fb fb-tg"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
 </div>
 
 <script>
     const translations = {
         en: {
-            LOGO: "MR · LIVING CAPITAL · DUBAI", HERO_H1: "Own Dubai<br>Before the Price<br><span style='color:var(--red)'>Goes</span> Up", HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.", HERO_CTA: "Consult Masoud", STAT1: "Buyer Commission", STAT2: "Payment Plans", STAT3: "Developer Access", PROJ_TITLE: "Current Opportunities", P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration.", P2: "Luxury master community in Abu Dhabi. Built by the region's quality leader.", P3: "Next to Wynn Casino. Branded residences with immense short-term rental upside.", ABOUT_H2: "Not an Agent.<br><span style='color:var(--red)'>An Advisor.</span>", ABOUT_P1: "19 years leading senior operations at Emirates NBD. I brought institutional discipline to real estate.", ABOUT_P2: "I review the developer, the math, and the exit strategy before I recommend a single unit.", SIG: "Investment Advisor", T1: "Banking Grade Due Diligence", T2: "No Pressure Sales Environment", T3: "Direct Relationship with Developers", FORM_TITLE: "Secure Consultation", FN: "First Name", WA: "WhatsApp", EM: "Email", BUD: "Budget", MSG: "Message", SUBMIT: "Send Enquiry"
+            LOGO: "MR · LIVING CAPITAL · DUBAI", HERO_H1: "Own Dubai<br>Before the Price<br><span style='color:var(--red)'>Goes</span> Up", HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.", HERO_CTA: "Consult Masoud", STAT1: "Buyer Commission", STAT2_N: "Post-Handover", STAT2: "Payment Plans", STAT3_N: "Top Tier", STAT3: "Developer Access", PROJ_TITLE: "Current Opportunities", P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration in Dubai's tech hub.", P2: "Luxury master community in Abu Dhabi. Built by the region's quality leader for premium living.", P3: "Next to Wynn Casino. Branded residences with immense short-term rental upside on Al Marjan Island.", ABOUT_H2: "Not an Agent.<br><span style='color:var(--red)'>An Advisor.</span>", ABOUT_P1: "19 years leading senior operations at one of the region's largest financial organizations. I brought institutional discipline to real estate.", ABOUT_P2: "I review the developer, the math, and the exit strategy before I recommend a single unit to my clients.", SIG_NAME: "Masoud", SIG_TITLE: "Investment Advisor", T1: "Banking Grade Due Diligence", T1_SUB: "Strict assessment of every project's financial viability.", T2: "No Pressure Environment", T2_SUB: "I advise based on your timeline, not a sales quota.", T3: "Direct Developer Access", T3_SUB: "First-phase pricing and priority unit selection.", FORM_TITLE: "Secure Consultation", FORM_SUB: "I will contact you personally via WhatsApp.", FN: "First Name", WA: "WhatsApp Number", EM: "Email Address", BUD: "Budget Range", MSG: "Investment Goals", SUBMIT: "Send Enquiry to Masoud"
         },
         ar: {
-            LOGO: "مسعود · ليفينج كابيتال · دبي", HERO_H1: "تملّك في دبي<br>قبل <span style='color:var(--red)'>ارتفاع</span><br>الأسعار", HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي. أساعدك على الاستثمار في عقارات الإمارات بناءً على البيانات والخبرة المالية.", HERO_CTA: "استشر مسعود الآن", STAT1: "عمولة شراء ٠٪", STAT2: "خطط دفع ميسرة", STAT3: "مشاريع حصرية", PROJ_TITLE: "الفرص المتاحة حالياً", P1: "منطقة واحة دبي للسيليكون. عوائد استثمارية عالية وتقنيات ذكية.", P2: "مجتمع سكني فاخر في قلب العاصمة أبوظبي من تطوير 'شوبا'.", P3: "بجانب كازينو وين. فخامة عالمية وعوائد إيجارية قوية في رأس الخيمة.", ABOUT_H2: "لست مجرد وكيل،<br><span style='color:var(--red)'>بل مستشارك.</span>", ABOUT_P1: "١٩ عاماً من الخبرة القيادية في بنك الإمارات دبي الوطني. أنقل انضباط العمل المصرفي إلى سوق العقارات.", ABOUT_P2: "أقوم بمراجعة المطور، الحسابات المالية، واستراتيجية الخروج قبل التوصية بأي وحدة.", SIG: "مستشار استثمار عقاري", T1: "تدقيق عقاري بمعايير مصرفية", T2: "بيئة بيع خالية من الضغوط", T3: "علاقات مباشرة مع كبار المطورين", FORM_TITLE: "حجز استشارة خاصة", FN: "الاسم", WA: "واتساب", EM: "الإيميل", BUD: "الميزانية", MSG: "الرسالة", SUBMIT: "إرسال الطلب"
+            LOGO: "مسعود · ليفينج كابيتال · دبي", HERO_H1: "تملّك في دبي<br>قبل <span style='color:var(--red)'>ارتفاع</span><br>الأسعار", HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي. أساعدك على الاستثمار في عقارات الإمارات بناءً على البيانات والخبرة المالية.", HERO_CTA: "استشر مسعود الآن", STAT1: "عمولة شراء ٠٪", STAT2_N: "بعد التسليم", STAT2: "خطط دفع ميسرة", STAT3_N: "مشاريع حصرية", STAT3: "وصول مباشر للمطورين", PROJ_TITLE: "الفرص المتاحة حالياً", P1: "منطقة واحة دبي للسيليكون. عوائد استثمارية عالية وتقنيات ذكية في قلب دبي التقني.", P2: "مجتمع سكني فاخر في قلب العاصمة أبوظبي من تطوير 'شوبا' لضمان أعلى معايير الجودة.", P3: "بجانب كازينو وين. فخامة عالمية وعوائد إيجارية قوية في جزيرة المرجان، رأس الخيمة.", ABOUT_H2: "لست مجرد وكيل،<br><span style='color:var(--red)'>بل مستشارك.</span>", ABOUT_P1: "١٩ عاماً من الخبرة القيادية في واحدة من أكبر المؤسسات المالية في المنطقة. أنقل انضباط العمل المصرفي إلى سوق العقارات.", ABOUT_P2: "أقوم بمراجعة المطور، الحسابات المالية، واستراتيجية الخروج قبل التوصية بأي وحدة لعملائي.", SIG_NAME: "مسعود", SIG_TITLE: "مستشار استثمار عقاري", T1: "تدقيق بمعايير مصرفية", T1_SUB: "تقييم صارم للجدوى المالية لكل مشروع.", T2: "بيئة خالية من الضغوط", T2_SUB: "أقدم النصيحة بناءً على وقتك، لا على أهداف البيع.", T3: "علاقات مباشرة مع المطورين", T3_SUB: "أسعار المرحلة الأولى وأولوية اختيار الوحدات.", FORM_TITLE: "حجز استشارة خاصة", FORM_SUB: "سأتواصل معك شخصياً عبر واتساب.", FN: "الاسم", WA: "رقم الواتساب", EM: "البريد الإلكتروني", BUD: "الميزانية", MSG: "الأهداف الاستثمارية", SUBMIT: "إرسال لمسعود الآن"
         },
         fa: {
-            LOGO: "مسعود · لیوینگ کپیتال · دبی", HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span style='color:var(--red)'>افزایش</span><br>قیمت‌ها", HERO_SUB: "مشاوره تخصصی با ۱۹ سال سابقه بانکی در امارات. من به شما کمک می‌کنم بر اساس اعداد و ارقام سرمایه‌گذاری کنید، نه حرف‌های تبلیغاتی.", HERO_CTA: "مشاوره با مسعود", STAT1: "بدون کمیسیون خرید", STAT2: "اقساط بلند مدت", STAT3: "دسترسی به سازندگان برتر", PROJ_TITLE: "فرصت‌های فعلی", P1: "منطقه سیلیکون واحه. پتانسیل رشد بالا و خانه‌های هوشمند.", P2: "شهرک لوکس و مدرن در پایتخت، ابوظبی. ساخته شده توسط بهترین سازنده منطقه.", P3: "در مجاورت کازینو وین. زندگی لوکس و پتانسیل بالای اجاره کوتاه‌مدت در رأس‌الخیمه.", ABOUT_H2: "نه فقط یک کارگزار،<br><span style='color:var(--red)'>بلکه مشاور شما.</span>", ABOUT_P1: "۱۹ سال سابقه مدیریت عملیات در بانک Emirates NBD. انضباط بانکی را به دنیای املاک آورده‌ام.", ABOUT_P2: "من سازنده، محاسبات ریاضی و استراتژی فروش مجدد را قبل از پیشنهاد هر واحد بررسی می‌کنم.", SIG: "مشاور سرمایه‌گذاری", T1: "بررسی دقیق با استانداردهای بانکی", T2: "فروش بدون فشار و صادقانه", T3: "ارتباط مستقیم با سازندگان تراز اول", FORM_TITLE: "درخواست مشاوره", FN: "نام", WA: "واتس‌اپ", EM: "ایمیل", BUD: "بودجه", MSG: "پیام شما", SUBMIT: "ارسال درخواست"
+            LOGO: "مسعود · لیوینگ کپیتال · دبی", HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span style='color:var(--red)'>افزایش</span><br>قیمت‌ها", HERO_SUB: "مشاوره تخصصی با ۱۹ سال سابقه بانکی در امارات. من به شما کمک می‌کنم بر اساس اعداد و ارقام سرمایه‌گذاری کنید، نه حرف‌های تبلیغاتی.", HERO_CTA: "مشاوره با مسعود", STAT1: "بدون کمیسیون خرید", STAT2_N: "پس از تحویل", STAT2: "اقساط بلند مدت", STAT3_N: "سازندگان برتر", STAT3: "دسترسی مستقیم", PROJ_TITLE: "فرصت‌های فعلی", P1: "منطقه سیلیکون واحه. پتانسیل رشد بالا و خانه‌های هوشمند در مرکز تکنولوژی دبی.", P2: "شهرک لوکس و مدرن در پایتخت، ابوظبی. ساخته شده توسط بهترین سازنده برای زندگی ایده‌آل.", P3: "در مجاورت کازینو وین. زندگی لوکس و پتانسیل بالای اجاره کوتاه‌مدت در جزیره مرجان.", ABOUT_H2: "نه فقط یک کارگزار،<br><span style='color:var(--red)'>بلکه مشاور شما.</span>", ABOUT_P1: "۱۹ سال سابقه مدیریت عملیات در یکی از بزرگترین مؤسسات مالی منطقه. انضباط بانکی را به دنیای املاک آورده‌ام.", ABOUT_P2: "من سازنده، محاسبات ریاضی و استراتژی فروش مجدد را قبل از پیشنهاد هر واحد به مشتریانم بررسی می‌کنم.", SIG_NAME: "مسعود", SIG_TITLE: "مشاور سرمایه‌گذاری", T1: "بررسی با استانداردهای بانکی", T1_SUB: "ارزیابی دقیق پایداری مالی هر پروژه.", T2: "فروش بدون فشار", T2_SUB: "من بر اساس زمان‌بندی شما مشاوره می‌دهم، نه سهمیه فروش.", T3: "ارتباط مستقیم با سازندگان", T3_SUB: "قیمت‌های مرحله اول و اولویت در انتخاب واحد.", FORM_TITLE: "درخواست مشاوره", FORM_SUB: "شخصاً از طریق واتس‌اپ با شما تماس خواهم گرفت.", FN: "نام", WA: "شماره واتس‌اپ", EM: "ایمیل", BUD: "بودجه", MSG: "اهداف سرمایه‌گذاری", SUBMIT: "ارسال برای مسعود"
         }
     };
     function setLang(lang, btn) {
