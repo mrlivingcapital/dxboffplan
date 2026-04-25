@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>MR LIVING CAPITAL | Strategic Advisory Dubai</title>
+    <title>MR LIVING CAPITAL | Strategic Property Advisory</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,19 +13,20 @@
 
     <style>
         /* ============================================================
-        2. EXPANDED CSS ARCHITECTURE (NON-SHORTHAND FOR LINE WEIGHT)
+        2. CSS CORE ARCHITECTURE (EXPANDED PROPERTIES)
         ============================================================
         */
         :root {
-            --uae-red-primary: #CE1126;
-            --uae-green-primary: #007A33;
-            --uae-white-pure: #FFFFFF;
-            --uae-black-base: #000000;
+            --uae-red: #CE1126;
+            --uae-green: #007A33;
+            --uae-white: #FFFFFF;
+            --uae-black: #000000;
             --gold-advisor: #E6AA20;
-            --glass-black: rgba(10, 10, 10, 0.94);
-            --transition-cinematic: 2500ms;
+            --glass-panel: rgba(10, 10, 10, 0.94);
+            --transition-speed: 2500ms;
         }
 
+        /* RESET ENGINE */
         html {
             scroll-behavior: smooth;
         }
@@ -43,14 +44,13 @@
         }
 
         body {
-            background-color: var(--uae-black-base);
-            color: var(--uae-white-pure);
+            background-color: var(--uae-black);
+            color: var(--uae-white);
             font-family: 'DM Sans', sans-serif;
             font-size: 15px;
             font-weight: 400;
             line-height: 1.6;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
         body.rtl {
@@ -58,7 +58,7 @@
             font-family: 'Noto Sans Arabic', sans-serif;
         }
 
-        /* CINEMATIC ENGINE (10 LANDMARKS) */
+        /* 10 LANDMARK ENGINE */
         .landmark-engine {
             position: fixed;
             top: 0px;
@@ -80,7 +80,7 @@
             background-repeat: no-repeat;
             opacity: 0;
             transition-property: opacity;
-            transition-duration: var(--transition-cinematic);
+            transition-duration: var(--transition-speed);
             transition-timing-function: ease-in-out;
             filter: brightness(0.35);
         }
@@ -90,14 +90,14 @@
             z-index: 1;
         }
 
-        /* HEADER & NAVIGATION */
-        header.nav-bar {
+        /* HEADER NAVIGATION */
+        header.nav-main {
             position: fixed;
             top: 0px;
             left: 0px;
             width: 100%;
             height: 90px;
-            background-color: var(--uae-white-pure);
+            background-color: var(--uae-white);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -106,26 +106,25 @@
             z-index: 1000;
             border-bottom-width: 6px;
             border-bottom-style: solid;
-            border-bottom-color: var(--uae-red-primary);
+            border-bottom-color: var(--uae-red);
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
         }
 
-        .brand-text {
+        .brand-logo {
             font-family: 'Playfair Display', serif;
-            color: var(--uae-black-base);
+            color: var(--uae-black);
             font-size: 1.5rem;
             font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
-        .lang-control {
+        .lang-node {
             display: flex;
             gap: 15px;
         }
 
-        .btn-lang {
+        .lang-button {
             background-color: transparent;
             border-top-width: 1px;
             border-bottom-width: 1px;
@@ -139,18 +138,17 @@
             padding-right: 20px;
             font-weight: 700;
             font-size: 0.8rem;
-            color: var(--uae-black-base);
+            color: var(--uae-black);
             cursor: pointer;
-            transition: 0.4s ease;
         }
 
-        .btn-lang.active {
-            background-color: var(--uae-black-base);
-            color: var(--uae-white-pure);
-            border-color: var(--uae-black-base);
+        .lang-button.active {
+            background-color: var(--uae-black);
+            color: var(--uae-white);
+            border-color: var(--uae-black);
         }
 
-        /* SECTION CORE */
+        /* SECTION TEMPLATE */
         section.master-block {
             min-height: 100vh;
             padding-top: 160px;
@@ -164,44 +162,43 @@
             z-index: 10;
         }
 
-        h1.hero-main {
+        h1.hero-text {
             font-family: 'Playfair Display', serif;
             font-size: 3.4rem;
             line-height: 1.1;
-            font-style: italic;
             margin-bottom: 35px;
             max-width: 850px;
         }
 
-        p.hero-sub {
+        .hero-lead {
             font-size: 1.3rem;
             max-width: 650px;
             border-left-width: 8px;
             border-left-style: solid;
-            border-left-color: var(--uae-red-primary);
+            border-left-color: var(--uae-red);
             padding-left: 30px;
             margin-bottom: 45px;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 300;
         }
 
-        body.rtl p.hero-sub {
+        body.rtl .hero-lead {
             border-left-width: 0px;
             border-right-width: 8px;
             border-right-style: solid;
-            border-right-color: var(--uae-red-primary);
+            border-right-color: var(--uae-red);
             padding-right: 30px;
         }
 
-        /* ADVISOR PROFILE FIX: ENSURING FACE IS SEEN */
-        .profile-container {
+        /* PROFILE COMPONENT - FACE FIX */
+        .profile-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 70px;
             align-items: start;
         }
 
-        .portrait-mask {
+        .frame-circle {
             width: 270px;
             height: 270px;
             border-radius: 50%;
@@ -219,22 +216,19 @@
             background-color: #111111;
         }
 
-        .portrait-mask img {
+        .frame-circle img {
             width: 100%;
             height: 100%;
-            /* THE FIX: Adjusting the crop to center the face at 20% from the top */
+            /* CRITICAL FIX FOR FACE VISIBILITY: 
+               Center 20% pushes the image down so your face 
+               (usually in the top half) is perfectly framed.
+            */
             object-fit: cover;
             object-position: center 20%; 
         }
 
-        .advisor-details h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .value-card-expanded {
-            background-color: var(--glass-black);
+        .value-card-box {
+            background-color: var(--glass-panel);
             padding-top: 50px;
             padding-bottom: 50px;
             padding-left: 50px;
@@ -245,18 +239,18 @@
             backdrop-filter: blur(20px);
         }
 
-        body.rtl .value-card-expanded {
+        body.rtl .value-card-box {
             border-right-width: 0px;
             border-left-width: 12px;
             border-left-style: solid;
             border-left-color: var(--gold-advisor);
         }
 
-        .v-node {
+        .value-node {
             margin-bottom: 35px;
         }
 
-        .v-node strong {
+        .value-node strong {
             display: block;
             color: var(--gold-advisor);
             text-transform: uppercase;
@@ -265,15 +259,15 @@
             margin-bottom: 10px;
         }
 
-        /* PROJECT GRID */
-        .project-grid-system {
+        /* GRID SYSTEM FOR PROJECTS */
+        .asset-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 50px;
         }
 
-        .asset-card-style {
+        .asset-item {
             background-color: rgba(15, 15, 15, 0.98);
             padding-top: 60px;
             padding-bottom: 50px;
@@ -281,25 +275,20 @@
             padding-right: 40px;
             border-top-width: 10px;
             border-top-style: solid;
-            border-top-color: var(--uae-red-primary);
+            border-top-color: var(--uae-red);
         }
 
-        .asset-card-style.green-theme {
-            border-top-color: var(--uae-green-primary);
-        }
-
-        .asset-card-style.gold-theme {
-            border-top-color: var(--gold-advisor);
-        }
+        .asset-item.green-brand { border-top-color: var(--uae-green); }
+        .asset-item.gold-brand { border-top-color: var(--gold-advisor); }
 
         /* FORMSPREE CONTAINER */
-        .form-master-box {
-            background-color: var(--uae-white-pure);
-            color: var(--uae-black-base);
+        .form-panel {
+            background-color: var(--uae-white);
+            color: var(--uae-black);
             padding-top: 80px;
             padding-bottom: 80px;
-            padding-left: 7%;
-            padding-right: 7%;
+            padding-left: 8%;
+            padding-right: 8%;
             max-width: 1100px;
             margin-left: auto;
             margin-right: auto;
@@ -307,19 +296,19 @@
             box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.7);
         }
 
-        .form-grid-layout {
+        .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
-        .form-field-unit {
+        .field-group {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
-        .form-field-unit label {
+        .field-group label {
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.75rem;
@@ -327,8 +316,7 @@
             letter-spacing: 1px;
         }
 
-        .form-field-unit input,
-        .form-field-unit select {
+        .field-group input, .field-group select {
             padding-top: 18px;
             padding-bottom: 18px;
             padding-left: 15px;
@@ -344,12 +332,12 @@
             font-size: 1rem;
         }
 
-        .submit-btn-master {
+        .submit-trigger {
             grid-column: span 2;
             padding-top: 25px;
             padding-bottom: 25px;
-            background-color: var(--uae-black-base);
-            color: var(--uae-white-pure);
+            background-color: var(--uae-black);
+            color: var(--uae-white);
             border-width: 0px;
             font-weight: 700;
             font-size: 1.2rem;
@@ -357,16 +345,10 @@
             letter-spacing: 3px;
             cursor: pointer;
             margin-top: 30px;
-            transition: 0.4s ease;
         }
 
-        .submit-btn-master:hover {
-            background-color: var(--uae-red-primary);
-            letter-spacing: 5px;
-        }
-
-        /* STICKY SOCIAL NODES */
-        .sticky-social-container {
+        /* STICKY NODES */
+        .sticky-hub {
             position: fixed;
             bottom: 45px;
             right: 45px;
@@ -376,7 +358,7 @@
             z-index: 9999;
         }
 
-        .social-button {
+        .hub-circle {
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -384,128 +366,106 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .social-button:hover {
-            transform: scale(1.15) rotate(10deg);
-        }
+        .hub-circle svg { width: 28px; fill: #FFFFFF; }
 
-        .social-button svg {
-            width: 28px;
-            fill: #FFFFFF;
-        }
-
-        /* RESPONSIVE LOGIC */
         @media (max-width: 900px) {
-            .profile-container, .form-grid-layout, .project-grid-system {
-                grid-template-columns: 1fr;
-            }
-            .submit-btn-master {
-                grid-column: span 1;
-            }
-            h1.hero-main {
-                font-size: 2.5rem;
-            }
+            .profile-layout, .form-grid, .asset-grid { grid-template-columns: 1fr; }
+            .submit-trigger { grid-column: span 1; }
         }
     </style>
 </head>
 <body class="ltr">
 
     <div class="landmark-engine">
-        <div class="bg-layer active" style="background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1614101614278-f68285ba0f0c?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1634712535043-f1d2d0913926?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1627662236973-4fda8358cb2d?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1528702748617-c64d49f918af?q=80&w=2400');"></div> </div>
+        <div class="bg-layer active" style="background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1614101614278-f68285ba0f0c?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1634712535043-f1d2d0913926?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1627662236973-4fda8358cb2d?q=80&w=2400');"></div>
+        <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1528702748617-c64d49f918af?q=80&w=2400');"></div>
+    </div>
 
-    <header class="nav-bar">
-        <a href="#" class="brand-text">MR LIVING CAPITAL</a>
-        <div class="lang-control">
-            <button class="btn-lang active" onclick="updateUI('en', this)">EN</button>
-            <button class="btn-lang" onclick="updateUI('ar', this)">AR</button>
-            <button class="btn-lang" onclick="updateUI('fa', this)">FA</button>
+    <header class="nav-main">
+        <a href="#" class="brand-logo">MR LIVING CAPITAL</a>
+        <div class="lang-node">
+            <button class="lang-button active" onclick="setLocale('en', this)">EN</button>
+            <button class="lang-button" onclick="setLocale('ar', this)">AR</button>
+            <button class="lang-button" onclick="setLocale('fa', this)">FA</button>
         </div>
     </header>
 
     <section class="master-block">
-        <h1 class="hero-main" id="TX_H1">Invest with <span style="color:var(--uae-red-primary);">Authority</span>.<br>Exit with <span style="color:var(--gold-advisor);">Wealth</span>.</h1>
-        <p class="hero-sub" id="TX_LEAD">Independent real estate advisory in Dubai. I provide data-driven insights to protect and grow your capital.</p>
+        <h1 class="hero-text" id="h1">Invest with <span style="color:var(--uae-red);">Authority</span>.<br>Exit with <span style="color:var(--gold-advisor);">Wealth</span>.</h1>
+        <p class="hero-lead" id="lead">Independent real estate advisory in Dubai. I provide data-driven insights to protect and grow your capital.</p>
         <div>
-            <a href="#contact" style="text-decoration:none; background:var(--uae-white-pure); color:#000; padding:18px 35px; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Book Private Briefing</a>
+            <a href="#contact" style="text-decoration:none; background:var(--uae-white); color:#000; padding:18px 35px; font-weight:700; text-transform:uppercase; font-size:0.8rem;">Request Briefing</a>
         </div>
     </section>
 
     <section class="master-block">
-        <div class="profile-container">
+        <div class="profile-layout">
             <div style="text-align: center;">
-                <div class="portrait-mask">
-                    <img src="profile.jpg" alt="Advisor Masoud">
+                <div class="frame-circle">
+                    <img src="profile.jpg" alt="Masoud Advisor">
                 </div>
-                <div class="advisor-details">
-                    <h2>Professional Portfolio</h2>
-                    <p style="opacity:0.7;">Fiduciary Advisory Services</p>
-                </div>
+                <h2 style="font-family:'Playfair Display'; font-size: 2.4rem;">Professional Advisory</h2>
+                <p style="opacity:0.7;">Fiduciary Market Intelligence</p>
             </div>
-            <div class="value-card-expanded">
-                <div class="v-node">
+            <div class="value-card-box">
+                <div class="value-node">
                     <strong>1. Independence</strong>
-                    <p>I am loyal to the investor, not the developer. I filter out the noise to find real value.</p>
+                    <p>Loyal to the investor, never the developer. Market filtration for pure ROI.</p>
                 </div>
-                <div class="v-node">
+                <div class="value-node">
                     <strong>2. Data Intelligence</strong>
-                    <p>My advice is rooted in real-time DLD transaction data and historical capital growth trends.</p>
+                    <p>Decisions rooted in DLD historical data and actual capital growth metrics.</p>
                 </div>
-                <div class="v-node">
-                    <strong>3. Asset Protection</strong>
-                    <p>I focus on risk mitigation in the off-plan sector, ensuring your capital is positioned safely.</p>
-                </div>
-                <div class="v-node">
-                    <strong>4. VIP Access</strong>
-                    <p>Direct entry into the UAE's most exclusive launches before they hit the general market.</p>
+                <div class="value-node">
+                    <strong>3. VIP Access</strong>
+                    <p>Priority allocation for off-market launches and elite community expansions.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="master-block">
-        <h2 style="font-family:'Playfair Display'; font-size:3rem; text-align:center; margin-bottom:40px;">Strategic Selections</h2>
-        <div class="project-grid-system">
-            <div class="asset-card-style">
-                <span style="color:var(--gold-advisor); font-weight:700; letter-spacing:2px; font-size:0.7rem;">DUBAILAND</span>
+        <h2 style="font-family:'Playfair Display'; font-size:3rem; text-align:center; margin-bottom:40px;">Strategic Assets</h2>
+        <div class="asset-grid">
+            <div class="asset-item">
+                <span style="color:var(--gold-advisor); font-weight:700; letter-spacing:2px; font-size:0.75rem;">DUBAILAND</span>
                 <h3 style="font-family:'Playfair Display'; font-size:1.8rem; margin-top:15px; margin-bottom:15px;">Tilal Binghatti</h3>
-                <p>Exclusive villa project designed for high-yield returns and premium lifestyle living.</p>
+                <p>Luxury villa collection with high capital appreciation potential.</p>
             </div>
-            <div class="asset-card-style green-theme">
-                <span style="color:var(--uae-green-primary); font-weight:700; letter-spacing:2px; font-size:0.7rem;">ABU DHABI</span>
+            <div class="asset-item green-brand">
+                <span style="color:var(--uae-green); font-weight:700; letter-spacing:2px; font-size:0.75rem;">ABU DHABI</span>
                 <h3 style="font-family:'Playfair Display'; font-size:1.8rem; margin-top:15px; margin-bottom:15px;">Sobha City</h3>
-                <p>Unmatched construction quality in the heart of the capital, ideal for long-term growth.</p>
+                <p>Premium construction standards in the heart of the UAE capital.</p>
             </div>
-            <div class="asset-card-style gold-theme">
-                <span style="color:var(--gold-advisor); font-weight:700; letter-spacing:2px; font-size:0.7rem;">RAK</span>
+            <div class="asset-item gold-brand">
+                <span style="color:var(--gold-advisor); font-weight:700; letter-spacing:2px; font-size:0.75rem;">RAK</span>
                 <h3 style="font-family:'Playfair Display'; font-size:1.8rem; margin-top:15px; margin-bottom:15px;">Mondrian Residences</h3>
-                <p>Waterfront assets positioned strategically near the region's massive leisure expansion.</p>
+                <p>Strategic waterfront assets near the upcoming integrated leisure zone.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="master-block">
-        <div class="form-master-box">
+        <div class="form-panel">
             <div style="text-align: center; margin-bottom:50px;">
-                <h2 style="font-family:'Playfair Display'; font-size:2.8rem;">Investor Briefing</h2>
-                <p style="color:#666;">Provide your criteria for a customized investment strategy.</p>
+                <h2 style="font-family:'Playfair Display'; font-size:2.8rem;">Private Inquiry</h2>
+                <p style="color:#666;">Submit your investment criteria for a customized briefing.</p>
             </div>
-            
             <form action="https://formspree.io/f/mkokrndr" method="POST">
-                <div class="form-grid-layout">
-                    
-                    <div class="form-field-unit">
-                        <label>Full Name</label>
-                        <input type="text" name="name" required placeholder="Full Name">
-                    </div>
-
-                    <div class="form-field-unit">
-                        <label>WhatsApp Number</label>
-                        <input type="tel" name="phone" required placeholder="+971 ...">
-                    </div>
-
-                    <div class="form-field-unit">
+                <div class="form-grid">
+                    <div class="field-group"><label>Full Name</label><input type="text" name="name" required placeholder="Name"></div>
+                    <div class="field-group"><label>WhatsApp Number</label><input type="tel" name="phone" required placeholder="+971 ..."></div>
+                    <div class="field-group">
                         <label>Budget Tier</label>
                         <select name="budget" required>
                             <option>Below 1.5M AED</option>
@@ -515,71 +475,64 @@
                             <option>10M+ AED</option>
                         </select>
                     </div>
-
-                    <div class="form-field-unit">
+                    <div class="field-group">
                         <label>Acquisition Timeline</label>
                         <select name="timeline" required>
                             <option>Immediately</option>
                             <option>Within 2 to 4 weeks</option>
                             <option>Within 3 Months</option>
-                            <option>Market Research Only</option>
+                            <option>Research Only</option>
                         </select>
                     </div>
-
-                    <div class="form-field-unit" style="grid-column: span 2;">
-                        <label>Project of Interest</label>
+                    <div class="field-group" style="grid-column: span 2;">
+                        <label>Asset Interest</label>
                         <select name="interest" required>
-                            <option>Tilal Binghatti (Dubailand)</option>
-                            <option>Sobha City (Abu Dhabi)</option>
-                            <option>Mondrian Residences (RAK)</option>
-                            <option>General Advisory / Off-Market</option>
+                            <option>Tilal Binghatti</option>
+                            <option>Sobha City</option>
+                            <option>Mondrian Residences</option>
+                            <option>General Advisory</option>
                         </select>
                     </div>
-
-                    <button type="submit" class="submit-btn-master">Submit Private Request</button>
-
+                    <button type="submit" class="submit-trigger">Submit Strategy Request</button>
                 </div>
             </form>
         </div>
     </section>
 
-    <div class="sticky-social-container">
-        <a href="https://wa.me/971585899112" class="social-button" style="background:#25D366;" target="_blank">
+    <div class="sticky-hub">
+        <a href="https://wa.me/971585899112" class="hub-circle" style="background:#25D366;" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
-        <a href="https://t.me/masoud_advisor" class="social-button" style="background:#229ED9;" target="_blank">
+        <a href="https://t.me/masoud_advisor" class="hub-circle" style="background:#229ED9;" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.184 16.51c-.183.18-.432.227-.643.14-.146-.06-.3-.133-.45-.224l-3.323-2.115-1.55 1.5c-.167.162-.43.2-.644.1-.11-.05-.22-.116-.32-.19l-.324-2.146-2.55-1.02c-.225-.09-.36-.312-.34-.543s.182-.423.4-.492l10.37-3.92c.2-.075.42-.045.6.08.18.12.27.33.24.54l-1.48 8.82z"/></svg>
         </a>
     </div>
 
     <script>
-        const dict = {
-            en: { h1: "Invest with <span style='color:var(--uae-red-primary);'>Authority</span>.<br>Exit with <span style='color:var(--gold-advisor);'>Wealth</span>.", lead: "Independent real estate advisory in Dubai. I provide data-driven insights to protect and grow your capital." },
-            ar: { h1: "استثمر <span style='color:var(--uae-red-primary);'>بسلطة</span>.<br>واخرج <span style='color:var(--gold-advisor);'>بثروة</span>.", lead: "استشارات عقارية مستقلة في دبي. أقدم رؤى مبنية على البيانات لحماية وتنمية رأس مالك." },
-            fa: { h1: "با <span style='color:var(--uae-red-primary);'>اقتدار</span> سرمایه‌گذاری کنید.<br>با <span style='color:var(--gold-advisor);'>ثروت</span> خارج شوید.", lead: "مشاوره مستقل املاک در بازار دبی. من بینش‌های مبتنی بر داده را برای محافظت و رشد سرمایه شما ارائه می‌دهم." }
+        const locales = {
+            en: { h1: "Invest with <span style='color:var(--uae-red);'>Authority</span>.<br>Exit with <span style='color:var(--gold-advisor);'>Wealth</span>.", lead: "Independent real estate advisory in Dubai. I provide data-driven insights to protect and grow your capital." },
+            ar: { h1: "استثمر <span style='color:var(--uae-red);'>بسلطة</span>.<br>واخرج <span style='color:var(--gold-advisor);'>بثروة</span>.", lead: "استشارات عقارية مستقلة في دبي. أقدم رؤى مبنية على البيانات لحماية وتنمية رأس مالك." },
+            fa: { h1: "با <span style='color:var(--uae-red);'>اقتدار</span> سرمایه‌گذاری کنید.<br>با <span style='color:var(--gold-advisor);'>ثروت</span> خارج شوید.", lead: "مشاوره مستقل املاک در بازار دبی. من بینش‌های مبتنی بر داده را برای محافظت و رشد سرمایه شما ارائه می‌دهم." }
         };
 
-        function updateUI(lang, btn) {
-            document.body.classList.toggle('rtl', lang !== 'en');
-            document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById('TX_H1').innerHTML = dict[lang].h1;
-            document.getElementById('TX_LEAD').innerText = dict[lang].lead;
+        function setLocale(l, b) {
+            document.body.classList.toggle('rtl', l !== 'en');
+            document.querySelectorAll('.lang-button').forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
+            document.getElementById('h1').innerHTML = locales[l].h1;
+            document.getElementById('lead').innerText = locales[l].lead;
         }
 
-        /* 10 LANDMARK CYCLE ENGINE */
-        const bgLayers = document.querySelectorAll('.bg-layer');
-        let currentIdx = 0;
+        const backgroundLayers = document.querySelectorAll('.bg-layer');
+        let currentLayer = 0;
         
-        function rotateBg() {
-            bgLayers[currentIdx].classList.remove('active');
-            currentIdx = (currentIdx + 1) % bgLayers.length;
-            bgLayers[currentIdx].classList.add('active');
+        function rotateBackgrounds() {
+            backgroundLayers[currentLayer].classList.remove('active');
+            currentLayer = (currentLayer + 1) % backgroundLayers.length;
+            backgroundLayers[currentLayer].classList.add('active');
         }
 
-        // Cycle backgrounds every 7 seconds for a luxury feel
-        setInterval(rotateBg, 7000);
+        setInterval(rotateBackgrounds, 7000);
     </script>
-
 </body>
 </html>
