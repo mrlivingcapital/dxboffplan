@@ -59,14 +59,12 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 
-/* SECURITY: PREVENT TEXT THEFT */
+/* SECURITY BRICK */
 body{
     background:var(--white);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:hidden;
     -webkit-user-select: none; -ms-user-select: none; user-select: none;
 }
-
-/* ALLOW INTERACTION ON FORMS AND BUTTONS */
-input, textarea, select, .fsub, .nav-inner, .lang-btn, .fb, .floating-contact {
+input, textarea, select, .fsub, .nav-inner, .lang-btn, .fb, .verification-box a {
     -webkit-user-select: text; -ms-user-select: text; user-select: text;
 }
 
@@ -109,6 +107,13 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,4vw,3.5rem);font-
 .profile-photo-frame{width:160px; height:160px; border-radius:50%; border:4px solid var(--gold-light); overflow:hidden; flex-shrink:0;}
 .profile-photo-frame img{width:100%; height:100%; object-fit:cover;}
 .about-s h2 { color:white !important; }
+
+/* 5 REASONS LIST STYLE */
+.reasons-list { list-style: none; margin-top: 2rem; }
+.reasons-list li { margin-bottom: 15px; padding-left: 30px; position: relative; font-size: 1rem; color: rgba(255,255,255,0.8); }
+.reasons-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold-light); font-weight: bold; }
+
+.verification-box { margin-top:30px; padding:20px; background:rgba(255,255,255,0.05); border:1px dashed rgba(184, 135, 10, 0.3); border-radius:8px; }
 
 .proj-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:30px; margin-top:3rem;}
 .pcard{border:1px solid var(--border); background:white; transition:0.3s; cursor:pointer; display:flex; flex-direction:column; position:relative; border-top:4px solid var(--red); color: var(--text);}
@@ -189,18 +194,25 @@ body.rtl .float-wrap { right:auto; left:2rem; }
         <div><h2 id="L_ABOUT_H2" style="margin:0;">Not an Agent.<br><span style="color:var(--red)">An Advisor.</span></h2></div>
       </div>
       <p id="L_ABOUT_P1">I spent nearly two decades leading senior operations at one of the region's largest financial organizations. I brought institutional discipline to real estate.</p>
-      <p id="L_ABOUT_P2">I review the developer, the math, and the exit strategy before I recommend a single unit to my clients.</p>
+      
+      <ul class="reasons-list" id="L_REASONS">
+        <li>19 Years of Institutional Banking Integrity</li>
+        <li>Fiduciary Care: I act for the client, not the commission</li>
+        <li>Specialized Focus: Sobha, Tilal Binghatti & RAK Branded Residences</li>
+        <li>Data-Driven Exit Strategy for Every Investment</li>
+        <li>0% Buyer Commission on Developer Projects</li>
+      </ul>
+
       <div class="asig" id="L_SIG_NAME" style="font-size:2.2rem; font-family:'Playfair Display'; color:var(--gold-light); margin-top:20px;">Masoud</div>
     </div>
-    <li style="display:block;">
-      <div style="margin-top:10px; padding:20px; background:rgba(255,255,255,0.05); border:1px dashed rgba(184, 135, 10, 0.3); border-radius:8px;">
-        <p style="font-size:0.75rem; color:var(--gold-light); margin-bottom:12px; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">Institutional Verification:</p>
-        <div style="display:flex; gap:20px; font-size:0.8rem;">
-          <a href="https://dubailand.gov.ae/en/eservices/status-of-project-service/#/" target="_blank" style="color:var(--white); text-decoration:none; border-bottom:1px solid var(--gold-light); padding-bottom:2px;">DLD Project Tracker</a>
-          <a href="https://dubailand.gov.ae/en/my-rights/mollak/" target="_blank" style="color:var(--white); text-decoration:none; border-bottom:1px solid var(--gold-light); padding-bottom:2px;">Mollak (Escrow)</a>
-        </div>
+
+    <div class="verification-box">
+      <p style="font-size:0.75rem; color:var(--gold-light); margin-bottom:12px; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">Institutional Verification:</p>
+      <div style="display:flex; flex-direction:column; gap:10px; font-size:0.85rem;">
+        <a href="https://dubailand.gov.ae/en/eservices/status-of-project-service/#/" target="_blank" style="color:var(--white); text-decoration:none; border-bottom:1px solid var(--gold-light); width:fit-content;">DLD Project Tracker</a>
+        <a href="https://dubailand.gov.ae/en/my-rights/mollak/" target="_blank" style="color:var(--white); text-decoration:none; border-bottom:1px solid var(--gold-light); width:fit-content;">Mollak (Escrow)</a>
       </div>
-    </li>
+    </div>
   </div>
 </section>
 
@@ -304,13 +316,13 @@ body.rtl .float-wrap { right:auto; left:2rem; }
 <script>
     const translations = {
         en: {
-            LOGO: "MR LIVING CAPITAL", HERO_H1: "Own Dubai<br>Before the Price<br><span style='color:var(--red)'>Goes</span> Up", HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.", HERO_CTA: "Consult Masoud personally", STAT1: "Buyer Commission", S2_N: "Post-Handover", S2_L: "Payment Plans", S3_N: "7-9%", S3_L: "Rental Yields", PROJ_TITLE: "What's <span style='color:var(--green)'>Available Now</span>", P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration in Dubai's tech hub.", P2: "Luxury master community in Abu Dhabi. Built by the region's quality leader for premium living.", P3: "Branded residences with immense short-term rental upside on Al Marjan Island, next to Wynn Casino.", REQ1: "Request Details →", REQ2: "Request Details →", REQ3: "Request Details →", ABOUT_H2: "Not an Agent.<br><span style='color:var(--red)'>An Advisor.</span>", ABOUT_P1: "I spent nearly two decades leading senior operations at one of the region's largest financial organizations. I brought institutional discipline to real estate.", ABOUT_P2: "I review the developer, the math, and the exit strategy before I recommend a single unit to my clients.", SIG_NAME: "Masoud", FORM_TITLE: "Secure Consultation", FN: "First Name", WA: "WhatsApp Number", EM: "Email Address", ROLE: "I am contacting you as:", BUD: "Budget Range", TIMELINE: "How soon you plan to purchase?", IPROJ: "Project Interest", MSG: "Anything else I should know?", SUBMIT: "Send enquiry to masoud"
+            LOGO: "MR LIVING CAPITAL", HERO_H1: "Own Dubai<br>Before the Price<br><span style='color:var(--red)'>Goes</span> Up", HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.", HERO_CTA: "Consult Masoud personally", STAT1: "Buyer Commission", S2_N: "Post-Handover", S2_L: "Payment Plans", S3_N: "7-9%", S3_L: "Rental Yields", PROJ_TITLE: "What's <span style='color:var(--green)'>Available Now</span>", P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration in Dubai's tech hub.", P2: "Luxury master community in Abu Dhabi. Built by the region's quality leader for premium living.", P3: "Branded residences with immense short-term rental upside on Al Marjan Island, next to Wynn Casino.", REQ1: "Request Details →", REQ2: "Request Details →", REQ3: "Request Details →", ABOUT_H2: "Not an Agent.<br><span style='color:var(--red)'>An Advisor.</span>", ABOUT_P1: "I spent nearly two decades leading senior operations at one of the region's largest financial organizations. I brought institutional discipline to real estate.", REASONS: "<li>19 Years of Institutional Banking Integrity</li><li>Fiduciary Care: I act for the client, not the commission</li><li>Specialized Focus: Sobha, Tilal Binghatti & RAK Branded Residences</li><li>Data-Driven Exit Strategy for Every Investment</li><li>0% Buyer Commission on Developer Projects</li>", SIG_NAME: "Masoud", FORM_TITLE: "Secure Consultation", FN: "First Name", WA: "WhatsApp Number", EM: "Email Address", ROLE: "I am contacting you as:", BUD: "Budget Range", TIMELINE: "How soon you plan to purchase?", IPROJ: "Project Interest", MSG: "Anything else I should know?", SUBMIT: "Send enquiry to masoud"
         },
         ar: {
-            LOGO: "MR LIVING CAPITAL", HERO_H1: "تملّك في دبي<br>قبل <span style='color:var(--red)'>ارتفاع</span><br>الأسعار", HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي. أساعدك على الاستثمار في عقارات الإمارات بناءً على البيانات والخبرة المالية.", HERO_CTA: "استشر مسعود شخصياً", STAT1: "عمولة شراء ٠٪", S2_N: "بعد التسليم", S2_L: "خطط دفع ميسرة", S3_N: "٧-٩٪", S3_L: "عوائد إيجارية", PROJ_TITLE: "ما هو <span style='color:var(--green)'>متاح الآن</span>", P1: "منطقة واحة دبي للسيليكون. عوائد استثمارية عالية وتقنيات ذكية في قلب دبي التقني.", P2: "مجتمع سكني فاخر في قلب العاصمة أبوظبي من تطوير 'شوبا' لضمان أعلى معايير الجودة.", P3: "فخامة عالمية وعوائد إيجارية قوية في جزيرة المرجان، رأس الخيمة بجانب كازينو وين.", REQ1: "اطلب التفاصيل ←", REQ2: "اطلب التفاصيل ←", REQ3: "اطلب التفاصيل ←", ABOUT_H2: "لست مجرد وكيل،<br><span style='color:var(--red)'>بل مستشارك.</span>", ABOUT_P1: "١٩ عاماً من الخبرة القيادية في المؤسسات المالية. أنقل انضباط العمل المصرفي إلى سوق العقارات.", ABOUT_P2: "أقوم بمراجعة المطور، الحسابات المالية، واستراتيجية الخروج قبل التوصية بأي وحدة.", SIG_NAME: "مسعود", FORM_TITLE: "حجز استشارة خاصة", FN: "الاسم الأول", WA: "رقم الواتساب", EM: "البريد الإلكتروني", ROLE: "أنا أتواصل معك بصفتي:", BUD: "الميزانية", TIMELINE: "متى تخطط للشراء؟", IPROJ: "المشروع المفضل", MSG: "أي ملاحظات أخرى؟", SUBMIT: "إرسال لمسعود الآن"
+            LOGO: "MR LIVING CAPITAL", HERO_H1: "تملّك في دبي<br>قبل <span style='color:var(--red)'>ارتفاع</span><br>الأسعار", HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي. أساعدك على الاستثمار في عقارات الإمارات بناءً على البيانات والخبرة المالية.", HERO_CTA: "استشر مسعود شخصياً", STAT1: "عمولة شراء ٠٪", S2_N: "بعد التسليم", S2_L: "خطط دفع ميسرة", S3_N: "٧-٩٪", S3_L: "عوائد إيجارية", PROJ_TITLE: "ما هو <span style='color:var(--green)'>متاح الآن</span>", P1: "منطقة واحة دبي للسيليكون. عوائد استثمارية عالية وتقنيات ذكية في قلب دبي التقني.", P2: "مجتمع سكني فاخر في قلب العاصمة أبوظبي من تطوير 'شوبا' لضمان أعلى معايير الجودة.", P3: "فخامة عالمية وعوائد إيجارية قوية في جزيرة المرجان، رأس الخيمة بجانب كازينو وين.", REQ1: "اطلب التفاصيل ←", REQ2: "اطلب التفاصيل ←", REQ3: "اطلب التفاصيل ←", ABOUT_H2: "لست مجرد وكيل،<br><span style='color:var(--red)'>بل مستشارك.</span>", ABOUT_P1: "١٩ عاماً من الخبرة القيادية في المؤسسات المالية. أنقل انضباط العمل المصرفي إلى سوق العقارات.", REASONS: "<li>١٩ عاماً من النزاهة المصرفية المؤسسية</li><li>عناية ائتمانية: أعمل لمصلحة العميل وليس العمولة</li><li>تركيز متخصص: شوبا، تلال بن غاطي، وجزيرة المرجان</li><li>استراتيجية خروج مبنية على البيانات لكل استثمار</li><li>٠٪ عمولة من المشتري على مشاريع المطورين</li>", SIG_NAME: "مسعود", FORM_TITLE: "حجز استشارة خاصة", FN: "الاسم الأول", WA: "رقم الواتساب", EM: "البريد الإلكتروني", ROLE: "أنا أتواصل معك بصفتي:", BUD: "الميزانية", TIMELINE: "متى تخطط للشراء؟", IPROJ: "المشروع المفضل", MSG: "أي ملاحظات أخرى؟", SUBMIT: "إرسال لمسعود الآن"
         },
         fa: {
-            LOGO: "MR LIVING CAPITAL", HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span style='color:var(--red)'>افزایش</span><br>قیمت‌ها", HERO_SUB: "مشاوره تخصصی با ۱۹ سال سابقه بانکی در امارات. من به شما کمک می‌کنم بر اساس اعداد و ارقام سرمایه‌گذاری کنید.", HERO_CTA: "مشاوره با مسعود", STAT1: "بدون کمیسیون خرید", S2_N: "پس از تحویل", S2_L: "اقساط بلند مدت", S3_N: "۷-۹٪", S3_L: "سود اجاره", PROJ_TITLE: "فرصت‌های <span style='color:var(--green)'>موجود</span>", P1: "منطقه سیلیکون واحه. پتانسیل رشد بالا و خانه‌های هوشمند در مرکز تکنولوژی دبی.", P2: "شهرک لوکس و مدرن در پایتخت، ابوظبی. ساخته شده برای زندگی ایده‌آل.", P3: "در مجاورت کازینو وین. زندگی لوکس و پتانسیل بالای اجاره کوتاه‌مدت در جزیره مرجان.", REQ1: "دریافت جزئیات ←", REQ2: "دریافت جزئیات ←", REQ3: "دریافت جزئیات ←", ABOUT_H2: "نه فقط یک کارگزار،<br><span style='color:var(--red)'>بلکه مشاور شما.</span>", ABOUT_P1: "۱۹ سال سابقه مدیریت در مؤسسات مالی منطقه. انضباط بانکی را به دنیای املاک آورده‌ام.", ABOUT_P2: "من سازنده و محاسبات ریاضی را قبل از پیشنهاد هر واحد به مشتریانم بررسی می‌کنم.", SIG_NAME: "مسعود", FORM_TITLE: "درخواست مشاوره", FN: "نام", WA: "شماره واتس‌اپ", EM: "ایمیل", ROLE: "من با شما تماس میگیرم به عنوان:", BUD: "بودجه", TIMELINE: "چه زمانی قصد خرید دارید؟", IPROJ: "پروژه مورد نظر", MSG: "پیام شما", SUBMIT: "ارسال برای مسعود"
+            LOGO: "MR LIVING CAPITAL", HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span style='color:var(--red)'>افزایش</span><br>قیمت‌ها", HERO_SUB: "مشاوره تخصصی با ۱۹ سال سابقه بانکی در امارات. من به شما کمک می‌کنم بر اساس اعداد و ارقام سرمایه‌گذاری کنید.", HERO_CTA: "مشاوره با مسعود", STAT1: "بدون کمیسیون خرید", S2_N: "پس از تحویل", S2_L: "اقساط بلند مدت", S3_N: "۷-۹٪", S3_L: "سود اجاره", PROJ_TITLE: "فرصت‌های <span style='color:var(--green)'>موجود</span>", P1: "منطقه سیلیکون واحه. پتانسیل رشد بالا و خانه‌های هوشمند در مرکز تکنولوژی دبی.", P2: "شهرک لوکس و مدرن در پایتخت، ابوظبی. ساخته شده برای زندگی ایده‌آل.", P3: "در مجاورت کازینو وین. زندگی لوکس و پتانسیل بالای اجاره کوتاه‌مدت در جزیره مرجان.", REQ1: "دریافت جزئیات ←", REQ2: "دریافت جزئیات ←", REQ3: "دریافت جزئیات ←", ABOUT_H2: "نه فقط یک کارگزار،<br><span style='color:var(--red)'>بلکه مشاور شما.</span>", ABOUT_P1: "۱۹ سال سابقه مدیریت در مؤسسات مالی منطقه. انضباط بانکی را به دنیای املاک آورده‌ام.", REASONS: "<li>۱۹ سال سابقه درخشان در بانکداری امارات</li><li>تعهد اخلاقی: اولویت من سود شماست، نه کمیسیون</li><li>تخصص در پروژه‌های Sobha، Tilal Binghatti و جزیره مرجان</li><li>استراتژی خروج بر اساس داده‌های مالی واقعی</li><li>۰٪ کمیسیون خرید از پروژه‌های سازندگان</li>", SIG_NAME: "مسعود", FORM_TITLE: "درخواست مشاوره", FN: "نام", WA: "شماره واتس‌اپ", EM: "ایمیل", ROLE: "من با شما تماس میگیرم به عنوان:", BUD: "بودجه", TIMELINE: "چه زمانی قصد خرید دارید؟", IPROJ: "پروژه مورد نظر", MSG: "پیام شما", SUBMIT: "ارسال برای مسعود"
         }
     };
 
