@@ -3,68 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>MR LIVING CAPITAL | Investment & Capital Advisor</title>
+    <title>MR LIVING CAPITAL | Strategic Property Advisory Dubai</title>
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* SECTION: GLOBAL VARIABLES & UAE FLAG COLOR PALETTE
+        /* ------------------------------------------------------------
+        1. THEME DEFINITION (UAE NATIONAL IDENTITY)
         ------------------------------------------------------------
         */
         :root {
-            /* UAE FLAG COLORS */
-            --uae-red: #CE1126;
-            --uae-green: #007A33;
-            --uae-white: #FFFFFF;
-            --uae-black: #000000;
+            /* NATIONAL COLORS */
+            --uae-red-primary: #CE1126;
+            --uae-green-primary: #007A33;
+            --uae-white-pure: #FFFFFF;
+            --uae-black-base: #000000;
             
-            /* LUXURY & ACCENT COLORS */
-            --gold-accent: #E6AA20;
-            --grey-light: #F8F9FA;
-            --grey-border: #EEEEEE;
+            /* LUXURY ACCENTS */
+            --gold-advisor: #E6AA20;
+            --gold-deep: #B8860B;
             
-            /* TRANSITION & ANIMATION CURVES */
-            --transition-slow: opacity 2.5s ease-in-out;
-            --transition-standard: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* UI SURFACES */
+            --glass-black: rgba(10, 10, 10, 0.95);
+            --form-bg-light: #FBFBFB;
+            --border-standard: #E5E5E5;
             
-            /* GLASSMORPHISM EFFECTS */
-            --glass-bg: rgba(10, 10, 10, 0.98);
-            --glass-blur: blur(30px);
+            /* TRANSITION SPECS */
+            --speed-bg-fade: 2800ms;
+            --speed-ui-hover: 450ms;
+            --ease-luxury: cubic-bezier(0.25, 1, 0.5, 1);
+            
+            /* FX */
+            --blur-depth: blur(30px);
+            --shadow-premium: 0 40px 100px rgba(0, 0, 0, 0.7);
         }
 
-        /* SECTION: GLOBAL RESET
+        /* ------------------------------------------------------------
+        2. GLOBAL NORMALIZATION
         ------------------------------------------------------------
         */
         html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
         }
 
         * {
-            margin: 0;
-            padding: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
             box-sizing: border-box;
             outline: none;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            background-color: var(--uae-black);
-            color: var(--uae-white);
+            background-color: var(--uae-black-base);
+            color: var(--uae-white-pure);
             font-family: 'DM Sans', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.85;
             font-size: 16px;
+            font-weight: 400;
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* SECTION: RTL (RIGHT-TO-LEFT) LOGIC
+        /* ------------------------------------------------------------
+        3. RTL (RIGHT-TO-LEFT) ARCHITECTURE
         ------------------------------------------------------------
         */
         body.rtl {
@@ -72,32 +86,21 @@
             font-family: 'Noto Sans Arabic', sans-serif;
         }
 
-        body.rtl .hero-sub {
-            border-left: none;
-            border-right: 10px solid var(--uae-red);
-            padding-left: 0;
-            padding-right: 45px;
-        }
-
-        body.rtl .reasons-sidebar {
-            border-right: none;
-            border-left: 10px solid var(--gold-accent);
-        }
-
-        /* SECTION: CINEMATIC BACKGROUND ENGINE
+        /* ------------------------------------------------------------
+        4. CINEMATIC BACKGROUND ENGINE
         ------------------------------------------------------------
         */
-        .bg-container {
+        .viewport-bg-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            background-color: var(--uae-black);
+            background-color: #000000;
         }
 
-        .bg-layer {
+        .landmark-layer {
             position: absolute;
             top: 0;
             left: 0;
@@ -107,81 +110,93 @@
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0;
-            transition: var(--transition-slow);
-            filter: brightness(0.40) contrast(1.15);
-            transform: scale(1.05);
+            transition-property: opacity;
+            transition-duration: var(--speed-bg-fade);
+            transition-timing-function: ease-in-out;
+            filter: brightness(0.35) contrast(1.1);
+            transform: scale(1.02);
+            transition-property: opacity, transform;
         }
 
-        .bg-layer.active {
+        .landmark-layer.active {
             opacity: 1;
             z-index: 1;
             transform: scale(1);
         }
 
-        /* SECTION: NAVIGATION INTERFACE
+        /* ------------------------------------------------------------
+        5. TOP INTERFACE (NAVIGATION)
         ------------------------------------------------------------
         */
-        header {
+        header.main-nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 110px;
-            z-index: 9999;
-            background-color: var(--uae-white);
+            height: 115px;
+            background-color: var(--uae-white-pure);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 8%;
-            border-bottom: 7px solid var(--uae-red);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+            padding-left: 8%;
+            padding-right: 8%;
+            z-index: 9999;
+            border-bottom-width: 8px;
+            border-bottom-style: solid;
+            border-bottom-color: var(--uae-red-primary);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .nav-logo {
+        .nav-branding {
             font-family: 'Playfair Display', serif;
-            color: var(--uae-black);
-            font-size: 1.85rem;
-            font-weight: 700;
+            color: var(--uae-black-base);
+            font-size: 1.9rem;
+            font-weight: 800;
             text-transform: uppercase;
             text-decoration: none;
-            letter-spacing: -1.2px;
+            letter-spacing: -1px;
         }
 
-        .lang-control {
+        .language-vault {
             display: flex;
-            align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
-        .lang-btn {
+        .lang-trigger {
             background-color: transparent;
-            border: 2.5px solid var(--grey-border);
-            padding: 12px 24px;
-            cursor: pointer;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #E0E0E0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: 'DM Sans', sans-serif;
             font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--uae-black);
-            transition: var(--transition-standard);
-            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: var(--uae-black-base);
+            cursor: pointer;
+            transition: var(--speed-ui-hover) var(--ease-luxury);
         }
 
-        .lang-btn:hover {
-            border-color: var(--uae-red);
+        .lang-trigger:hover {
+            border-color: var(--uae-red-primary);
         }
 
-        .lang-btn.active {
-            background-color: var(--uae-black);
-            color: var(--uae-white);
-            border-color: var(--uae-black);
+        .lang-trigger.is-active {
+            background-color: var(--uae-black-base);
+            color: var(--uae-white-pure);
+            border-color: var(--uae-black-base);
         }
 
-        /* SECTION: PAGE LAYOUT & TYPOGRAPHY
+        /* ------------------------------------------------------------
+        6. LAYOUT CORE (SECTIONS)
         ------------------------------------------------------------
         */
-        section {
+        section.page-block {
             min-height: 100vh;
-            padding-top: 240px;
-            padding-bottom: 160px;
+            padding-top: 260px;
+            padding-bottom: 140px;
             padding-left: 10%;
             padding-right: 10%;
             display: flex;
@@ -191,613 +206,667 @@
             z-index: 10;
         }
 
-        h1 {
+        h1.hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 5.2rem;
+            font-size: 5.4rem;
             line-height: 1.05;
-            margin-bottom: 50px;
             font-style: italic;
             font-weight: 700;
+            margin-bottom: 45px;
+            max-width: 1200px;
         }
 
-        .hero-sub {
-            font-size: 1.7rem;
-            max-width: 900px;
-            border-left: 12px solid var(--uae-red);
-            padding-left: 45px;
-            margin-bottom: 75px;
+        .hero-lead-text {
+            font-size: 1.8rem;
+            max-width: 850px;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.95);
+            border-left-width: 12px;
+            border-left-style: solid;
+            border-left-color: var(--uae-red-primary);
+            padding-left: 45px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 80px;
         }
 
-        /* SECTION: ABOUT ME COMPONENT (ROUND PHOTO)
+        body.rtl .hero-lead-text {
+            border-left-width: 0;
+            border-right-width: 12px;
+            border-right-style: solid;
+            border-right-color: var(--uae-red-primary);
+            padding-left: 0;
+            padding-right: 45px;
+        }
+
+        /* ------------------------------------------------------------
+        7. BIOGRAPHY & ROUND PHOTO COMPONENT
         ------------------------------------------------------------
         */
-        .about-flex-container {
-            display: flex;
-            flex-wrap: wrap;
+        .profile-layout-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 100px;
-            align-items: flex-start;
-            justify-content: space-between;
+            align-items: start;
         }
 
-        .about-biography {
-            flex: 1;
-            min-width: 450px;
-        }
-
-        .biography-content {
-            margin-bottom: 40px;
-        }
-
-        .biography-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 30px;
-        }
-
-        .biography-content p {
-            font-size: 1.35rem;
-            margin-bottom: 25px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* THE PHOTO COMPONENT */
-        .portrait-wrapper {
+        .portrait-stack {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 50px;
         }
 
-        .round-photo-frame {
-            width: 340px;
-            height: 340px;
+        .circular-portrait-frame {
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
-            border: 6px solid var(--gold-accent);
+            border-top-width: 7px;
+            border-top-style: solid;
+            border-top-color: var(--gold-advisor);
+            border-bottom-width: 7px;
+            border-bottom-style: solid;
+            border-bottom-color: var(--gold-advisor);
+            border-left-width: 7px;
+            border-left-style: solid;
+            border-left-color: var(--gold-advisor);
+            border-right-width: 7px;
+            border-right-style: solid;
+            border-right-color: var(--gold-advisor);
             overflow: hidden;
-            background-color: #111;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.8);
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
+            background-color: #111111;
         }
 
-        .round-photo-frame img {
+        .circular-portrait-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* SECTION: THE 5 REASONS SIDEBAR
+        .bio-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            margin-bottom: 30px;
+        }
+
+        .bio-paragraph {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+        }
+
+        /* ------------------------------------------------------------
+        8. THE 5 REASONS SIDEBAR
         ------------------------------------------------------------
         */
-        .reasons-sidebar {
-            flex: 0 0 550px;
-            background-color: var(--glass-bg);
-            padding: 70px;
-            border-right: 12px solid var(--gold-accent);
-            backdrop-filter: var(--glass-blur);
-            box-shadow: 0 50px 100px rgba(0,0,0,0.9);
+        .value-proposition-sidebar {
+            background-color: var(--glass-black);
+            padding-top: 70px;
+            padding-bottom: 70px;
+            padding-left: 60px;
+            padding-right: 60px;
+            border-right-width: 15px;
+            border-right-style: solid;
+            border-right-color: var(--gold-advisor);
+            backdrop-filter: var(--blur-depth);
         }
 
-        .reasons-sidebar h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: var(--uae-white);
-            margin-bottom: 60px;
-            opacity: 0.7;
+        body.rtl .value-proposition-sidebar {
+            border-right-width: 0;
+            border-left-width: 15px;
+            border-left-style: solid;
+            border-left-color: var(--gold-advisor);
         }
 
-        .reason-node {
-            margin-bottom: 45px;
+        .value-node {
+            margin-bottom: 50px;
         }
 
-        .reason-node strong {
+        .value-node:last-child {
+            margin-bottom: 0;
+        }
+
+        .value-node strong {
             display: block;
-            color: var(--gold-accent);
+            color: var(--gold-advisor);
             font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-bottom: 12px;
         }
 
-        .reason-node p {
-            font-size: 1.15rem;
+        .value-node p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.75);
             line-height: 1.7;
-            color: rgba(255, 255, 255, 0.8);
         }
 
-        /* SECTION: STRATEGIC SELECTION (PORTFOLIO)
+        /* ------------------------------------------------------------
+        9. STRATEGIC CARDS (PROJECTS)
         ------------------------------------------------------------
         */
-        .portfolio-header {
-            text-align: center;
-            margin-bottom: 90px;
-        }
-
-        .portfolio-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-        }
-
-        .portfolio-grid {
+        .grid-project-system {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 60px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 60px;
         }
 
-        .project-card {
-            background-color: var(--glass-bg);
-            padding: 90px 60px;
-            border-top: 15px solid var(--uae-red);
-            transition: var(--transition-standard);
-            position: relative;
+        .project-asset-card {
+            background-color: rgba(15, 15, 15, 0.98);
+            padding-top: 100px;
+            padding-bottom: 80px;
+            padding-left: 50px;
+            padding-right: 50px;
+            border-top-width: 15px;
+            border-top-style: solid;
+            border-top-color: var(--uae-red-primary);
+            transition: transform var(--speed-ui-hover) var(--ease-luxury);
         }
 
-        .project-card:hover {
-            transform: translateY(-25px);
-            border-top-color: var(--gold-accent);
+        .project-asset-card:hover {
+            transform: translateY(-20px);
         }
 
-        .project-meta {
-            font-size: 1rem;
+        .project-asset-card.variant-green {
+            border-top-color: var(--uae-green-primary);
+        }
+
+        .project-asset-card.variant-gold {
+            border-top-color: var(--gold-advisor);
+        }
+
+        .card-location-tag {
+            font-size: 0.95rem;
             font-weight: 700;
-            color: var(--gold-accent);
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 35px;
+            letter-spacing: 4px;
+            color: var(--gold-advisor);
             display: block;
+            margin-bottom: 30px;
         }
 
-        .project-card h3 {
+        .project-asset-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 25px;
         }
 
-        .project-card p {
-            font-size: 1.2rem;
-            opacity: 0.8;
+        .project-asset-card p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* SECTION: FORMSPREE MASTER FORM
+        /* ------------------------------------------------------------
+        10. THE RESTORED FORMSPREE MASTER (5 FIELDS)
         ------------------------------------------------------------
         */
-        .form-master-wrapper {
-            background-color: var(--uae-white);
-            color: var(--uae-black);
-            padding: 120px 10%;
-            max-width: 1400px;
-            margin: 0 auto;
+        .form-master-container {
+            background-color: var(--uae-white-pure);
+            color: var(--uae-black-base);
+            padding-top: 130px;
+            padding-bottom: 130px;
+            padding-left: 10%;
+            padding-right: 10%;
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
             border-radius: 4px;
-            box-shadow: 0 80px 150px rgba(0,0,0,0.9);
+            box-shadow: 0 100px 200px rgba(0, 0, 0, 0.9);
         }
 
-        .form-heading {
+        .form-header-box {
             text-align: center;
             margin-bottom: 80px;
         }
 
-        .form-heading h2 {
+        .form-header-box h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .form-grid-architecture {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .full-span {
-            grid-column: span 2;
-        }
-
-        .form-field-group {
-            position: relative;
-            margin-bottom: 10px;
-        }
-
-        .form-field-group label {
-            display: block;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: #777777;
+            font-size: 4.2rem;
             margin-bottom: 15px;
         }
 
-        .form-field-group input,
-        .form-field-group select {
-            width: 100%;
-            padding: 26px;
-            background-color: #FBFBFB;
-            border: 2px solid #F0F0F0;
+        .form-header-box p {
+            font-size: 1.4rem;
+            color: #666;
+        }
+
+        /* THE EXACT 5-FIELD GRID LOGIC */
+        .grid-form-architecture {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+        }
+
+        .full-width-field {
+            grid-column: span 2;
+        }
+
+        .form-input-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-input-wrapper label {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        .form-input-wrapper input,
+        .form-input-wrapper select {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: var(--form-bg-light);
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: #DDDDDD;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #DDDDDD;
+            border-left-width: 1px;
+            border-left-style: solid;
+            border-left-color: #DDDDDD;
+            border-right-width: 1px;
+            border-right-style: solid;
+            border-right-color: #DDDDDD;
             font-family: 'DM Sans', sans-serif;
             font-size: 1.2rem;
-            color: var(--uae-black);
-            transition: var(--transition-standard);
+            color: var(--uae-black-base);
+            transition: border-color var(--speed-ui-hover) ease;
         }
 
-        .form-field-group input:focus,
-        .form-field-group select:focus {
-            background-color: #FFFFFF;
-            border-color: var(--uae-red);
+        .form-input-wrapper input:focus,
+        .form-input-wrapper select:focus {
+            border-color: var(--uae-red-primary);
         }
 
-        .submit-button {
+        .master-submit-btn {
             width: 100%;
-            background-color: var(--uae-black);
-            color: var(--uae-white);
-            padding: 40px;
-            border: none;
+            padding-top: 38px;
+            padding-bottom: 38px;
+            background-color: var(--uae-black-base);
+            color: var(--uae-white-pure);
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
             font-weight: 700;
             font-size: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             cursor: pointer;
-            margin-top: 70px;
-            transition: var(--transition-standard);
+            margin-top: 60px;
+            transition: background-color 0.4s ease, letter-spacing 0.4s ease;
         }
 
-        .submit-button:hover {
-            background-color: var(--uae-red);
+        .master-submit-btn:hover {
+            background-color: var(--uae-red-primary);
             letter-spacing: 12px;
         }
 
-        /* SECTION: STICKY SOCIAL INTERFACE
+        /* ------------------------------------------------------------
+        11. STICKY SOCIAL CHANNELS
         ------------------------------------------------------------
         */
         .sticky-social-bar {
             position: fixed;
-            bottom: 70px;
-            right: 70px;
-            z-index: 9999;
+            bottom: 60px;
+            right: 60px;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
+            z-index: 10000;
         }
 
-        .social-trigger {
-            width: 80px;
-            height: 80px;
+        .social-link-node {
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-            transition: var(--transition-bounce);
             text-decoration: none;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .social-trigger svg {
-            width: 38px;
-            fill: var(--uae-white);
+        .social-link-node:hover {
+            transform: scale(1.25) translateY(-10px) rotate(5deg);
         }
 
-        .social-trigger:hover {
-            transform: scale(1.3) translateY(-15px) rotate(8deg);
+        .social-link-node svg {
+            width: 35px;
+            height: 35px;
+            fill: #FFFFFF;
         }
 
-        /* SOCIAL COLORS */
-        .bg-wa { background-color: #25D366; }
-        .bg-tg { background-color: #229ED9; }
-        .bg-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-
-        /* SECTION: RESPONSIVE OVERRIDES (MOBILE & TABLET)
+        /* ------------------------------------------------------------
+        12. RESPONSIVE MEDIA QUERIES
         ------------------------------------------------------------
         */
-        @media (max-width: 1200px) {
-            h1 { font-size: 4rem; }
-            .about-flex-container { flex-direction: column; }
-            .about-biography, .reasons-sidebar { flex: 1 1 100%; min-width: 100%; }
-            .form-grid-architecture { grid-template-columns: 1fr; }
-            .full-span { grid-column: span 1; }
-            section { padding-top: 180px; padding-bottom: 120px; }
-            .sticky-social-bar { right: 30px; bottom: 30px; }
-            .social-trigger { width: 65px; height: 65px; }
+        @media (max-width: 1400px) {
+            h1.hero-title { font-size: 4.2rem; }
+            .grid-project-system { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 1100px) {
+            .profile-layout-container { grid-template-columns: 1fr; }
+            .grid-form-architecture { grid-template-columns: 1fr; }
+            .full-width-field { grid-column: span 1; }
+            .grid-project-system { grid-template-columns: 1fr; }
+            section.page-block { padding-top: 200px; }
+            header.main-nav { height: 100px; }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            .hero-sub { font-size: 1.25rem; padding-left: 25px; }
-            nav { height: 90px; }
-            .nav-logo { font-size: 1.4rem; }
-            .round-photo-frame { width: 260px; height: 260px; }
+            h1.hero-title { font-size: 3rem; }
+            .hero-lead-text { font-size: 1.3rem; padding-left: 25px; }
+            .circular-portrait-frame { width: 280px; height: 280px; }
+            .sticky-social-bar { right: 30px; bottom: 30px; }
+            .social-link-node { width: 65px; height: 65px; }
         }
     </style>
 </head>
 <body class="ltr">
 
-    <div class="bg-container">
-        <div class="bg-layer active" id="bg-section-hero" style="background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2400');"></div>
+    <div class="viewport-bg-container">
+        <div class="landmark-layer active" id="bg-hero" style="background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2400');"></div>
         
-        <div class="bg-layer" id="bg-section-about" style="background-image: url('https://images.unsplash.com/photo-1614101614278-f68285ba0f0c?q=80&w=2400');"></div>
+        <div class="landmark-layer" id="bg-about" style="background-image: url('https://images.unsplash.com/photo-1614101614278-f68285ba0f0c?q=80&w=2400');"></div>
         
-        <div class="bg-layer" id="bg-section-projects" style="background-image: url('https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?q=80&w=2400');"></div>
+        <div class="landmark-layer" id="bg-projects" style="background-image: url('https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?q=80&w=2400');"></div>
         
-        <div class="bg-layer" id="bg-section-advisory" style="background-image: url('https://images.unsplash.com/photo-1528702748617-c64d49f918af?q=80&w=2400');"></div>
+        <div class="landmark-layer" id="bg-advisory" style="background-image: url('https://images.unsplash.com/photo-1528702748617-c64d49f918af?q=80&w=2400');"></div>
         
-        <div class="bg-layer" id="bg-section-contact" style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=2400');"></div>
+        <div class="landmark-layer" id="bg-contact" style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=2400');"></div>
     </div>
 
-    <header>
-        <a href="#section-hero" class="nav-logo">MR LIVING CAPITAL</a>
-        <div class="lang-control">
-            <button class="lang-btn active" id="btn-en" onclick="changeLanguage('en', this)">EN</button>
-            <button class="lang-btn" id="btn-ar" onclick="changeLanguage('ar', this)">AR</button>
-            <button class="lang-btn" id="btn-fa" onclick="changeLanguage('fa', this)">FA</button>
+    <header class="main-nav">
+        <a href="#hero" class="nav-branding">MR LIVING CAPITAL</a>
+        <div class="language-vault">
+            <button class="lang-trigger is-active" id="lang-en" onclick="deployLanguage('en', this)">EN</button>
+            <button class="lang-trigger" id="lang-ar" onclick="deployLanguage('ar', this)">AR</button>
+            <button class="lang-trigger" id="lang-fa" onclick="deployLanguage('fa', this)">FA</button>
         </div>
     </header>
 
-    <section id="section-hero">
-        <div class="content-animate">
-            <h1 id="TEXT_H1">Invest with <span style="color:var(--uae-red);">Authority</span>.<br>Exit with <span style="color:var(--gold-accent);">Wealth</span>.</h1>
-            <p class="hero-sub" id="TEXT_HS">I provide independent real estate advisory, helping you navigate the Dubai market with data-driven insights and a focus on long-term capital growth.</p>
-            
-            <div style="display:flex; gap:20px;">
-                <a href="#section-contact" class="submit-button" style="text-decoration:none; width:fit-content; padding:25px 60px; font-size:1.1rem; margin-top:0;">Book Discovery Session</a>
+    <section class="page-block" id="hero">
+        <h1 class="hero-title" id="TEXT_H1">Invest with <span style="color:var(--uae-red-primary);">Authority</span>.<br>Exit with <span style="color:var(--gold-advisor);">Wealth</span>.</h1>
+        <p class="hero-lead-text" id="TEXT_LEAD">I provide independent real estate advisory, helping you navigate the Dubai market with data-driven insights and a focus on long-term capital growth.</p>
+        
+        <div style="display: flex; gap: 20px;">
+            <a href="#contact" style="text-decoration: none; background: var(--uae-white-pure); color: var(--uae-black-base); padding: 25px 50px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Begin Consultation</a>
+        </div>
+    </section>
+
+    <section class="page-block" id="about">
+        <div class="profile-layout-container">
+            <div class="portrait-stack">
+                <div class="circular-portrait-frame">
+                    <img src="profile.jpg" alt="Advisor Masoud">
+                </div>
+                <div style="text-align: left; width: 100%;">
+                    <h2 class="bio-header" id="TEXT_ABOUT_H">About Me</h2>
+                    <p class="bio-paragraph" id="TEXT_ABOUT_P1">I am your personal advisor in the Dubai real estate landscape. I believe in total transparency and a banking-level approach to asset selection.</p>
+                    <p class="bio-paragraph" id="TEXT_ABOUT_P2">My goal is to protect your interests above all else, ensuring that your property acquisition is a strategic financial move, not just a transaction.</p>
+                </div>
+            </div>
+
+            <div class="value-proposition-sidebar">
+                <h3 style="font-family:'DM Sans'; letter-spacing: 5px; opacity: 0.6; margin-bottom: 50px;" id="TEXT_REASONS_TITLE">Why Work With Me?</h3>
+                
+                <div class="value-node">
+                    <strong id="R1_T">1. Independence</strong>
+                    <p id="R1_P">I am not tied to any single developer; my loyalty is exclusively to your portfolio and your returns.</p>
+                </div>
+
+                <div class="value-node">
+                    <strong id="R2_T">2. Data-First Approach</strong>
+                    <p id="R2_P">Every recommendation is backed by real-time DLD transaction data, historical trends, and supply metrics.</p>
+                </div>
+
+                <div class="value-node">
+                    <strong id="R3_T">3. End-to-End Support</strong>
+                    <p id="R3_P">From initial selection to legal handover and property management, I manage every complexity for you.</p>
+                </div>
+
+                <div class="value-node">
+                    <strong id="R4_T">4. Total Transparency</strong>
+                    <p id="R4_P">I speak the truth about developer health and project delays. No marketing hype, just actionable facts.</p>
+                </div>
+
+                <div class="value-node">
+                    <strong id="R5_T">5. Market Access</strong>
+                    <p id="R5_P">I provide my private clients with early access to off-market distressed deals and exclusive pre-launch inventory.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="section-about">
-        <div class="about-flex-container">
-            
-            <div class="about-biography">
-                <div class="portrait-wrapper">
-                    <div class="round-photo-frame">
-                        <img src="profile.jpg" alt="MR LIVING CAPITAL Advisor Portrait">
-                    </div>
-                </div>
-                
-                <div class="biography-content">
-                    <h2 id="TEXT_ABOUT_TITLE">About Me</h2>
-                    <p id="TEXT_ABOUT_P1">I am your personal advisor in the Dubai real estate landscape. I believe in total transparency and a banking-level approach to asset selection.</p>
-                    <p id="TEXT_ABOUT_P2">My goal is to protect your interests above all else, ensuring that your property acquisition is a strategic financial move, not just a transaction.</p>
-                </div>
-            </div>
-
-            <div class="reasons-sidebar">
-                <h3 id="TEXT_REASONS_TITLE">Why Work With Me?</h3>
-                
-                <div class="reason-node">
-                    <strong id="REASON_1_T">1. Independence</strong>
-                    <p id="REASON_1_P">I am not tied to any single developer; my loyalty is exclusively to your portfolio and your returns.</p>
-                </div>
-
-                <div class="reason-node">
-                    <strong id="REASON_2_T">2. Data-First Approach</strong>
-                    <p id="REASON_2_P">Every recommendation is backed by real-time DLD transaction data, historical trends, and supply metrics.</p>
-                </div>
-
-                <div class="reason-node">
-                    <strong id="REASON_3_T">3. End-to-End Support</strong>
-                    <p id="REASON_3_P">From initial selection to legal handover and property management, I manage every complexity for you.</p>
-                </div>
-
-                <div class="reason-node">
-                    <strong id="REASON_4_T">4. Total Transparency</strong>
-                    <p id="REASON_4_P">I speak the truth about developer health and project delays. No marketing hype, just actionable facts.</p>
-                </div>
-
-                <div class="reason-node">
-                    <strong id="REASON_5_T">5. Market Access</strong>
-                    <p id="REASON_5_P">I provide my private clients with early access to off-market distressed deals and exclusive pre-launch inventory.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="section-projects">
-        <div class="portfolio-header">
-            <h2 id="TEXT_PORTFOLIO_TITLE">Strategic Opportunities</h2>
-            <p style="font-size:1.3rem; opacity:0.6;" id="TEXT_PORTFOLIO_SUB">Hand-picked assets for capital preservation and appreciation.</p>
+    <section class="page-block" id="projects">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <h2 style="font-family:'Playfair Display'; font-size: 4.5rem;" id="TEXT_PROJECT_H">Strategic Selection</h2>
+            <p style="font-size: 1.4rem; opacity: 0.6;" id="TEXT_PROJECT_S">Hand-picked assets for capital preservation.</p>
         </div>
 
-        <div class="portfolio-grid">
-            
-            <div class="project-card">
-                <span class="project-meta">Dubailand Corridor</span>
+        <div class="grid-project-system">
+            <div class="project-asset-card">
+                <span class="card-location-tag">Dubailand</span>
                 <h3>Tilal Binghatti</h3>
                 <p>Premium villa assets designed for high-yield residential demand and steady capital growth.</p>
             </div>
 
-            <div class="project-card" style="border-top-color: var(--uae-green);">
-                <span class="project-meta" style="color:var(--uae-green);">Abu Dhabi</span>
+            <div class="project-asset-card variant-green">
+                <span class="card-location-tag" style="color:var(--uae-green-primary);">Abu Dhabi</span>
                 <h3>Sobha City</h3>
                 <p>Setting the gold standard of construction quality and finishings in the capital's newest urban center.</p>
             </div>
 
-            <div class="project-card" style="border-top-color: var(--gold-accent);">
-                <span class="project-meta">Marjan Island, RAK</span>
+            <div class="project-asset-card variant-gold">
+                <span class="card-location-tag">RAK</span>
                 <h3>Mondrian Residences</h3>
                 <p>Strategically positioned waterfront assets next to the future of the region's leisure district.</p>
             </div>
-
         </div>
     </section>
 
-    <section id="section-advisory">
-        <div style="max-width:1000px; margin:0 auto; text-align:center;">
-            <h2 style="font-family:'Playfair Display'; font-size:4.5rem; margin-bottom:40px;">Professional Integrity.</h2>
-            <p style="font-size:2rem; font-weight:300; line-height:1.5; color:var(--gold-accent);">"In a market of sales tactics, I offer a fiduciary perspective that prioritizes your wealth over developer commissions."</p>
+    <section class="page-block" id="advisory">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="font-family: 'Playfair Display'; font-size: 5rem; margin-bottom: 40px;">Professional Integrity.</h2>
+            <p style="font-size: 2.2rem; font-weight: 300; line-height: 1.4; color: var(--gold-advisor);">"In a market of sales tactics, I offer a fiduciary perspective that prioritizes your wealth over developer commissions."</p>
         </div>
     </section>
 
-    <section id="section-contact">
-        <div class="form-master-wrapper">
-            <div class="form-heading">
-                <h2 id="TEXT_FORM_TITLE">Private Inquiry</h2>
-                <p id="TEXT_FORM_SUB">Enter your investment objectives for a tailored market briefing.</p>
+    <section class="page-block" id="contact">
+        <div class="form-master-container">
+            <div class="form-header-box">
+                <h2 id="FORM_H">Private Inquiry</h2>
+                <p id="FORM_S">Enter your investment objectives for a tailored market briefing.</p>
             </div>
 
             <form action="https://formspree.io/f/mkokrndr" method="POST">
-                <div class="form-grid-architecture">
+                <div class="grid-form-architecture">
                     
-                    <div class="form-field-group">
+                    <div class="form-input-wrapper">
                         <label>Full Name</label>
-                        <input type="text" name="client_name" required placeholder="Ex: John Doe">
+                        <input type="text" name="name" required placeholder="Ex: John Doe">
                     </div>
 
-                    <div class="form-field-group">
+                    <div class="form-input-wrapper">
                         <label>WhatsApp Number</label>
-                        <input type="tel" name="client_phone" required placeholder="+971 ...">
+                        <input type="tel" name="phone" required placeholder="+971 ...">
                     </div>
 
-                    <div class="form-field-group">
-                        <label>Exact Investment (AED)</label>
-                        <input type="number" name="exact_budget" required placeholder="Amount">
-                    </div>
-
-                    <div class="form-field-group">
+                    <div class="form-input-wrapper">
                         <label>Budget Tier</label>
-                        <select name="budget_range" required>
-                            <option value="below_1.5m">Below 1.5M AED</option>
-                            <option value="1.5m_3m">1.5M - 3M AED</option>
-                            <option value="3m_5m">3M - 5M AED</option>
-                            <option value="5m_10m">5M - 10M AED</option>
-                            <option value="10m_plus">10M+ AED</option>
+                        <select name="budget_tier" required>
+                            <option value="Below 1.5M">Below 1.5M AED</option>
+                            <option value="1.5M-3M">1.5M - 3M AED</option>
+                            <option value="3M-5M">3M - 5M AED</option>
+                            <option value="5M-10M">5M - 10M AED</option>
+                            <option value="Above 10M">10M+ AED</option>
                         </select>
                     </div>
 
-                    <div class="form-field-group full-span">
+                    <div class="form-input-wrapper">
                         <label>Acquisition Timeline</label>
-                        <select name="purchase_timeline">
-                            <option value="immediately">Immediately</option>
-                            <option value="3_months">Within 3 Months</option>
-                            <option value="6_months_plus">6 Months +</option>
-                            <option value="researching">Market Research Only</option>
+                        <select name="timeline" required>
+                            <option value="Immediately">Immediately</option>
+                            <option value="Within 3 Months">Within 3 Months</option>
+                            <option value="Within 6 Months">Within 6 Months</option>
+                            <option value="Market Research">Market Research Only</option>
                         </select>
                     </div>
 
-                    <div class="form-field-group full-span">
+                    <div class="form-input-wrapper full-width-field">
                         <label>Primary Project Interest</label>
                         <select name="project_interest" required>
-                            <option value="tilal_binghatti">Tilal Binghatti (Dubailand)</option>
-                            <option value="sobha_city">Sobha City (Abu Dhabi)</option>
-                            <option value="mondrian_residences">Mondrian Residences (RAK)</option>
-                            <option value="general_advisory">General Portfolio Strategy</option>
-                            <option value="distressed_deals">Off-Market Distressed Deals</option>
+                            <option value="Tilal Binghatti">Tilal Binghatti (Dubailand)</option>
+                            <option value="Sobha City">Sobha City (Abu Dhabi)</option>
+                            <option value="Mondrian Residences">Mondrian Residences (RAK)</option>
+                            <option value="General Advisory">General Portfolio Strategy</option>
+                            <option value="Distressed Deals">Off-Market Distressed Deals</option>
                         </select>
                     </div>
 
                 </div>
-                
-                <button type="submit" class="submit-button">Submit Briefing Request</button>
+
+                <button type="submit" class="master-submit-btn">Submit Briefing Request</button>
             </form>
         </div>
     </section>
 
     <div class="sticky-social-bar">
-        <a href="https://wa.me/971585899112" class="social-trigger bg-wa" target="_blank" aria-label="WhatsApp">
+        <a href="https://wa.me/971585899112" class="social-link-node" style="background-color: #25D366;" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
         
-        <a href="https://t.me/masoud_advisor" class="social-trigger bg-tg" target="_blank" aria-label="Telegram">
+        <a href="https://t.me/masoud_advisor" class="social-link-node" style="background-color: #229ED9;" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.184 16.51c-.183.18-.432.227-.643.14-.146-.06-.3-.133-.45-.224l-3.323-2.115-1.55 1.5c-.167.162-.43.2-.644.1-.11-.05-.22-.116-.32-.19l-.324-2.146-2.55-1.02c-.225-.09-.36-.312-.34-.543s.182-.423.4-.492l10.37-3.92c.2-.075.42-.045.6.08.18.12.27.33.24.54l-1.48 8.82z"/></svg>
         </a>
 
-        <a href="https://instagram.com/masoud" class="social-trigger bg-ig" target="_blank" aria-label="Instagram">
+        <a href="https://instagram.com/masoud" class="social-link-node" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.245 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.063 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.245-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.063-2.633-.333-3.608-1.308-.975-.975-1.245-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.063-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.245 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.617 6.78 6.979 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28-.073-1.689-.073-4.948s.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
     </div>
 
     <script>
-        /* DATA OBJECT: Linguistic Dictionaries 
+        /* ------------------------------------------------------------
+        J-1. CONTENT DICTIONARY
+        ------------------------------------------------------------
         */
-        const Dictionary = {
+        const pageContent = {
             en: {
-                H1: "Invest with <span style='color:var(--uae-red);'>Authority</span>.<br>Exit with <span style='color:var(--gold-accent);'>Wealth</span>.",
-                HS: "I provide independent real estate advisory, helping you navigate the Dubai market with data-driven insights and a focus on long-term capital growth.",
-                ABOUT_TITLE: "About Me",
+                H1: "Invest with <span style='color:var(--uae-red-primary);'>Authority</span>.<br>Exit with <span style='color:var(--gold-advisor);'>Wealth</span>.",
+                LEAD: "I provide independent real estate advisory, helping you navigate the Dubai market with data-driven insights and a focus on long-term capital growth.",
+                ABOUT_H: "About Me",
                 ABOUT_P1: "I am your personal advisor in the Dubai real estate landscape. I believe in total transparency and a banking-level approach to asset selection.",
                 ABOUT_P2: "My goal is to protect your interests above all else, ensuring that your property acquisition is a strategic financial move, not just a transaction."
             },
             ar: {
-                H1: "استثمر <span style='color:var(--uae-red);'>بسلطة</span>.<br>واخرج <span style='color:var(--gold-accent);'>بثروة</span>.",
-                HS: "أقدم استشارات عقارية مستقلة لمساعدتك في سوق دبي من خلال رؤى مبنية على البيانات والتركيز على نمو رأس المال طويل الأجل.",
-                ABOUT_TITLE: "من أنا",
+                H1: "استثمر <span style='color:var(--uae-red-primary);'>بسلطة</span>.<br>واخرج <span style='color:var(--gold-advisor);'>بثروة</span>.",
+                LEAD: "أقدم استشارات عقارية مستقلة لمساعدتك في سوق دبي من خلال رؤى مبنية على البيانات والتركيز على نمو رأس المال طويل الأجل.",
+                ABOUT_H: "من أنا",
                 ABOUT_P1: "أنا مستشارك الشخصي في سوق العقارات في دبي. أؤمن بالشفافية المطلقة والنهج المصرفي في اختيار الأصول.",
                 ABOUT_P2: "هدفي هو حماية مصالحك فوق كل شيء، وضمان أن شراء عقارك هو خطوة مالية استراتيجية، وليس مجرد معاملة."
             },
             fa: {
-                H1: "با <span style='color:var(--uae-red);'>اقتدار</span> سرمایه‌گذاری کنید.<br>با <span style='color:var(--gold-accent);'>ثروت</span> خارج شوید.",
-                HS: "من مشاوره مستقل املاک ارائه می‌دهم تا با استفاده از داده‌های دقیق، بهترین تصمیم را برای رشد سرمایه بلندمدت خود در بازار دبی بگیرید.",
-                ABOUT_TITLE: "درباره من",
+                H1: "با <span style='color:var(--uae-red-primary);'>اقتدار</span> سرمایه‌گذاری کنید.<br>با <span style='color:var(--gold-advisor);'>ثروت</span> خارج شوید.",
+                LEAD: "من مشاوره مستقل املاک ارائه می‌دهم تا با استفاده از داده‌های دقیق، بهترین تصمیم را برای رشد سرمایه بلندمدت خود در بازار دبی بگیرید.",
+                ABOUT_H: "درباره من",
                 ABOUT_P1: "من مشاور شخصی شما در بازار املاک دبی هستم. من به شفافیت کامل و رویکردی در سطح بانکی در انتخاب دارایی اعتقاد دارم.",
                 ABOUT_P2: "هدف من محافظت از منافع شماست تا اطمینان حاصل شود که خرید ملک شما یک حرکت استراتژیک مالی است، نه فقط یک معامله."
             }
         };
 
-        /* FUNCTION: Handle Language Switching & RTL Logic
+        /* ------------------------------------------------------------
+        J-2. LANGUAGE CONTROLLER
+        ------------------------------------------------------------
         */
-        function changeLanguage(lang, btnElement) {
-            // Update Body Direction
-            const isRTL = (lang === 'ar' || lang === 'fa');
-            document.body.className = isRTL ? 'rtl' : 'ltr';
+        function deployLanguage(targetLang, triggerElement) {
+            // Check for RTL
+            const isRTL = (targetLang === 'ar' || targetLang === 'fa');
+            
+            if (isRTL) {
+                document.body.classList.add('rtl');
+                document.body.classList.remove('ltr');
+            } else {
+                document.body.classList.add('ltr');
+                document.body.classList.remove('rtl');
+            }
 
-            // Update Active Button State
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
+            // Update UI State
+            document.querySelectorAll('.lang-trigger').forEach(btn => {
+                btn.classList.remove('is-active');
             });
-            btnElement.classList.add('active');
+            triggerElement.classList.add('is-active');
 
-            // Apply Text Changes
-            document.getElementById('TEXT_H1').innerHTML = Dictionary[lang].H1;
-            document.getElementById('TEXT_HS').innerText = Dictionary[lang].HS;
-            document.getElementById('TEXT_ABOUT_TITLE').innerText = Dictionary[lang].ABOUT_TITLE;
-            document.getElementById('TEXT_ABOUT_P1').innerText = Dictionary[lang].ABOUT_P1;
-            document.getElementById('TEXT_ABOUT_P2').innerText = Dictionary[lang].ABOUT_P2;
+            // Inject Content
+            document.getElementById('TEXT_H1').innerHTML = pageContent[targetLang].H1;
+            document.getElementById('TEXT_LEAD').innerText = pageContent[targetLang].LEAD;
+            document.getElementById('TEXT_ABOUT_H').innerText = pageContent[targetLang].ABOUT_H;
+            document.getElementById('TEXT_ABOUT_P1').innerText = pageContent[targetLang].ABOUT_P1;
+            document.getElementById('TEXT_ABOUT_P2').innerText = pageContent[targetLang].ABOUT_P2;
         }
 
-        /* FUNCTION: Intersection Observer for Background Image Swapping
+        /* ------------------------------------------------------------
+        J-3. INTERSECTION OBSERVER (SCROLL-BASED LANDMARKS)
+        ------------------------------------------------------------
         */
-        const sections = document.querySelectorAll('section');
-        const bgLayers = document.querySelectorAll('.bg-layer');
+        const allSections = document.querySelectorAll('section');
+        const allBgLayers = document.querySelectorAll('.landmark-layer');
 
-        const observerOptions = {
+        const observerSetup = {
             root: null,
-            threshold: 0.45, // Detect when 45% of the section is visible
+            threshold: 0.50, // Trigger when half of the section is visible
             rootMargin: "0px"
         };
 
-        const sectionObserver = new IntersectionObserver((entries) => {
+        const activityObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const sectionId = entry.target.getAttribute('id');
+                    const activeSectionId = entry.target.getAttribute('id');
                     
-                    // Remove active class from all layers
-                    bgLayers.forEach(layer => {
+                    // Clear all background actives
+                    allBgLayers.forEach(layer => {
                         layer.classList.remove('active');
                     });
 
-                    // Add active class to corresponding background layer
-                    const targetLayer = document.getElementById('bg-' + sectionId);
-                    if (targetLayer) {
-                        targetLayer.classList.add('active');
+                    // Match background ID to section ID
+                    const matchingBg = document.getElementById('bg-' + activeSectionId);
+                    if (matchingBg) {
+                        matchingBg.classList.add('active');
                     }
                 }
             });
-        }, observerOptions);
+        }, observerSetup);
 
-        sections.forEach(section => {
-            sectionObserver.observe(section);
+        allSections.forEach(currentSection => {
+            activityObserver.observe(currentSection);
         });
 
-        /* LOGIC: Ensure Nav clicks smooth scroll 
+        /* ------------------------------------------------------------
+        J-4. SMOOTH SCROLL INTEGRITY
+        ------------------------------------------------------------
         */
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetHash = this.getAttribute('href');
+                const destination = document.querySelector(targetHash);
+                
+                if (destination) {
+                    destination.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
