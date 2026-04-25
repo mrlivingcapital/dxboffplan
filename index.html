@@ -1,293 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MR LIVING CAPITAL | Dubai Off-Plan Investment Advisor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR LIVING CAPITAL | Dubai Real Estate Investment Fiduciary</title>
 
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-<meta name="description" content="Expert investment advisory for Tilal Binghatti, Sobha City & Mondrian RAK. 19 years banking experience. Professional guidance by Masoud.">
-<meta name="keywords" content="Dubai Real Estate, Off-plan Dubai, Tilal Binghatti, Sobha City Abu Dhabi, Mondrian Al Marjan, Dubai Investment Advisor">
-<meta property="og:title" content="MR LIVING CAPITAL | Investment Advisory">
-<meta property="og:description" content="Fiduciary property advisory backed by 19 years of institutional banking experience.">
-<meta property="og:image" content="https://mrlivingcapital.com/MRLC.jpeg">
-<meta property="og:url" content="https://mrlivingcapital.com">
-<link rel="canonical" href="https://mrlivingcapital.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;600&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+Arabic:wght@300;600&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --red:#CE1126; --red-light:#FF2D42;
-  --green:#00732F; --green-light:#009940;
-  --black:#0D0D0D; --white:#FFFFFF; --off-white:#F6F4F0;
-  --gold-light:#E6AA20; --text-soft:#888;
-  --border:rgba(255,255,255,0.1);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-
-/* IMMERSION ENGINE */
-body{
-    background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; font-weight:300; font-size:16px; line-height:1.7; overflow-x:hidden;
-    -webkit-user-select: none; user-select: none;
-}
-input, textarea, select, .fsub, .nav-inner, .lang-btn, .fb, .verification-box a, .safety-bar a, .pcard { -webkit-user-select: text; user-select: text; }
-
-.bg-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: var(--black); }
-.bg-layer { position: absolute; inset: 0; background-size: cover; background-position: center; filter: blur(10px) brightness(0.35); transition: opacity 1.5s ease-in-out; opacity: 0; }
-.bg-layer.active { opacity: 1; }
-
-body.rtl { direction: rtl; font-family: 'Noto Sans Arabic', sans-serif; }
-
-/* NAVIGATION */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:stretch;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);}
-.nav-bar-red{width:7px;background:var(--red);} .nav-bar-white{width:7px;background:var(--off-white);} .nav-bar-green{width:7px;background:var(--green);}
-.nav-inner{flex:1;display:flex;justify-content:space-between;align-items:center;padding:0.8rem 2.2rem;}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);}
-.lang-btn { cursor: pointer; font-size: 0.7rem; font-weight: 600; padding: 6px 12px; border: 1px solid #ddd; background: none; color:var(--black); }
-.lang-btn.active { background: var(--black); color: white; }
-
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;}
-.hero-content{padding:9rem 4rem 4rem; max-width:1200px; margin:0 auto; width:100%; z-index:2;}
-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6.5vw,5.5rem);font-weight:700;line-height:1.05;margin-bottom:1.5rem;}
-.word-red{color:var(--red-light);} .word-green{color:#4AE87A;}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.8);max-width:550px;margin-bottom:3rem;}
-
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);background:rgba(255,255,255,0.05);backdrop-filter:blur(5px);border-top:1px solid var(--border);}
-.hstat{padding:2.5rem;border-right:1px solid var(--border); text-align:center;}
-.hstat-n{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold-light);display:block;font-weight:700;}
-.hstat-l{font-size:0.68rem;text-transform:uppercase;color:rgba(255,255,255,0.5);letter-spacing:1px;}
-
-/* SECTIONS */
-section{padding:8rem 4rem; max-width:1300px; margin: 0 auto; width:100%; position:relative; z-index:5;}
-h2{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:700;margin-bottom:2rem;}
-
-.safety-bar{background:rgba(206, 17, 38, 0.85); color:var(--white); padding:3rem 4rem; text-align:center; z-index:10; backdrop-filter:blur(8px);}
-.safety-btn{background:var(--white); color:var(--red); padding:12px 30px; text-transform:uppercase; font-weight:600; font-size:0.8rem; text-decoration:none; display:inline-block; margin-top:10px;}
-
-.about-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start;}
-.reasons-list { list-style: none; margin-top: 2rem; }
-.reasons-list li { margin-bottom: 18px; padding-left: 35px; position: relative; color: rgba(255,255,255,0.9); }
-.reasons-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold-light); font-weight: bold; }
-.verification-box { padding:30px; background:rgba(255,255,255,0.07); border:1px solid rgba(184, 135, 10, 0.4); border-radius:12px; backdrop-filter:blur(10px); }
-
-/* CARDS */
-.proj-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; margin-top:3rem;}
-.pcard{border:1px solid var(--border); background:rgba(24, 24, 24, 0.7); backdrop-filter:blur(15px); transition:0.3s; cursor:pointer; display:flex; flex-direction:column; border-top:4px solid var(--red);}
-.pcard.pg{border-top-color:var(--green-light);} .pcard.pgo{border-top-color:var(--gold-light);}
-.pcard.distress{background:rgba(206, 17, 38, 0.15); border: 1px solid var(--red-light); border-top-width:6px;}
-.pcard:hover{transform:translateY(-10px); background:rgba(40, 40, 40, 0.9); border-color:var(--gold-light);}
-
-.ph{padding:2rem 1.5rem 1rem;}
-.pbadge{display:inline-block; padding:4px 12px; font-size:0.65rem; background:rgba(255,255,255,0.1); margin-bottom:1rem; text-transform:uppercase;}
-.pdesc{padding:0 1.5rem 1.5rem; font-size:0.95rem; color:rgba(255,255,255,0.7); min-height:90px;}
-.pdetails{border-top:1px solid var(--border); margin: 0 1.5rem; padding:1.2rem 0;}
-.prow{display:flex; justify-content:space-between; font-size:0.85rem; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05);}
-.pfooter{padding:1.5rem; border-top:1px solid var(--border); font-size:0.8rem; font-weight:600; text-transform:uppercase; color:var(--gold-light);}
-
-/* FORM */
-.fcard{max-width:800px; margin:0 auto; background:rgba(255, 255, 255, 0.98); padding:4.5rem; border-radius:4px; color:var(--black);}
-.fgrid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-.fg.full{grid-column:1/-1;}
-label{font-size:0.75rem; text-transform:uppercase; color:var(--text-soft); font-weight:600; margin-bottom:8px; display:block;}
-input,select,textarea{background:var(--off-white); border:1px solid #ddd; padding:15px; width:100%; font-family:inherit; outline:none;}
-.fsub{width:100%; background:var(--black); color:var(--white); border:none; padding:22px; font-weight:600; text-transform:uppercase; cursor:pointer; margin-top:2rem; font-size:1rem; letter-spacing:2px; transition:0.3s;}
-.fsub:hover{background:var(--red); transform:translateY(-2px);}
-
-.float-wrap{position:fixed; bottom:2rem; right:2rem; z-index:9999; display:flex; flex-direction:column; gap:12px;}
-.fb{width:55px; height:55px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 25px rgba(0,0,0,0.3); transition:0.3s;}
-.fb svg{width:28px; fill:white;}
-.fb-wa{background:#25D366;} .fb-tg{background:#229ED9;} .fb-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);}
-
-@media(max-width:850px){
-  section,.safety-bar{padding:5rem 1.5rem;}
-  .about-inner,.fgrid,.hero-stats{grid-template-columns:1fr;}
-  .fcard { padding: 2.5rem 1.5rem; }
-}
-</style>
-</head>
-<body id="body">
-
-<div class="bg-overlay">
-    <div class="bg-layer active" id="bg1" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=2000');"></div>
-    <div class="bg-layer" id="bg2" style="background-image: url('https://images.unsplash.com/photo-1647426154366-3392419f0753?auto=format&fit=crop&q=80&w=2000');"></div>
-    <div class="bg-layer" id="bg3" style="background-image: url('https://images.unsplash.com/photo-1544923246-77307dd654ca?auto=format&fit=crop&q=80&w=2000');"></div>
-    <div class="bg-layer" id="bg4" style="background-image: url('https://images.unsplash.com/photo-1580219602051-9310034430e7?auto=format&fit=crop&q=80&w=2000');"></div>
-    <div class="bg-layer" id="bg5" style="background-image: url('https://images.unsplash.com/photo-1596434417180-2a8d3864a66a?auto=format&fit=crop&q=80&w=2000');"></div>
-</div>
-
-<nav>
-  <div class="nav-bar-red"></div><div class="nav-bar-white"></div><div class="nav-bar-green"></div>
-  <div class="nav-inner">
-    <div class="nav-logo">MR LIVING CAPITAL</div>
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLang('en', this)">EN</button>
-      <button class="lang-btn" onclick="setLang('ar', this)">AR</button>
-      <button class="lang-btn" onclick="setLang('fa', this)">FA</button>
-    </div>
-  </div>
-</nav>
-
-<div class="float-wrap">
-  <a href="https://wa.me/971585899112" target="_blank" class="fb fb-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-  <a href="https://t.me/mrlivingcapital" target="_blank" class="fb fb-tg"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
-  <a href="https://instagram.com/mrlivingcapital" target="_blank" class="fb fb-ig"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-</div>
-
-<section id="sec1" class="hero">
-  <div class="hero-content">
-    <h1 id="L_HERO_H1">Own Dubai<br>Before the Price<br><span class="word-red">Goes</span> <span class="word-green">Up</span></h1>
-    <p class="hero-sub" id="L_HERO_SUB">Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.</p>
-    <a href="#enquire" class="fsub" style="text-decoration:none; display:inline-block; width:auto; padding:18px 45px; background:var(--red);" id="L_HERO_CTA">Consult Masoud personally</a>
-  </div>
-  <div class="hero-stats">
-    <div class="hstat"><span class="hstat-n">0%</span><span class="hstat-l" id="L_STAT1">Buyer Commission</span></div>
-    <div class="hstat"><span class="hstat-n" id="L_S2_N">Post-Handover</span><span class="hstat-l" id="L_S2_L">Payment Plans</span></div>
-    <div class="hstat"><span class="hstat-n" id="L_S3_N">7-9%</span><span class="hstat-l" id="L_S3_L">Rental Yields</span></div>
-  </div>
-</section>
-
-<div class="safety-bar" id="L_SAFETY_BAR">
-    <h3 id="L_SAFE_H">Download the Off-Plan Safety Checklist</h3>
-    <p id="L_SAFE_P">Institutional due diligence: 5 things every investor must verify before signing an SPA.</p>
-    <a href="#enquire" class="safety-btn" onclick="document.getElementsByName('Message')[0].value='I would like to receive the Off-Plan Safety Checklist.'">Get My Free Copy</a>
-</div>
-
-<section id="sec2">
-  <div class="about-inner">
-    <div>
-      <div style="display:flex; align-items:center; gap:30px; margin-bottom:3rem;">
-        <div style="width:140px; height:140px; border-radius:50%; border:3px solid var(--gold-light); overflow:hidden; flex-shrink:0;"><img src="MRLC.jpeg" alt="Masoud" style="width:100%; height:100%; object-fit:cover;"></div>
-        <h2 id="L_ABOUT_H2" style="margin:0;">Not an Agent.<br><span style="color:var(--red-light)">An Advisor.</span></h2>
-      </div>
-      <p id="L_ABOUT_P1">I spent nearly two decades leading senior operations at one of the region's largest financial organizations. I brought institutional discipline to real estate.</p>
-      <ul class="reasons-list" id="L_REASONS">
-        <li>19 Years of Institutional Banking Integrity</li>
-        <li>Fiduciary Care: I act for the client, not the commission</li>
-        <li>Specialized Focus: Sobha, Tilal Binghatti & RAK Branded Residences</li>
-        <li>Data-Driven Exit Strategy for Every Investment</li>
-        <li>0% Buyer Commission on Developer Projects</li>
-      </ul>
-      <div id="L_SIG_NAME" style="font-size:2.2rem; font-family:'Playfair Display'; color:var(--gold-light); margin-top:20px;">Masoud</div>
-    </div>
-    <div class="verification-box">
-      <p style="font-size:0.75rem; color:var(--gold-light); margin-bottom:12px; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">Verification:</p>
-      <div style="display:flex; flex-direction:column; gap:12px;">
-        <a href="https://dubailand.gov.ae/en/eservices/status-of-project-service/#/" target="_blank" style="color:white; text-decoration:none; border-bottom:1px solid var(--gold-light); width:fit-content;">DLD Project Tracker</a>
-        <a href="https://dubailand.gov.ae/en/my-rights/mollak/" target="_blank" style="color:white; text-decoration:none; border-bottom:1px solid var(--gold-light); width:fit-content;">Mollak (Escrow)</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="sec3">
-  <h2 id="L_PROJ_TITLE">What's <span style="color:var(--green-light)">Available Now</span></h2>
-  <div class="proj-grid">
-    <div class="pcard distress" onclick="scrollToDistress()">
-      <div class="ph"><div class="pbadge">URGENT</div><h3 style="color:var(--red-light);">Distress Deals</h3></div>
-      <p class="pdesc">Looking for immediate equity? Access under-market value units and developer cancellations.</p>
-      <div class="pfooter">Get Distress Alerts →</div>
-    </div>
-    <div class="pcard" onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">
-      <div class="ph"><div class="pbadge">Dubai</div><h3>Tilal Binghatti</h3></div>
-      <p class="pdesc" id="L_P1">Silicon Oasis Corridor. High ROI potential and smart-home integration.</p>
-      <div class="pfooter" id="L_REQ1">Get Inventory List →</div>
-    </div>
-    <div class="pcard pg" onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">
-      <div class="ph"><div class="pbadge">Abu Dhabi</div><h3>Sobha City</h3></div>
-      <p class="pdesc" id="L_P2">Luxury master community built by the quality leader for premium living.</p>
-      <div class="pfooter" id="L_REQ2">Get Inventory List →</div>
-    </div>
-  </div>
-</section>
-
-<section id="sec4">
-  <div class="proj-grid" style="margin-top:0;">
-    <div class="pcard pgo" onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">
-      <div class="ph"><div class="pbadge">RAK</div><h3>Mondrian Residences</h3></div>
-      <p class="pdesc" id="L_P3">Branded residences with short-term rental upside next to Wynn Casino.</p>
-      <div class="pfooter" id="L_REQ3">Get Inventory List →</div>
-    </div>
-  </div>
-</section>
-
-<section id="sec5" class="form-s">
-  <div class="fcard" id="enquire">
-    <h2 id="L_FORM_TITLE" style="text-align:center;">Secure Consultation</h2>
-    <div id="form-status" style="display:none; text-align:center; padding:15px; color:var(--green); font-weight:600; border:1px solid var(--green); margin-bottom:20px;">✓ Message Sent</div>
-    <form id="enquiry-form" action="https://formspree.io/f/mkokrndr" method="POST">
-      <div class="fgrid">
-        <div class="fg"><label id="L_FN">Name</label><input type="text" name="Name" required></div>
-        <div class="fg"><label id="L_WA">WhatsApp</label><input type="tel" name="WhatsApp" required></div>
-        <div class="fg full"><label id="L_EM">Email</label><input type="email" name="Email" required></div>
-        <div class="fg full">
-          <label id="L_IPROJ">Project Interest</label>
-          <select name="Interested_Project">
-            <option value="Tilal Binghatti">Tilal Binghatti</option>
-            <option value="Sobha City">Sobha City</option>
-            <option value="Mondrian Residences">Mondrian Residences</option>
-            <option value="Distress Deals">Distress Deals</option>
-          </select>
-        </div>
-        <div class="fg full"><label id="L_MSG">Message</label><textarea name="Message" rows="3"></textarea></div>
-      </div>
-      <button type="submit" id="submit-btn" class="fsub">Send enquiry to masoud</button>
-    </form>
-  </div>
-</section>
-
-<footer style="padding:4rem; text-align:center; color:rgba(255,255,255,0.4);">© 2026 MR LIVING CAPITAL · DUBAI, UAE</footer>
-
-<script>
-    window.addEventListener('scroll', () => {
-        const sections = ['sec1', 'sec2', 'sec3', 'sec4', 'sec5'];
-        sections.forEach((id, index) => {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
-                document.querySelectorAll('.bg-layer').forEach(l => l.classList.remove('active'));
-                document.getElementById('bg' + (index + 1)).classList.add('active');
-            }
-        });
-    });
-
-    const translations = {
-        en: { LOGO: "MR LIVING CAPITAL", HERO_H1: "Own Dubai<br>Before the Price<br><span class='word-red'>Goes</span> <span class='word-green'>Up</span>", HERO_SUB: "Expert advisory with 19 years of institutional banking experience. I help you invest in UAE property with data, not sales talk.", HERO_CTA: "Consult Masoud personally", STAT1: "Buyer Commission", S2_N: "Post-Handover", S2_L: "Payment Plans", S3_N: "7-9%", S3_L: "Rental Yields", PROJ_TITLE: "What's <span style='color:var(--green-light)'>Available Now</span>", P1: "Silicon Oasis Corridor. High ROI potential and smart-home integration.", P2: "Luxury master community built by the quality leader for premium living.", P3: "Branded residences with short-term rental upside next to Wynn Casino.", REQ1: "Get Inventory List →", REQ2: "Get Inventory List →", REQ3: "Get Inventory List →", ABOUT_H2: "Not an Agent.<br><span style='color:var(--red-light)'>An Advisor.</span>", ABOUT_P1: "I spent nearly two decades leading senior operations at one of the region's largest financial organizations.", REASONS: "<li>19 Years of Institutional Banking Integrity</li><li>Fiduciary Care: I act for the client</li><li>Specialized Focus: Sobha, Binghatti & RAK</li><li>0% Buyer Commission on Developer Projects</li>", SIG_NAME: "Masoud", FORM_TITLE: "Secure Consultation", FN: "Name", WA: "WhatsApp", EM: "Email", IPROJ: "Interest", MSG: "Message", SUBMIT: "Send enquiry to masoud", SAFE_H: "Download the Safety Checklist", SAFE_P: "Institutional due diligence: 5 things to verify." },
-        ar: { LOGO: "MR LIVING CAPITAL", HERO_H1: "تملّك في دبي<br>قبل <span class='word-red'>ارتفاع</span> الأسعار", HERO_SUB: "استشارات عقارية بخبرة ١٩ عاماً في القطاع المصرفي.", HERO_CTA: "استشر مسعود شخصياً", STAT1: "عمولة شراء ٠٪", S2_N: "بعد التسليم", S2_L: "خطط دفع", S3_N: "٧-٩٪", S3_L: "عوائد", PROJ_TITLE: "المتاح الآن", P1: "واحة دبي للسيليكون. عوائد عالية.", P2: "مجتمع سكني فاخر في أبوظبي.", P3: "جزيرة المرجان بجانب كازينو وين.", REQ1: "اطلب القائمة ←", REQ2: "اطلب القائمة ←", REQ3: "اطلب القائمة ←", ABOUT_H2: "لست وكيلاً،<br><span style='color:var(--red-light)'>بل مستشارك.</span>", ABOUT_P1: "١٩ عاماً من الخبرة المصرفية القيادية.", REASONS: "<li>١٩ عاماً من النزاهة المصرفية</li><li>أعمل لمصلحة العميل</li><li>٠٪ عمولة من المشتري</li>", SIG_NAME: "مسعود", FORM_TITLE: "حجز استشارة", FN: "الاسم", WA: "واتساب", EM: "الايميل", IPROJ: "المشروع", MSG: "الرسالة", SUBMIT: "إرسال الآن", SAFE_H: "تحميل دليل الأمان", SAFE_P: "٥ أشياء يجب التحقق منها." },
-        fa: { LOGO: "MR LIVING CAPITAL", HERO_H1: "صاحب خانه در دبی شوید<br>قبل از <span class='word-red'>افزایش</span> قیمت‌ها", HERO_SUB: "۱۹ سال سابقه بانکی در امارات.", HERO_CTA: "مشاوره با مسعود", STAT1: "بدون کمیسیون خرید", S2_N: "پس از تحویل", S2_L: "اقساط", S3_N: "۷-۹٪", S3_L: "سود", PROJ_TITLE: "فرصت‌های موجود", P1: "سیلیکون واحه دبی.", P2: "شهرک لوکس در ابوظبی.", P3: "جزیره مرجان در کنار کازینو.", REQ1: "دریافت لیست ←", REQ2: "دریافت لیست ←", REQ3: "دریافت لیست ←", ABOUT_H2: "نه یک کارگزار،<br><span style='color:var(--red-light)'>بلکه مشاور شما.</span>", ABOUT_P1: "۱۹ سال سابقه مدیریت بانکی.", REASONS: "<li>۱۹ سال سابقه درخشان بانکی</li><li>اولویت من سود شماست</li><li>۰٪ کمیسیون خرید</li>", SIG_NAME: "مسعود", FORM_TITLE: "درخواست مشاوره", FN: "نام", WA: "واتس‌اپ", EM: "ایمیل", IPROJ: "پروژه", MSG: "پیام", SUBMIT: "ارسال برای مسعود", SAFE_H: "دانلود دفترچه امنیت", SAFE_P: "۵ نکته حیاتی قبل از خرید." }
-    };
-
-    function setLang(lang, btn) {
-        const b = document.getElementById('body');
-        lang === 'en' ? b.classList.remove('rtl') : b.classList.add('rtl');
-        document.querySelectorAll('.lang-btn').forEach(l => l.classList.remove('active'));
-        btn.classList.add('active');
-        for (let k in translations[lang]) {
-            const el = document.getElementById('L_' + k);
-            if (el) el.innerHTML = translations[lang][k];
+    <style>
+        /* ----------------------------------------------------------------
+           1. CSS VARIABLES & CORE RESET
+        ------------------------------------------------------------------- */
+        :root {
+            --red: #CE1126;
+            --red-hover: #A50E1E;
+            --green: #00732F;
+            --black: #000000;
+            --dark-grey: #121212;
+            --white: #FFFFFF;
+            --off-white: #F8F8F8;
+            --gold: #E6AA20;
+            --glass: rgba(18, 18, 18, 0.85);
+            --border-white: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        document.getElementById('submit-btn').innerText = translations[lang].SUBMIT;
-    }
 
-    function scrollToDistress() {
-        document.getElementById('enquire').scrollIntoView({behavior:'smooth'});
-        document.getElementsByName('Interested_Project')[0].value = 'Distress Deals';
-        document.getElementsByName('Message')[0].value = 'I am looking for urgent distress deals.';
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    document.getElementById("enquiry-form").addEventListener("submit", async function(e) {
-        e.preventDefault();
-        const btn = document.getElementById("submit-btn"); btn.innerText = "SENDING..."; btn.disabled = true;
-        const res = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' }});
-        if (res.ok) { e.target.style.display = "none"; document.getElementById("form-status").style.display = "block"; }
-        else { alert("Error. Please WhatsApp me."); btn.innerText = "Send enquiry"; btn.disabled = false; }
-    });
-</script>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body.rtl {
+            direction: rtl;
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+
+        /* ----------------------------------------------------------------
+           2. BACKGROUND ENGINE (RESTORED FIDELITY)
+        ------------------------------------------------------------------- */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: var(--black);
+        }
+
+        .bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            filter: brightness(0.3) contrast(1.1);
+        }
+
+        .bg-layer.active {
+            opacity: 1;
+        }
+
+        /* ----------------------------------------------------------------
+           3. NAVIGATION (THE ACCENTED BAR)
+        ------------------------------------------------------------------- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            display: flex;
+            border-bottom: 4px solid var(--red);
+        }
+
+        .nav-inner {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 6%;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--black);
+            letter-spacing: -0.5px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        /* ----------------------------------------------------------------
+           4. LAYOUT COMPONENTS
+        ------------------------------------------------------------------- */
+        section {
+            min-height: 100vh;
+            padding: 160px 8% 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .container-mid {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .text-red { color: var(--red); }
+        .text-green { color: #4AE87A; }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            max-width: 650px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+        }
+
+        /* SAFETY CHECKLIST COMPONENT */
+        .safety-wrapper {
+            background: var(--red);
+            padding: 80px 8%;
+            margin: 60px 0;
+            text-align: center;
+            position: relative;
+            z-index: 15;
+        }
+
+        .safety-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--red);
+            padding: 20px 45px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            transition: var(--transition);
+        }
+
+        /* PROJECT CARDS - RE-ESTABLISHED GRID */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: var(--glass);
+            border: 1px solid var(--border-white);
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            border-top: 6px solid var(--red);
+            transition: var(--transition);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--gold);
+        }
+
+        .card-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--gold);
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            margin-bottom: 15px;
+        }
+
+        .project-stats {
+            margin-top: auto;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-white);
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        /* FORM COMPONENT */
+        .form-container {
+            background: var(--white);
+            color: var(--black);
+            padding: 80px 10%;
+            border-radius: 4px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .form-group.full { grid-column: span 2; }
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 18px;
+            border: 1px solid #E0E0E0;
+            background: #F9F9F9;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--black);
+            color: var(--white);
+            padding: 22px;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* STICKY SOCIALS */
+        .social-sticky {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            transition: var(--transition);
+        }
+
+        .social-icon svg { width: 30px; fill: white; }
+        .wa-btn { background: #25D366; }
+        .tg-btn { background: #229ED9; }
+
+        @media (max-width: 1024px) {
+            .project-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .project-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-grid .form-group.full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body id="master-body">
+
+    <div class="bg-container">
+        <div class="bg-layer active" id="bg-hero" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2000');"></div>
+        <div class="bg-layer" id="bg-projects" style="background-image: url('https://images.unsplash.com/photo-1582672093232-995639170c0c?q=80&w=2000');"></div>
+        <div class="bg-layer" id="bg-consult" style="background-image: url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2000');"></div>
+        <div class="bg-layer" id="bg-footer" style="background-image: url('https://images.unsplash.com/photo-1528901166007-3784c7dd3653?q=80&w=2000');"></div>
+    </div>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-logo" id="L_LOGO">MR LIVING CAPITAL</div>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="updateLanguage('en', this)">EN</button>
+                <button class="lang-btn" onclick="updateLanguage('ar', this)">AR</button>
+                <button class="lang-btn" onclick="updateLanguage('fa', this)">FA</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container-mid">
+            <h1 id="L_H1">Invest in Dubai.<br>Own the <span class="text-red">Future</span>,<br>Securely <span class="text-green">Now.</span></h1>
+            <p class="hero-desc" id="L_H_DESC">Fiduciary property advisory backed by 19 years of institutional banking experience. We don't sell property; we protect capital.</p>
+            <a href="#consult" class="submit-btn" style="text-decoration:none; width:fit-content; padding:22px 60px;" id="L_H_CTA">Request Private Briefing</a>
+        </div>
+    </section>
+
+    <div class="safety-wrapper" id="safety-anchor">
+        <h2 id="L_S_H" style="font-family:'Playfair Display'; font-size:2.5rem;">Off-Plan Safety Protocol</h2>
+        <p id="L_S_P" style="max-width:700px; margin:15px auto;">Download our 5-step verification checklist including DLD project tracking and Escrow status verification.</p>
+        <a href="#consult" class="safety-btn" id="L_S_B" onclick="document.getElementById('msg-area').value='Interested in the Off-Plan Safety Protocol Checklist.'">Get Access Now</a>
+    </div>
+
+    <section id="projects">
+        <div class="container-mid">
+            <h2 id="L_P_H" style="font-family:'Playfair Display'; font-size:3rem; margin-bottom:10px;">The Prime Portfolio</h2>
+            <p id="L_P_S" style="margin-bottom:40px; opacity:0.7;">Curated institutional-grade opportunities.</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="card-label">Silicon Oasis</span>
+                    <h3>Tilal Binghatti</h3>
+                    <p id="L_P1_D">Hyper-modern architecture with aggressive rental yield potential. Situated in a high-demand tech hub.</p>
+                    <div class="project-stats">
+                        <div class="stat-row"><span>Target ROI</span><span class="text-green">8.5% Net</span></div>
+                        <div class="stat-row"><span>Asset Class</span><span>Residential</span></div>
+                    </div>
+                </div>
+                <div class="project-card" style="border-top-color: var(--green);">
+                    <span class="card-label">Abu Dhabi</span>
+                    <h3>Sobha City</h3>
+                    <p id="L_P2_D">The gold standard of construction quality. Ideal for long-term capital preservation and luxury living.</p>
+                    <div class="project-stats">
+                        <div class="stat-row"><span>Quality Score</span><span>A+</span></div>
+                        <div class="stat-row"><span>Investment Play</span><span>Equity Growth</span></div>
+                    </div>
+                </div>
+                <div class="project-card" style="border-top-color: var(--gold);">
+                    <span class="card-label">Marjan Island</span>
+                    <h3>Mondrian Residences</h3>
+                    <p id="L_P3_D">Branded residences adjacent to the Wynn Casino. A unique speculative play on tourism and gaming.</p>
+                    <div class="project-stats">
+                        <div class="stat-row"><span>Projected Gain</span><span class="text-green">High</span></div>
+                        <div class="stat-row"><span>Strategy</span><span>Exit on Casino Opening</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="consult">
+        <div class="form-container">
+            <h2 id="L_F_H" style="font-family:'Playfair Display'; margin-bottom:30px; font-size:2.5rem;">Strategy Session</h2>
+            <form action="https://formspree.io/f/mkokrndr" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label id="L_L1">Full Name</label>
+                        <input type="text" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label id="L_L2">WhatsApp Number</label>
+                        <input type="tel" name="phone" required placeholder="+971 ...">
+                    </div>
+                    <div class="form-group full">
+                        <label id="L_L3">Investment Interest</label>
+                        <select name="interest">
+                            <option value="Binghatti">Tilal Binghatti</option>
+                            <option value="Sobha">Sobha City</option>
+                            <option value="Mondrian">Mondrian RAK</option>
+                            <option value="Distress">Distress Deals Only</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label id="L_L4">Message</label>
+                        <textarea name="message" id="msg-area" rows="4" placeholder="Briefly describe your investment timeline..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn" id="L_F_B">Request Secure Consultation</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="social-sticky">
+        <a href="https://wa.me/971585899112" class="social-icon wa-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+    </div>
+
+    <script>
+        // TRANSLATION DICTIONARY (RESTORED)
+        const dictionary = {
+            en: {
+                H1: "Invest in Dubai.<br>Own the <span class='text-red'>Future</span>,<br>Securely <span class='text-green'>Now.</span>",
+                H_DESC: "Fiduciary property advisory backed by 19 years of institutional banking experience. We don't sell property; we protect capital.",
+                H_CTA: "Request Private Briefing",
+                S_H: "Off-Plan Safety Protocol",
+                S_P: "Download our 5-step verification checklist including DLD project tracking and Escrow status verification.",
+                S_B: "Get Access Now",
+                P_H: "The Prime Portfolio",
+                P1_D: "Hyper-modern architecture with aggressive rental yield potential.",
+                F_H: "Strategy Session",
+                L1: "Full Name", L2: "WhatsApp Number", L3: "Investment Interest", L4: "Message",
+                F_B: "Request Secure Consultation"
+            },
+            ar: {
+                H1: "استثمر في دبي.<br>تملك <span class='text-red'>المستقبل</span>،<br>بأمان <span class='text-green'>الآن.</span>",
+                H_DESC: "استشارات عقارية ائتمانية مدعومة بـ 19 عاماً من الخبرة المصرفية المؤسسية. نحن لا نبيع العقارات؛ نحن نحمي رأس المال.",
+                H_CTA: "طلب إحاطة خاصة",
+                S_H: "بروتوكول سلامة المشاريع",
+                S_P: "قم بتنزيل قائمة التحقق المكونة من 5 خطوات بما في ذلك تتبع مشروع DLD والتحقق من حالة الضمان.",
+                S_B: "احصل على الدخول الآن",
+                P_H: "المحفظة العقارية",
+                P1_D: "عمارة حديثة للغاية مع إمكانات عائد إيجاري قوية.",
+                F_H: "جلسة استراتيجية",
+                L1: "الاسم الكامل", L2: "رقم الواتساب", L3: "اهتمامك الاستثماري", L4: "الرسالة",
+                F_B: "اطلب استشارة آمنة"
+            },
+            fa: {
+                H1: "در دبی سرمایه‌گذاری کنید.<br>صاحب <span class='text-red'>آینده</span> شوید،<br>همین <span class='text-green'>حالا</span>.",
+                H_DESC: "مشاوره ملکی با ۱۹ سال سابقه بانکی در امارات. ما ملک نمی‌فروشیم، ما از سرمایه شما محافظت می‌کنیم.",
+                H_CTA: "درخواست مشاوره خصوصی",
+                S_H: "پروتکل امنیت پیش‌خرید",
+                S_P: "چک‌لیست ۵ مرحله‌ای تایید اصالت پروژه و حساب امانی را دانلود کنید.",
+                S_B: "دریافت چک‌لیست",
+                P_H: "سبد سرمایه‌گذاری",
+                P1_D: "معماری مدرن با پتانسیل بالای سود اجاره در مرکز تکنولوژی دبی.",
+                F_H: "جلسه استراتژیک",
+                L1: "نام کامل", L2: "شماره واتس‌اپ", L3: "علاقه سرمایه‌گذاری", L4: "پیام",
+                F_B: "درخواست مشاوره امن"
+            }
+        };
+
+        function updateLanguage(lang, btn) {
+            document.body.classList.toggle('rtl', lang !== 'en');
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            for (let key in dictionary[lang]) {
+                const el = document.getElementById('L_' + key);
+                if (el) el.innerHTML = dictionary[lang][key];
+            }
+        }
+
+        // BACKGROUND ENGINE (SCROLL SENSOR)
+        const sections = document.querySelectorAll('section');
+        const layers = document.querySelectorAll('.bg-layer');
+
+        const observerOptions = { threshold: 0.4 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    layers.forEach(l => l.classList.remove('active'));
+                    const target = document.getElementById('bg-' + entry.target.id);
+                    if (target) target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(s => observer.observe(s));
+    </script>
 </body>
 </html>
