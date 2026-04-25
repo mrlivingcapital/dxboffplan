@@ -5,105 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>MR LIVING CAPITAL | Strategic Property Advisory Dubai</title>
-    
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>MR LIVING CAPITAL | Strategic Advisory Dubai</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ------------------------------------------------------------
-        1. THEME DEFINITION (UAE NATIONAL IDENTITY)
-        ------------------------------------------------------------
+        /* ============================================================
+        2. EXPANDED CSS ARCHITECTURE (NON-SHORTHAND FOR LINE WEIGHT)
+        ============================================================
         */
         :root {
-            /* NATIONAL COLORS */
             --uae-red-primary: #CE1126;
             --uae-green-primary: #007A33;
             --uae-white-pure: #FFFFFF;
             --uae-black-base: #000000;
-            
-            /* LUXURY ACCENTS */
             --gold-advisor: #E6AA20;
-            --gold-deep: #B8860B;
-            
-            /* UI SURFACES */
-            --glass-black: rgba(10, 10, 10, 0.95);
-            --form-bg-light: #FBFBFB;
-            --border-standard: #E5E5E5;
-            
-            /* TRANSITION SPECS */
-            --speed-bg-fade: 2800ms;
-            --speed-ui-hover: 450ms;
-            --ease-luxury: cubic-bezier(0.25, 1, 0.5, 1);
-            
-            /* FX */
-            --blur-depth: blur(30px);
-            --shadow-premium: 0 40px 100px rgba(0, 0, 0, 0.7);
+            --glass-black: rgba(10, 10, 10, 0.94);
+            --transition-cinematic: 2500ms;
         }
 
-        /* ------------------------------------------------------------
-        2. GLOBAL NORMALIZATION
-        ------------------------------------------------------------
-        */
         html {
             scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
         }
 
         * {
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
             box-sizing: border-box;
-            outline: none;
         }
 
         body {
             background-color: var(--uae-black-base);
             color: var(--uae-white-pure);
             font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 400;
-            line-height: 1.8;
+            line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ------------------------------------------------------------
-        3. RTL (RIGHT-TO-LEFT) ARCHITECTURE
-        ------------------------------------------------------------
-        */
         body.rtl {
             direction: rtl;
             font-family: 'Noto Sans Arabic', sans-serif;
         }
 
-        /* ------------------------------------------------------------
-        4. CINEMATIC BACKGROUND ENGINE
-        ------------------------------------------------------------
-        */
-        .viewport-bg-container {
+        /* CINEMATIC ENGINE (10 LANDMARKS) */
+        .landmark-engine {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0px;
+            left: 0px;
             width: 100%;
             height: 100%;
             z-index: -1;
             background-color: #000000;
         }
 
-        .landmark-layer {
+        .bg-layer {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 0px;
+            left: 0px;
             width: 100%;
             height: 100%;
             background-size: cover;
@@ -111,94 +80,83 @@
             background-repeat: no-repeat;
             opacity: 0;
             transition-property: opacity;
-            transition-duration: var(--speed-bg-fade);
+            transition-duration: var(--transition-cinematic);
             transition-timing-function: ease-in-out;
-            filter: brightness(0.35) contrast(1.1);
-            transform: scale(1.02);
-            transition-property: opacity, transform;
+            filter: brightness(0.35);
         }
 
-        .landmark-layer.active {
+        .bg-layer.active {
             opacity: 1;
             z-index: 1;
-            transform: scale(1);
         }
 
-        /* ------------------------------------------------------------
-        5. TOP INTERFACE (NAVIGATION)
-        ------------------------------------------------------------
-        */
-        header.main-nav {
+        /* HEADER & NAVIGATION */
+        header.nav-bar {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0px;
+            left: 0px;
             width: 100%;
-            height: 115px;
+            height: 90px;
             background-color: var(--uae-white-pure);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-left: 8%;
-            padding-right: 8%;
-            z-index: 9999;
-            border-bottom-width: 8px;
+            padding-left: 7%;
+            padding-right: 7%;
+            z-index: 1000;
+            border-bottom-width: 6px;
             border-bottom-style: solid;
             border-bottom-color: var(--uae-red-primary);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
         }
 
-        .nav-branding {
+        .brand-text {
             font-family: 'Playfair Display', serif;
             color: var(--uae-black-base);
-            font-size: 1.9rem;
-            font-weight: 800;
+            font-size: 1.5rem;
+            font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
 
-        .language-vault {
+        .lang-control {
             display: flex;
             gap: 15px;
         }
 
-        .lang-trigger {
+        .btn-lang {
             background-color: transparent;
-            border-width: 2px;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-right-width: 1px;
             border-style: solid;
-            border-color: #E0E0E0;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            border-color: #DDDDDD;
+            padding-top: 8px;
+            padding-bottom: 8px;
             padding-left: 20px;
             padding-right: 20px;
-            font-family: 'DM Sans', sans-serif;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--uae-black-base);
             cursor: pointer;
-            transition: var(--speed-ui-hover) var(--ease-luxury);
+            transition: 0.4s ease;
         }
 
-        .lang-trigger:hover {
-            border-color: var(--uae-red-primary);
-        }
-
-        .lang-trigger.is-active {
+        .btn-lang.active {
             background-color: var(--uae-black-base);
             color: var(--uae-white-pure);
             border-color: var(--uae-black-base);
         }
 
-        /* ------------------------------------------------------------
-        6. LAYOUT CORE (SECTIONS)
-        ------------------------------------------------------------
-        */
-        section.page-block {
+        /* SECTION CORE */
+        section.master-block {
             min-height: 100vh;
-            padding-top: 260px;
-            padding-bottom: 140px;
-            padding-left: 10%;
-            padding-right: 10%;
+            padding-top: 160px;
+            padding-bottom: 100px;
+            padding-left: 8%;
+            padding-right: 8%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -206,669 +164,421 @@
             z-index: 10;
         }
 
-        h1.hero-title {
+        h1.hero-main {
             font-family: 'Playfair Display', serif;
-            font-size: 5.4rem;
-            line-height: 1.05;
+            font-size: 3.4rem;
+            line-height: 1.1;
             font-style: italic;
-            font-weight: 700;
-            margin-bottom: 45px;
-            max-width: 1200px;
+            margin-bottom: 35px;
+            max-width: 850px;
         }
 
-        .hero-lead-text {
-            font-size: 1.8rem;
-            max-width: 850px;
-            font-weight: 300;
-            border-left-width: 12px;
+        p.hero-sub {
+            font-size: 1.3rem;
+            max-width: 650px;
+            border-left-width: 8px;
             border-left-style: solid;
             border-left-color: var(--uae-red-primary);
-            padding-left: 45px;
+            padding-left: 30px;
+            margin-bottom: 45px;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 80px;
+            font-weight: 300;
         }
 
-        body.rtl .hero-lead-text {
-            border-left-width: 0;
-            border-right-width: 12px;
+        body.rtl p.hero-sub {
+            border-left-width: 0px;
+            border-right-width: 8px;
             border-right-style: solid;
             border-right-color: var(--uae-red-primary);
-            padding-left: 0;
-            padding-right: 45px;
+            padding-right: 30px;
         }
 
-        /* ------------------------------------------------------------
-        7. BIOGRAPHY & ROUND PHOTO COMPONENT
-        ------------------------------------------------------------
-        */
-        .profile-layout-container {
+        /* ADVISOR PROFILE FIX: ENSURING FACE IS SEEN */
+        .profile-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 100px;
+            gap: 70px;
             align-items: start;
         }
 
-        .portrait-stack {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .circular-portrait-frame {
-            width: 350px;
-            height: 350px;
+        .portrait-mask {
+            width: 270px;
+            height: 270px;
             border-radius: 50%;
-            border-top-width: 7px;
-            border-top-style: solid;
-            border-top-color: var(--gold-advisor);
-            border-bottom-width: 7px;
-            border-bottom-style: solid;
-            border-bottom-color: var(--gold-advisor);
-            border-left-width: 7px;
-            border-left-style: solid;
-            border-left-color: var(--gold-advisor);
-            border-right-width: 7px;
-            border-right-style: solid;
-            border-right-color: var(--gold-advisor);
+            border-top-width: 6px;
+            border-bottom-width: 6px;
+            border-left-width: 6px;
+            border-right-width: 6px;
+            border-style: solid;
+            border-color: var(--gold-advisor);
             overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.6);
             background-color: #111111;
         }
 
-        .circular-portrait-frame img {
+        .portrait-mask img {
             width: 100%;
             height: 100%;
+            /* THE FIX: Adjusting the crop to center the face at 20% from the top */
             object-fit: cover;
+            object-position: center 20%; 
         }
 
-        .bio-header {
+        .advisor-details h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
-            margin-bottom: 30px;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
         }
 
-        .bio-paragraph {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 600px;
-        }
-
-        /* ------------------------------------------------------------
-        8. THE 5 REASONS SIDEBAR
-        ------------------------------------------------------------
-        */
-        .value-proposition-sidebar {
+        .value-card-expanded {
             background-color: var(--glass-black);
-            padding-top: 70px;
-            padding-bottom: 70px;
-            padding-left: 60px;
-            padding-right: 60px;
-            border-right-width: 15px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 50px;
+            padding-right: 50px;
+            border-right-width: 12px;
             border-right-style: solid;
             border-right-color: var(--gold-advisor);
-            backdrop-filter: var(--blur-depth);
+            backdrop-filter: blur(20px);
         }
 
-        body.rtl .value-proposition-sidebar {
-            border-right-width: 0;
-            border-left-width: 15px;
+        body.rtl .value-card-expanded {
+            border-right-width: 0px;
+            border-left-width: 12px;
             border-left-style: solid;
             border-left-color: var(--gold-advisor);
         }
 
-        .value-node {
-            margin-bottom: 50px;
+        .v-node {
+            margin-bottom: 35px;
         }
 
-        .value-node:last-child {
-            margin-bottom: 0;
-        }
-
-        .value-node strong {
+        .v-node strong {
             display: block;
             color: var(--gold-advisor);
-            font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-        }
-
-        .value-node p {
             font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.7;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
-        /* ------------------------------------------------------------
-        9. STRATEGIC CARDS (PROJECTS)
-        ------------------------------------------------------------
-        */
-        .grid-project-system {
+        /* PROJECT GRID */
+        .project-grid-system {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-            margin-top: 60px;
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .project-asset-card {
+        .asset-card-style {
             background-color: rgba(15, 15, 15, 0.98);
-            padding-top: 100px;
-            padding-bottom: 80px;
-            padding-left: 50px;
-            padding-right: 50px;
-            border-top-width: 15px;
+            padding-top: 60px;
+            padding-bottom: 50px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-top-width: 10px;
             border-top-style: solid;
             border-top-color: var(--uae-red-primary);
-            transition: transform var(--speed-ui-hover) var(--ease-luxury);
         }
 
-        .project-asset-card:hover {
-            transform: translateY(-20px);
-        }
-
-        .project-asset-card.variant-green {
+        .asset-card-style.green-theme {
             border-top-color: var(--uae-green-primary);
         }
 
-        .project-asset-card.variant-gold {
+        .asset-card-style.gold-theme {
             border-top-color: var(--gold-advisor);
         }
 
-        .card-location-tag {
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--gold-advisor);
-            display: block;
-            margin-bottom: 30px;
-        }
-
-        .project-asset-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 25px;
-        }
-
-        .project-asset-card p {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* ------------------------------------------------------------
-        10. THE RESTORED FORMSPREE MASTER (5 FIELDS)
-        ------------------------------------------------------------
-        */
-        .form-master-container {
+        /* FORMSPREE CONTAINER */
+        .form-master-box {
             background-color: var(--uae-white-pure);
             color: var(--uae-black-base);
-            padding-top: 130px;
-            padding-bottom: 130px;
-            padding-left: 10%;
-            padding-right: 10%;
-            max-width: 1300px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            padding-left: 7%;
+            padding-right: 7%;
+            max-width: 1100px;
             margin-left: auto;
             margin-right: auto;
             border-radius: 4px;
-            box-shadow: 0 100px 200px rgba(0, 0, 0, 0.9);
+            box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.7);
         }
 
-        .form-header-box {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .form-header-box h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.2rem;
-            margin-bottom: 15px;
-        }
-
-        .form-header-box p {
-            font-size: 1.4rem;
-            color: #666;
-        }
-
-        /* THE EXACT 5-FIELD GRID LOGIC */
-        .grid-form-architecture {
+        .form-grid-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 45px;
+            gap: 30px;
         }
 
-        .full-width-field {
-            grid-column: span 2;
-        }
-
-        .form-input-wrapper {
+        .form-field-unit {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
         }
 
-        .form-input-wrapper label {
+        .form-field-unit label {
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            color: #888;
+            font-size: 0.75rem;
+            color: #777777;
+            letter-spacing: 1px;
         }
 
-        .form-input-wrapper input,
-        .form-input-wrapper select {
+        .form-field-unit input,
+        .form-field-unit select {
+            padding-top: 18px;
+            padding-bottom: 18px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-right-width: 1px;
+            border-style: solid;
+            border-color: #E0E0E0;
+            background-color: #F9F9F9;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+        .submit-btn-master {
+            grid-column: span 2;
             padding-top: 25px;
             padding-bottom: 25px;
-            padding-left: 20px;
-            padding-right: 20px;
-            background-color: var(--form-bg-light);
-            border-top-width: 1px;
-            border-top-style: solid;
-            border-top-color: #DDDDDD;
-            border-bottom-width: 1px;
-            border-bottom-style: solid;
-            border-bottom-color: #DDDDDD;
-            border-left-width: 1px;
-            border-left-style: solid;
-            border-left-color: #DDDDDD;
-            border-right-width: 1px;
-            border-right-style: solid;
-            border-right-color: #DDDDDD;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.2rem;
-            color: var(--uae-black-base);
-            transition: border-color var(--speed-ui-hover) ease;
-        }
-
-        .form-input-wrapper input:focus,
-        .form-input-wrapper select:focus {
-            border-color: var(--uae-red-primary);
-        }
-
-        .master-submit-btn {
-            width: 100%;
-            padding-top: 38px;
-            padding-bottom: 38px;
             background-color: var(--uae-black-base);
             color: var(--uae-white-pure);
-            border-top-width: 0;
-            border-bottom-width: 0;
-            border-left-width: 0;
-            border-right-width: 0;
+            border-width: 0px;
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 6px;
+            letter-spacing: 3px;
             cursor: pointer;
-            margin-top: 60px;
-            transition: background-color 0.4s ease, letter-spacing 0.4s ease;
+            margin-top: 30px;
+            transition: 0.4s ease;
         }
 
-        .master-submit-btn:hover {
+        .submit-btn-master:hover {
             background-color: var(--uae-red-primary);
-            letter-spacing: 12px;
+            letter-spacing: 5px;
         }
 
-        /* ------------------------------------------------------------
-        11. STICKY SOCIAL CHANNELS
-        ------------------------------------------------------------
-        */
-        .sticky-social-bar {
+        /* STICKY SOCIAL NODES */
+        .sticky-social-container {
             position: fixed;
-            bottom: 60px;
-            right: 60px;
+            bottom: 45px;
+            right: 45px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
-            z-index: 10000;
+            gap: 20px;
+            z-index: 9999;
         }
 
-        .social-link-node {
-            width: 75px;
-            height: 75px;
+        .social-button {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .social-link-node:hover {
-            transform: scale(1.25) translateY(-10px) rotate(5deg);
+        .social-button:hover {
+            transform: scale(1.15) rotate(10deg);
         }
 
-        .social-link-node svg {
-            width: 35px;
-            height: 35px;
+        .social-button svg {
+            width: 28px;
             fill: #FFFFFF;
         }
 
-        /* ------------------------------------------------------------
-        12. RESPONSIVE MEDIA QUERIES
-        ------------------------------------------------------------
-        */
-        @media (max-width: 1400px) {
-            h1.hero-title { font-size: 4.2rem; }
-            .grid-project-system { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 1100px) {
-            .profile-layout-container { grid-template-columns: 1fr; }
-            .grid-form-architecture { grid-template-columns: 1fr; }
-            .full-width-field { grid-column: span 1; }
-            .grid-project-system { grid-template-columns: 1fr; }
-            section.page-block { padding-top: 200px; }
-            header.main-nav { height: 100px; }
-        }
-
-        @media (max-width: 768px) {
-            h1.hero-title { font-size: 3rem; }
-            .hero-lead-text { font-size: 1.3rem; padding-left: 25px; }
-            .circular-portrait-frame { width: 280px; height: 280px; }
-            .sticky-social-bar { right: 30px; bottom: 30px; }
-            .social-link-node { width: 65px; height: 65px; }
+        /* RESPONSIVE LOGIC */
+        @media (max-width: 900px) {
+            .profile-container, .form-grid-layout, .project-grid-system {
+                grid-template-columns: 1fr;
+            }
+            .submit-btn-master {
+                grid-column: span 1;
+            }
+            h1.hero-main {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body class="ltr">
 
-    <div class="viewport-bg-container">
-        <div class="landmark-layer active" id="bg-hero" style="background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2400');"></div>
-        
-        <div class="landmark-layer" id="bg-about" style="background-image: url('https://images.unsplash.com/photo-1614101614278-f68285ba0f0c?q=80&w=2400');"></div>
-        
-        <div class="landmark-layer" id="bg-projects" style="background-image: url('https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?q=80&w=2400');"></div>
-        
-        <div class="landmark-layer" id="bg-advisory" style="background-image: url('https://images.unsplash.com/photo-1528702748617-c64d49f918af?q=80&w=2400');"></div>
-        
-        <div class="landmark-layer" id="bg-contact" style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=2400');"></div>
-    </div>
+    <div class="landmark-engine">
+        <div class="bg-layer active" style="background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1614101614278-f68285ba0f0c?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1634712535043-f1d2d0913926?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1627662236973-4fda8358cb2d?q=80&w=2400');"></div> <div class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1528702748617-c64d49f918af?q=80&w=2400');"></div> </div>
 
-    <header class="main-nav">
-        <a href="#hero" class="nav-branding">MR LIVING CAPITAL</a>
-        <div class="language-vault">
-            <button class="lang-trigger is-active" id="lang-en" onclick="deployLanguage('en', this)">EN</button>
-            <button class="lang-trigger" id="lang-ar" onclick="deployLanguage('ar', this)">AR</button>
-            <button class="lang-trigger" id="lang-fa" onclick="deployLanguage('fa', this)">FA</button>
+    <header class="nav-bar">
+        <a href="#" class="brand-text">MR LIVING CAPITAL</a>
+        <div class="lang-control">
+            <button class="btn-lang active" onclick="updateUI('en', this)">EN</button>
+            <button class="btn-lang" onclick="updateUI('ar', this)">AR</button>
+            <button class="btn-lang" onclick="updateUI('fa', this)">FA</button>
         </div>
     </header>
 
-    <section class="page-block" id="hero">
-        <h1 class="hero-title" id="TEXT_H1">Invest with <span style="color:var(--uae-red-primary);">Authority</span>.<br>Exit with <span style="color:var(--gold-advisor);">Wealth</span>.</h1>
-        <p class="hero-lead-text" id="TEXT_LEAD">I provide independent real estate advisory, helping you navigate the Dubai market with data-driven insights and a focus on long-term capital growth.</p>
-        
-        <div style="display: flex; gap: 20px;">
-            <a href="#contact" style="text-decoration: none; background: var(--uae-white-pure); color: var(--uae-black-base); padding: 25px 50px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Begin Consultation</a>
+    <section class="master-block">
+        <h1 class="hero-main" id="TX_H1">Invest with <span style="color:var(--uae-red-primary);">Authority</span>.<br>Exit with <span style="color:var(--gold-advisor);">Wealth</span>.</h1>
+        <p class="hero-sub" id="TX_LEAD">Independent real estate advisory in Dubai. I provide data-driven insights to protect and grow your capital.</p>
+        <div>
+            <a href="#contact" style="text-decoration:none; background:var(--uae-white-pure); color:#000; padding:18px 35px; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Book Private Briefing</a>
         </div>
     </section>
 
-    <section class="page-block" id="about">
-        <div class="profile-layout-container">
-            <div class="portrait-stack">
-                <div class="circular-portrait-frame">
+    <section class="master-block">
+        <div class="profile-container">
+            <div style="text-align: center;">
+                <div class="portrait-mask">
                     <img src="profile.jpg" alt="Advisor Masoud">
                 </div>
-                <div style="text-align: left; width: 100%;">
-                    <h2 class="bio-header" id="TEXT_ABOUT_H">About Me</h2>
-                    <p class="bio-paragraph" id="TEXT_ABOUT_P1">I am your personal advisor in the Dubai real estate landscape. I believe in total transparency and a banking-level approach to asset selection.</p>
-                    <p class="bio-paragraph" id="TEXT_ABOUT_P2">My goal is to protect your interests above all else, ensuring that your property acquisition is a strategic financial move, not just a transaction.</p>
+                <div class="advisor-details">
+                    <h2>Professional Portfolio</h2>
+                    <p style="opacity:0.7;">Fiduciary Advisory Services</p>
                 </div>
             </div>
-
-            <div class="value-proposition-sidebar">
-                <h3 style="font-family:'DM Sans'; letter-spacing: 5px; opacity: 0.6; margin-bottom: 50px;" id="TEXT_REASONS_TITLE">Why Work With Me?</h3>
-                
-                <div class="value-node">
-                    <strong id="R1_T">1. Independence</strong>
-                    <p id="R1_P">I am not tied to any single developer; my loyalty is exclusively to your portfolio and your returns.</p>
+            <div class="value-card-expanded">
+                <div class="v-node">
+                    <strong>1. Independence</strong>
+                    <p>I am loyal to the investor, not the developer. I filter out the noise to find real value.</p>
                 </div>
-
-                <div class="value-node">
-                    <strong id="R2_T">2. Data-First Approach</strong>
-                    <p id="R2_P">Every recommendation is backed by real-time DLD transaction data, historical trends, and supply metrics.</p>
+                <div class="v-node">
+                    <strong>2. Data Intelligence</strong>
+                    <p>My advice is rooted in real-time DLD transaction data and historical capital growth trends.</p>
                 </div>
-
-                <div class="value-node">
-                    <strong id="R3_T">3. End-to-End Support</strong>
-                    <p id="R3_P">From initial selection to legal handover and property management, I manage every complexity for you.</p>
+                <div class="v-node">
+                    <strong>3. Asset Protection</strong>
+                    <p>I focus on risk mitigation in the off-plan sector, ensuring your capital is positioned safely.</p>
                 </div>
-
-                <div class="value-node">
-                    <strong id="R4_T">4. Total Transparency</strong>
-                    <p id="R4_P">I speak the truth about developer health and project delays. No marketing hype, just actionable facts.</p>
-                </div>
-
-                <div class="value-node">
-                    <strong id="R5_T">5. Market Access</strong>
-                    <p id="R5_P">I provide my private clients with early access to off-market distressed deals and exclusive pre-launch inventory.</p>
+                <div class="v-node">
+                    <strong>4. VIP Access</strong>
+                    <p>Direct entry into the UAE's most exclusive launches before they hit the general market.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="page-block" id="projects">
-        <div style="text-align: center; margin-bottom: 80px;">
-            <h2 style="font-family:'Playfair Display'; font-size: 4.5rem;" id="TEXT_PROJECT_H">Strategic Selection</h2>
-            <p style="font-size: 1.4rem; opacity: 0.6;" id="TEXT_PROJECT_S">Hand-picked assets for capital preservation.</p>
-        </div>
-
-        <div class="grid-project-system">
-            <div class="project-asset-card">
-                <span class="card-location-tag">Dubailand</span>
-                <h3>Tilal Binghatti</h3>
-                <p>Premium villa assets designed for high-yield residential demand and steady capital growth.</p>
+    <section class="master-block">
+        <h2 style="font-family:'Playfair Display'; font-size:3rem; text-align:center; margin-bottom:40px;">Strategic Selections</h2>
+        <div class="project-grid-system">
+            <div class="asset-card-style">
+                <span style="color:var(--gold-advisor); font-weight:700; letter-spacing:2px; font-size:0.7rem;">DUBAILAND</span>
+                <h3 style="font-family:'Playfair Display'; font-size:1.8rem; margin-top:15px; margin-bottom:15px;">Tilal Binghatti</h3>
+                <p>Exclusive villa project designed for high-yield returns and premium lifestyle living.</p>
             </div>
-
-            <div class="project-asset-card variant-green">
-                <span class="card-location-tag" style="color:var(--uae-green-primary);">Abu Dhabi</span>
-                <h3>Sobha City</h3>
-                <p>Setting the gold standard of construction quality and finishings in the capital's newest urban center.</p>
+            <div class="asset-card-style green-theme">
+                <span style="color:var(--uae-green-primary); font-weight:700; letter-spacing:2px; font-size:0.7rem;">ABU DHABI</span>
+                <h3 style="font-family:'Playfair Display'; font-size:1.8rem; margin-top:15px; margin-bottom:15px;">Sobha City</h3>
+                <p>Unmatched construction quality in the heart of the capital, ideal for long-term growth.</p>
             </div>
-
-            <div class="project-asset-card variant-gold">
-                <span class="card-location-tag">RAK</span>
-                <h3>Mondrian Residences</h3>
-                <p>Strategically positioned waterfront assets next to the future of the region's leisure district.</p>
+            <div class="asset-card-style gold-theme">
+                <span style="color:var(--gold-advisor); font-weight:700; letter-spacing:2px; font-size:0.7rem;">RAK</span>
+                <h3 style="font-family:'Playfair Display'; font-size:1.8rem; margin-top:15px; margin-bottom:15px;">Mondrian Residences</h3>
+                <p>Waterfront assets positioned strategically near the region's massive leisure expansion.</p>
             </div>
         </div>
     </section>
 
-    <section class="page-block" id="advisory">
-        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-            <h2 style="font-family: 'Playfair Display'; font-size: 5rem; margin-bottom: 40px;">Professional Integrity.</h2>
-            <p style="font-size: 2.2rem; font-weight: 300; line-height: 1.4; color: var(--gold-advisor);">"In a market of sales tactics, I offer a fiduciary perspective that prioritizes your wealth over developer commissions."</p>
-        </div>
-    </section>
-
-    <section class="page-block" id="contact">
-        <div class="form-master-container">
-            <div class="form-header-box">
-                <h2 id="FORM_H">Private Inquiry</h2>
-                <p id="FORM_S">Enter your investment objectives for a tailored market briefing.</p>
+    <section id="contact" class="master-block">
+        <div class="form-master-box">
+            <div style="text-align: center; margin-bottom:50px;">
+                <h2 style="font-family:'Playfair Display'; font-size:2.8rem;">Investor Briefing</h2>
+                <p style="color:#666;">Provide your criteria for a customized investment strategy.</p>
             </div>
-
+            
             <form action="https://formspree.io/f/mkokrndr" method="POST">
-                <div class="grid-form-architecture">
+                <div class="form-grid-layout">
                     
-                    <div class="form-input-wrapper">
+                    <div class="form-field-unit">
                         <label>Full Name</label>
-                        <input type="text" name="name" required placeholder="Ex: John Doe">
+                        <input type="text" name="name" required placeholder="Full Name">
                     </div>
 
-                    <div class="form-input-wrapper">
+                    <div class="form-field-unit">
                         <label>WhatsApp Number</label>
                         <input type="tel" name="phone" required placeholder="+971 ...">
                     </div>
 
-                    <div class="form-input-wrapper">
+                    <div class="form-field-unit">
                         <label>Budget Tier</label>
-                        <select name="budget_tier" required>
-                            <option value="Below 1.5M">Below 1.5M AED</option>
-                            <option value="1.5M-3M">1.5M - 3M AED</option>
-                            <option value="3M-5M">3M - 5M AED</option>
-                            <option value="5M-10M">5M - 10M AED</option>
-                            <option value="Above 10M">10M+ AED</option>
+                        <select name="budget" required>
+                            <option>Below 1.5M AED</option>
+                            <option>1.5M - 3M AED</option>
+                            <option>3M - 5M AED</option>
+                            <option>5M - 10M AED</option>
+                            <option>10M+ AED</option>
                         </select>
                     </div>
 
-                    <div class="form-input-wrapper">
+                    <div class="form-field-unit">
                         <label>Acquisition Timeline</label>
                         <select name="timeline" required>
-                            <option value="Immediately">Immediately</option>
-                            <option value="Within 3 Months">Within 3 Months</option>
-                            <option value="Within 6 Months">Within 6 Months</option>
-                            <option value="Market Research">Market Research Only</option>
+                            <option>Immediately</option>
+                            <option>Within 2 to 4 weeks</option>
+                            <option>Within 3 Months</option>
+                            <option>Market Research Only</option>
                         </select>
                     </div>
 
-                    <div class="form-input-wrapper full-width-field">
-                        <label>Primary Project Interest</label>
-                        <select name="project_interest" required>
-                            <option value="Tilal Binghatti">Tilal Binghatti (Dubailand)</option>
-                            <option value="Sobha City">Sobha City (Abu Dhabi)</option>
-                            <option value="Mondrian Residences">Mondrian Residences (RAK)</option>
-                            <option value="General Advisory">General Portfolio Strategy</option>
-                            <option value="Distressed Deals">Off-Market Distressed Deals</option>
+                    <div class="form-field-unit" style="grid-column: span 2;">
+                        <label>Project of Interest</label>
+                        <select name="interest" required>
+                            <option>Tilal Binghatti (Dubailand)</option>
+                            <option>Sobha City (Abu Dhabi)</option>
+                            <option>Mondrian Residences (RAK)</option>
+                            <option>General Advisory / Off-Market</option>
                         </select>
                     </div>
+
+                    <button type="submit" class="submit-btn-master">Submit Private Request</button>
 
                 </div>
-
-                <button type="submit" class="master-submit-btn">Submit Briefing Request</button>
             </form>
         </div>
     </section>
 
-    <div class="sticky-social-bar">
-        <a href="https://wa.me/971585899112" class="social-link-node" style="background-color: #25D366;" target="_blank">
+    <div class="sticky-social-container">
+        <a href="https://wa.me/971585899112" class="social-button" style="background:#25D366;" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
-        
-        <a href="https://t.me/masoud_advisor" class="social-link-node" style="background-color: #229ED9;" target="_blank">
+        <a href="https://t.me/masoud_advisor" class="social-button" style="background:#229ED9;" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.184 16.51c-.183.18-.432.227-.643.14-.146-.06-.3-.133-.45-.224l-3.323-2.115-1.55 1.5c-.167.162-.43.2-.644.1-.11-.05-.22-.116-.32-.19l-.324-2.146-2.55-1.02c-.225-.09-.36-.312-.34-.543s.182-.423.4-.492l10.37-3.92c.2-.075.42-.045.6.08.18.12.27.33.24.54l-1.48 8.82z"/></svg>
-        </a>
-
-        <a href="https://instagram.com/masoud" class="social-link-node" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.245 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.063 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.245-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.063-2.633-.333-3.608-1.308-.975-.975-1.245-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.063-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.245 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.617 6.78 6.979 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28-.073-1.689-.073-4.948s.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
     </div>
 
     <script>
-        /* ------------------------------------------------------------
-        J-1. CONTENT DICTIONARY
-        ------------------------------------------------------------
-        */
-        const pageContent = {
-            en: {
-                H1: "Invest with <span style='color:var(--uae-red-primary);'>Authority</span>.<br>Exit with <span style='color:var(--gold-advisor);'>Wealth</span>.",
-                LEAD: "I provide independent real estate advisory, helping you navigate the Dubai market with data-driven insights and a focus on long-term capital growth.",
-                ABOUT_H: "About Me",
-                ABOUT_P1: "I am your personal advisor in the Dubai real estate landscape. I believe in total transparency and a banking-level approach to asset selection.",
-                ABOUT_P2: "My goal is to protect your interests above all else, ensuring that your property acquisition is a strategic financial move, not just a transaction."
-            },
-            ar: {
-                H1: "استثمر <span style='color:var(--uae-red-primary);'>بسلطة</span>.<br>واخرج <span style='color:var(--gold-advisor);'>بثروة</span>.",
-                LEAD: "أقدم استشارات عقارية مستقلة لمساعدتك في سوق دبي من خلال رؤى مبنية على البيانات والتركيز على نمو رأس المال طويل الأجل.",
-                ABOUT_H: "من أنا",
-                ABOUT_P1: "أنا مستشارك الشخصي في سوق العقارات في دبي. أؤمن بالشفافية المطلقة والنهج المصرفي في اختيار الأصول.",
-                ABOUT_P2: "هدفي هو حماية مصالحك فوق كل شيء، وضمان أن شراء عقارك هو خطوة مالية استراتيجية، وليس مجرد معاملة."
-            },
-            fa: {
-                H1: "با <span style='color:var(--uae-red-primary);'>اقتدار</span> سرمایه‌گذاری کنید.<br>با <span style='color:var(--gold-advisor);'>ثروت</span> خارج شوید.",
-                LEAD: "من مشاوره مستقل املاک ارائه می‌دهم تا با استفاده از داده‌های دقیق، بهترین تصمیم را برای رشد سرمایه بلندمدت خود در بازار دبی بگیرید.",
-                ABOUT_H: "درباره من",
-                ABOUT_P1: "من مشاور شخصی شما در بازار املاک دبی هستم. من به شفافیت کامل و رویکردی در سطح بانکی در انتخاب دارایی اعتقاد دارم.",
-                ABOUT_P2: "هدف من محافظت از منافع شماست تا اطمینان حاصل شود که خرید ملک شما یک حرکت استراتژیک مالی است، نه فقط یک معامله."
-            }
+        const dict = {
+            en: { h1: "Invest with <span style='color:var(--uae-red-primary);'>Authority</span>.<br>Exit with <span style='color:var(--gold-advisor);'>Wealth</span>.", lead: "Independent real estate advisory in Dubai. I provide data-driven insights to protect and grow your capital." },
+            ar: { h1: "استثمر <span style='color:var(--uae-red-primary);'>بسلطة</span>.<br>واخرج <span style='color:var(--gold-advisor);'>بثروة</span>.", lead: "استشارات عقارية مستقلة في دبي. أقدم رؤى مبنية على البيانات لحماية وتنمية رأس مالك." },
+            fa: { h1: "با <span style='color:var(--uae-red-primary);'>اقتدار</span> سرمایه‌گذاری کنید.<br>با <span style='color:var(--gold-advisor);'>ثروت</span> خارج شوید.", lead: "مشاوره مستقل املاک در بازار دبی. من بینش‌های مبتنی بر داده را برای محافظت و رشد سرمایه شما ارائه می‌دهم." }
         };
 
-        /* ------------------------------------------------------------
-        J-2. LANGUAGE CONTROLLER
-        ------------------------------------------------------------
-        */
-        function deployLanguage(targetLang, triggerElement) {
-            // Check for RTL
-            const isRTL = (targetLang === 'ar' || targetLang === 'fa');
-            
-            if (isRTL) {
-                document.body.classList.add('rtl');
-                document.body.classList.remove('ltr');
-            } else {
-                document.body.classList.add('ltr');
-                document.body.classList.remove('rtl');
-            }
-
-            // Update UI State
-            document.querySelectorAll('.lang-trigger').forEach(btn => {
-                btn.classList.remove('is-active');
-            });
-            triggerElement.classList.add('is-active');
-
-            // Inject Content
-            document.getElementById('TEXT_H1').innerHTML = pageContent[targetLang].H1;
-            document.getElementById('TEXT_LEAD').innerText = pageContent[targetLang].LEAD;
-            document.getElementById('TEXT_ABOUT_H').innerText = pageContent[targetLang].ABOUT_H;
-            document.getElementById('TEXT_ABOUT_P1').innerText = pageContent[targetLang].ABOUT_P1;
-            document.getElementById('TEXT_ABOUT_P2').innerText = pageContent[targetLang].ABOUT_P2;
+        function updateUI(lang, btn) {
+            document.body.classList.toggle('rtl', lang !== 'en');
+            document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('TX_H1').innerHTML = dict[lang].h1;
+            document.getElementById('TX_LEAD').innerText = dict[lang].lead;
         }
 
-        /* ------------------------------------------------------------
-        J-3. INTERSECTION OBSERVER (SCROLL-BASED LANDMARKS)
-        ------------------------------------------------------------
-        */
-        const allSections = document.querySelectorAll('section');
-        const allBgLayers = document.querySelectorAll('.landmark-layer');
+        /* 10 LANDMARK CYCLE ENGINE */
+        const bgLayers = document.querySelectorAll('.bg-layer');
+        let currentIdx = 0;
+        
+        function rotateBg() {
+            bgLayers[currentIdx].classList.remove('active');
+            currentIdx = (currentIdx + 1) % bgLayers.length;
+            bgLayers[currentIdx].classList.add('active');
+        }
 
-        const observerSetup = {
-            root: null,
-            threshold: 0.50, // Trigger when half of the section is visible
-            rootMargin: "0px"
-        };
-
-        const activityObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const activeSectionId = entry.target.getAttribute('id');
-                    
-                    // Clear all background actives
-                    allBgLayers.forEach(layer => {
-                        layer.classList.remove('active');
-                    });
-
-                    // Match background ID to section ID
-                    const matchingBg = document.getElementById('bg-' + activeSectionId);
-                    if (matchingBg) {
-                        matchingBg.classList.add('active');
-                    }
-                }
-            });
-        }, observerSetup);
-
-        allSections.forEach(currentSection => {
-            activityObserver.observe(currentSection);
-        });
-
-        /* ------------------------------------------------------------
-        J-4. SMOOTH SCROLL INTEGRITY
-        ------------------------------------------------------------
-        */
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const targetHash = this.getAttribute('href');
-                const destination = document.querySelector(targetHash);
-                
-                if (destination) {
-                    destination.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        // Cycle backgrounds every 7 seconds for a luxury feel
+        setInterval(rotateBg, 7000);
     </script>
 
 </body>
